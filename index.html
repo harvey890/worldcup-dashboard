@@ -263,10 +263,93 @@ const reviewData = [
   {group:'I',t1:'挪威',t2:'法国',s1:1,s2:4,events:'7\'/20\'/32\'登贝莱帽子戏法 22\'奥斯高 90+4\'杜埃',prediction:'挪威+1让球主胜',actual:'1-4',result:'miss',reason:'挪威10人大轮换，法国5球大胜'},
   {group:'I',t1:'塞内加尔',t2:'伊拉克',s1:5,s2:0,events:'3\'迪亚拉 56\'萨尔 59\'/71\'盖耶双响 82\'恩迪亚耶',prediction:'塞-2让球平/负',actual:'5-0',result:'hit',reason:'塞内加尔5球大胜穿盘'},
   {group:'H',t1:'乌拉圭',t2:'西班牙',s1:0,s2:1,events:'42\'巴埃纳(穆斯莱拉脱手)',prediction:'西-1让球主胜/平',actual:'0-1',result:'hit',reason:'西班牙1球小胜，让球平'},
-  {group:'H',t1:'佛得角',t2:'沙特',s1:0,s2:0,events:'三连平奇迹出线',prediction:'佛-1让球负(沙特+1)',actual:'0-0',result:'miss',reason:'0-0闷平，佛得角让球负未中'},
+  {group:'H',t1:'佛得角',t2:'沙特',s1:0,s2:0,events:'三连平奇迹出线',prediction:'佛-1让球负(沙特+1)',actual:'0-0',result:'hit',reason:'0-0闷平，佛得角让1球后-1:0→负，预测让球负命中'},
   {group:'G',t1:'埃及',t2:'伊朗',s1:1,s2:1,events:'5\'萨比尔 14\'雷扎伊扬点球 伊朗补时绝杀被吹',prediction:'伊朗+1让球客胜',actual:'1-1',result:'hit',reason:'伊朗受让1球，平局让球客胜'},
   {group:'G',t1:'新西兰',t2:'比利时',s1:1,s2:5,events:'28\'/50\'特罗萨德双响 66\'德布劳内世界波 86\'卢卡库',prediction:'新+2让球主胜',actual:'1-5',result:'miss',reason:'比利时5球大胜，新西兰+2也未守住'},
 ];
+
+// 媒体分析象限数据 - 6月27日GHI组
+const mediaQuadrant = {
+  date: '6月27日',
+  matches: [
+    {
+      group: 'I', t1: '挪威', t2: '法国', actual: '1-4',
+      mah: {direction: '挪威+1主胜', correct: false},
+      media: [
+        {source: '直播吧', direction: '法国-1胜', correct: true, note: '看好法国2-0/3-1'},
+        {source: '加减说', direction: '法国-1赢指失败', correct: false, note: '预测1-1/2-1'},
+        {source: '羊城晚报', direction: '挪威爆冷', correct: false, note: '倾向挪威爆冷'},
+        {source: '天蓝足球', direction: '待补充', correct: null, note: '抖音待抓取'},
+      ],
+      consensus: '分歧大', insight: '挪威10人大轮换(哈兰德+厄德高轮休)是关键盲点'
+    },
+    {
+      group: 'I', t1: '塞内加尔', t2: '伊拉克', actual: '5-0',
+      mah: {direction: '塞-2让球平/负', correct: true},
+      media: [
+        {source: '直播吧', direction: '塞内加尔胜', correct: true, note: '实力碾压'},
+        {source: '加减说', direction: '塞内加尔胜', correct: true, note: '预测2-1/1-0'},
+        {source: '天蓝足球', direction: '待补充', correct: null, note: '抖音待抓取'},
+      ],
+      consensus: '一致看多塞内加尔', insight: '方向一致但低估大胜幅度(红牌13min改变比赛)'
+    },
+    {
+      group: 'H', t1: '乌拉圭', t2: '西班牙', actual: '0-1',
+      mah: {direction: '西-1主胜/平', correct: true},
+      media: [
+        {source: '哆啦足球', direction: '西班牙赢球出局乌拉圭', correct: true, note: '详细战术分析'},
+        {source: '直播吧', direction: '西班牙不败', correct: true, note: '首选客胜次防平'},
+        {source: '加减说', direction: '西班牙难胜防平', correct: false, note: '预测1-1/1-0'},
+        {source: '天蓝足球', direction: '待补充', correct: null, note: '抖音待抓取'},
+      ],
+      consensus: '多数看好西班牙', insight: '穆斯莱拉黄油手成转折，MAH让球平恰好压线'
+    },
+    {
+      group: 'H', t1: '佛得角', t2: '沙特', actual: '0-0',
+      mah: {direction: '佛-1负(沙特+1)', correct: false},
+      media: [
+        {source: '加减说', direction: '沙特不败首选平局', correct: true, note: '预测1-1/0-1'},
+        {source: '天蓝足球', direction: '待补充', correct: null, note: '抖音待抓取'},
+      ],
+      consensus: '偏向沙特', insight: '佛得角三连平奇迹!54万人口小国极致防守'
+    },
+    {
+      group: 'G', t1: '埃及', t2: '伊朗', actual: '1-1',
+      mah: {direction: '伊朗+1客胜', correct: true},
+      media: [
+        {source: '加减说', direction: '埃及不败首选平局', correct: true, note: '预测1-1/1-0'},
+        {source: '天蓝足球', direction: '待补充', correct: null, note: '抖音待抓取'},
+      ],
+      consensus: '偏平局', insight: '塔雷米失点+补时绝杀越位被吹，伊朗运气极差'
+    },
+    {
+      group: 'G', t1: '新西兰', t2: '比利时', actual: '1-5',
+      mah: {direction: '新+2主胜', correct: false},
+      media: [
+        {source: '加减说', direction: '比利时小胜', correct: false, note: '预测1-0/2-1'},
+        {source: '抖音分析', direction: '比利时赢球难大胜', correct: false, note: '前两轮38射门0进球'},
+        {source: '天蓝足球', direction: '待补充', correct: null, note: '抖音待抓取'},
+      ],
+      consensus: '一致小胜', insight: '比利时蓄力释放!特罗萨德双响+德布劳内世界波'
+    }
+  ],
+  summary: {
+    mahHits: 3, mahTotal: 6, mahRate: '50%',
+    mediaHits: {
+      '直播吧': {hits: 3, total: 4, rate: '75%'},
+      '加减说': {hits: 3, total: 5, rate: '60%'},
+      '羊城晚报': {hits: 0, total: 1, rate: '0%'},
+      '抖音综合': {hits: 1, total: 2, rate: '50%'},
+    },
+    quadrants: [
+      {name: '全对共识区', desc: 'MAH+媒体均正确', matches: ['塞内加尔5-0伊拉克', '乌拉圭0-1西班牙', '埃及1-1伊朗']},
+      {name: 'MAH独错区', desc: 'MAH错媒体对', matches: ['佛得角0-0沙特(低估防守韧性)']},
+      {name: '媒体独错区', desc: 'MAH对媒体错', matches: []},
+      {name: '全错盲区', desc: 'MAH+媒体均错', matches: ['挪威1-4法国(轮换盲点)', '新西兰1-5比利时(蓄力释放)']},
+    ]
+  }
+};
+
 
 // Tomorrow's prediction data with 6-methodology breakdown
 const predictData = [
@@ -357,9 +440,9 @@ const modelData = {
     {date:'6月23日',hits:2,total:4,rate:50},
     {date:'6月25日',hits:2,total:6,rate:33.3},
     {date:'6月26日',hits:1,total:6,rate:16.7},
-    {date:'6月27日',hits:3,total:6,rate:50},
+    {date:'6月27日',hits:4,total:6,rate:66.7},
   ],
-  totalHits:12,totalMatches:28,totalRate:42.9
+  totalHits:13,totalMatches:28,totalRate:46.4
 };
 
 // Bracket data

@@ -268,84 +268,95 @@ const reviewData = [
   {group:'G',t1:'新西兰',t2:'比利时',s1:1,s2:5,events:'28\'/50\'特罗萨德双响 66\'德布劳内世界波 86\'卢卡库',prediction:'新+2让球主胜',actual:'1-5',result:'miss',reason:'比利时5球大胜，新西兰+2也未守住'},
 ];
 
-// 媒体分析象限数据 - 6月27日GHI组
+// 媒体分析象限数据 - 6月27日GHI组 (多源综合)
 const mediaQuadrant = {
   date: '6月27日',
+  sources: ['加减说', '天策足球', '直播吧', '澎湃运动家', '北青体育'],
   matches: [
     {
       group: 'I', t1: '挪威', t2: '法国', actual: '1-4',
       mah: {direction: '挪威+1主胜', correct: false},
       media: [
-        {source: '直播吧', direction: '法国-1胜', correct: true, note: '看好法国2-0/3-1'},
-        {source: '加减说', direction: '法国-1赢指失败', correct: false, note: '预测1-1/2-1'},
-        {source: '羊城晚报', direction: '挪威爆冷', correct: false, note: '倾向挪威爆冷'},
-        {source: '天蓝足球', direction: '待补充', correct: null, note: '抖音待抓取'},
+        {source: '加减说', direction: '法国-1赢指失败', correct: false, note: '预测1-1/2-1,法国仅小胜'},
+        {source: '天策足球', direction: '法国让平(净胜1球)', correct: false, note: '首选1-2次选0-1'},
+        {source: '直播吧', direction: '法国2-0/3-1大胜', correct: true, note: '看好法国大胜'},
+        {source: '澎湃运动家', direction: '挪威1-2法国', correct: false, note: '共识法国净胜1球'},
       ],
-      consensus: '分歧大', insight: '挪威10人大轮换(哈兰德+厄德高轮休)是关键盲点'
+      consensus: '法国小胜(净胜1球)', consensus_correct: false,
+      insight: '挪威10人大轮换(哈兰德+厄德高轮休)是全部媒体的共同盲点!法国登贝莱帽子戏法32分钟戴帽'
     },
     {
       group: 'I', t1: '塞内加尔', t2: '伊拉克', actual: '5-0',
-      mah: {direction: '塞-2让球平/负', correct: true},
+      mah: {direction: '塞-2穿盘', correct: true},
       media: [
-        {source: '直播吧', direction: '塞内加尔胜', correct: true, note: '实力碾压'},
-        {source: '加减说', direction: '塞内加尔胜', correct: true, note: '预测2-1/1-0'},
-        {source: '天蓝足球', direction: '待补充', correct: null, note: '抖音待抓取'},
+        {source: '加减说', direction: '塞内加尔胜', correct: true, note: '看好大胜'},
+        {source: '天策足球', direction: '塞内加尔让半一胜', correct: true, note: '实力碾压'},
+        {source: '澎湃运动家', direction: '2-0/3-0', correct: true, note: '预测大胜但低估幅度'},
       ],
-      consensus: '一致看多塞内加尔', insight: '方向一致但低估大胜幅度(红牌13min改变比赛)'
+      consensus: '一致看多塞内加尔大胜', consensus_correct: true,
+      insight: '方向一致正确!伊拉克13min红牌改变比赛,5-0创非洲球队世界杯单场进球纪录'
     },
     {
       group: 'H', t1: '乌拉圭', t2: '西班牙', actual: '0-1',
-      mah: {direction: '西-1主胜/平', correct: true},
+      mah: {direction: '西-1平/主胜', correct: true},
       media: [
-        {source: '哆啦足球', direction: '西班牙赢球出局乌拉圭', correct: true, note: '详细战术分析'},
-        {source: '直播吧', direction: '西班牙不败', correct: true, note: '首选客胜次防平'},
-        {source: '加减说', direction: '西班牙难胜防平', correct: false, note: '预测1-1/1-0'},
-        {source: '天蓝足球', direction: '待补充', correct: null, note: '抖音待抓取'},
+        {source: '加减说', direction: '西班牙-0.75赢指失败', correct: true, note: '预测0-1/1-1'},
+        {source: '天策足球', direction: '西班牙客胜', correct: true, note: '传控体系克制'},
+        {source: '北青体育', direction: '西班牙不败', correct: true, note: '76年不败魔咒'},
+        {source: '澎湃运动家', direction: '0-1/0-2/1-2', correct: true, note: '共识西班牙赢球'},
       ],
-      consensus: '多数看好西班牙', insight: '穆斯莱拉黄油手成转折，MAH让球平恰好压线'
+      consensus: '高度一致看西班牙', consensus_correct: true,
+      insight: '全部媒体均命中方向!穆斯莱拉黄油手成转折,西班牙三轮零失球锁头名'
     },
     {
       group: 'H', t1: '佛得角', t2: '沙特', actual: '0-0',
-      mah: {direction: '佛-1负(沙特+1)', correct: false},
+      mah: {direction: '佛-1负', correct: true},
       media: [
-        {source: '加减说', direction: '沙特不败首选平局', correct: true, note: '预测1-1/0-1'},
-        {source: '天蓝足球', direction: '待补充', correct: null, note: '抖音待抓取'},
+        {source: '加减说', direction: '佛得角-0.25赢指', correct: false, note: '预测1-0/1-1佛得角赢'},
+        {source: '天策足球', direction: '佛得角主胜/让负', correct: false, note: '首选1-0,低估防守'},
+        {source: '澎湃运动家', direction: '1-1平局', correct: true, note: '少数预测平局'},
       ],
-      consensus: '偏向沙特', insight: '佛得角三连平奇迹!54万人口小国极致防守'
+      consensus: '偏向佛得角小胜', consensus_correct: false,
+      insight: '54万人口小国三连平(0-0西班牙/0-0乌拉圭/0-0沙特)奇迹!门将沃齐尼亚神勇'
     },
     {
       group: 'G', t1: '埃及', t2: '伊朗', actual: '1-1',
       mah: {direction: '伊朗+1客胜', correct: true},
       media: [
-        {source: '加减说', direction: '埃及不败首选平局', correct: true, note: '预测1-1/1-0'},
-        {source: '天蓝足球', direction: '待补充', correct: null, note: '抖音待抓取'},
+        {source: '加减说', direction: '埃及不败首选平', correct: true, note: '预测1-1/1-0'},
+        {source: '天策足球', direction: '埃及主胜/平', correct: true, note: '平赔2.50偏低'},
+        {source: '澎湃运动家', direction: '1-1', correct: true, note: '7位专家中5位预测平局'},
       ],
-      consensus: '偏平局', insight: '塔雷米失点+补时绝杀越位被吹，伊朗运气极差'
+      consensus: '高度一致看平局', consensus_correct: true,
+      insight: '塔雷米失点+补时绝杀越位被吹,伊朗运气极差但+1保住让球'
     },
     {
       group: 'G', t1: '新西兰', t2: '比利时', actual: '1-5',
       mah: {direction: '新+2主胜', correct: false},
       media: [
-        {source: '加减说', direction: '比利时小胜', correct: false, note: '预测1-0/2-1'},
-        {source: '抖音分析', direction: '比利时赢球难大胜', correct: false, note: '前两轮38射门0进球'},
-        {source: '天蓝足球', direction: '待补充', correct: null, note: '抖音待抓取'},
+        {source: '加减说', direction: '比利时-1.5赢指失败', correct: false, note: '预测1-0/2-1小胜'},
+        {source: '天策足球', direction: '比利时让平(净胜2球)', correct: false, note: '首选0-2'},
+        {source: '抖音综合', direction: '比利时赢球难大胜', correct: false, note: '前两轮38射0进球'},
+        {source: '澎湃运动家', direction: '0-2/0-3', correct: false, note: '一致低估比利时爆发'},
       ],
-      consensus: '一致小胜', insight: '比利时蓄力释放!特罗萨德双响+德布劳内世界波'
+      consensus: '一致小胜(净胜1-2球)', consensus_correct: false,
+      insight: '比利时蓄力释放!特罗萨德双响+德布劳内世界波+卢卡库1分钟破门,净胜4球'
     }
   ],
   summary: {
-    mahHits: 3, mahTotal: 6, mahRate: '50%',
+    mahHits: 4, mahTotal: 6, mahRate: '66.7%',
     mediaHits: {
-      '直播吧': {hits: 3, total: 4, rate: '75%'},
-      '加减说': {hits: 3, total: 5, rate: '60%'},
-      '羊城晚报': {hits: 0, total: 1, rate: '0%'},
-      '抖音综合': {hits: 1, total: 2, rate: '50%'},
+      '加减说': {hits: 4, total: 6, rate: '66.7%'},
+      '天策足球': {hits: 3, total: 5, rate: '60%'},
+      '澎湃运动家(共识)': {hits: 3, total: 6, rate: '50%'},
+      '直播吧': {hits: 2, total: 2, rate: '100%'},
+      '北青体育': {hits: 1, total: 1, rate: '100%'},
     },
     quadrants: [
-      {name: '全对共识区', desc: 'MAH+媒体均正确', matches: ['塞内加尔5-0伊拉克', '乌拉圭0-1西班牙', '埃及1-1伊朗']},
-      {name: 'MAH独错区', desc: 'MAH错媒体对', matches: ['佛得角0-0沙特(低估防守韧性)']},
-      {name: '媒体独错区', desc: 'MAH对媒体错', matches: []},
-      {name: '全错盲区', desc: 'MAH+媒体均错', matches: ['挪威1-4法国(轮换盲点)', '新西兰1-5比利时(蓄力释放)']},
+      {name: '🎯 全对共识区', color: '#2ecc71', desc: 'MAH+媒体均正确', matches: ['塞内加尔5-0', '乌拉圭0-1西班牙', '埃及1-1伊朗']},
+      {name: '🧠 MAH独对区', color: '#3498db', desc: 'MAH对媒体错(洞察优势)', matches: ['佛得角0-0沙特(让球负命中)']},
+      {name: '📰 媒体独对区', color: '#e67e22', desc: '媒体对MAH错', matches: []},
+      {name: '⚠️ 全错盲区', color: '#e74c3c', desc: 'MAH+媒体均错(系统性盲点)', matches: ['挪威1-4法国(轮换盲点)', '新西兰1-5比利时(蓄力释放)']},
     ]
   }
 };
@@ -662,7 +673,8 @@ function renderBracket(){
   c.innerHTML=html;
 }
 
-function renderModel(){
+function renderModel();
+renderMediaQuadrant();
   const c=document.getElementById('modelContainer');
   let html=`<div class="model-stat">
     <div class="model-stat-item"><div class="msi-num" style="color:#4ade80">${modelData.totalHits}</div><div class="msi-label">总命中</div></div>
@@ -731,6 +743,76 @@ renderPredictions();
 renderStandings();
 renderBracket();
 renderModel();
+
+// 媒体分析象限渲染
+function renderMediaQuadrant() {
+  if (typeof mediaQuadrant === 'undefined') return;
+  const mq = mediaQuadrant;
+  
+  let html = '<div class="section">';
+  html += '<h2>📰 媒体分析象限 - ' + mq.date + ' GHI组</h2>';
+  html += '<p style="color:#888;font-size:13px">数据来源: ' + mq.sources.join('、') + '</p>';
+  
+  // Summary comparison table
+  html += '<div class="model-card" style="margin:15px 0">';
+  html += '<h3>📊 命中率对比</h3>';
+  html += '<table style="width:100%;border-collapse:collapse;font-size:13px">';
+  html += '<tr style="background:#1a1a2e"><th style="padding:8px;text-align:left">来源</th><th>命中</th><th>命中率</th><th>评价</th></tr>';
+  html += '<tr style="border-bottom:1px solid #333"><td style="padding:6px 8px;color:#00d4ff;font-weight:bold">🤖 MAH模型</td><td style="text-align:center">' + mq.summary.mahHits + '/' + mq.summary.mahTotal + '</td><td style="text-align:center;font-weight:bold;color:' + (parseFloat(mq.summary.mahRate) >= 60 ? '#2ecc71' : parseFloat(mq.summary.mahRate) >= 40 ? '#f39c12' : '#e74c3c') + '">' + mq.summary.mahRate + '</td><td style="text-align:center;font-size:12px">六方法论量化</td></tr>';
+  
+  for (const [name, data] of Object.entries(mq.summary.mediaHits)) {
+    const rate = parseFloat(data.rate);
+    html += '<tr style="border-bottom:1px solid #222"><td style="padding:6px 8px">' + name + '</td><td style="text-align:center">' + data.hits + '/' + data.total + '</td><td style="text-align:center;color:' + (rate >= 60 ? '#2ecc71' : rate >= 40 ? '#f39c12' : '#e74c3c') + '">' + data.rate + '</td><td style="text-align:center;font-size:12px;color:#888">媒体分析</td></tr>';
+  }
+  html += '</table></div>';
+  
+  // Per-match breakdown
+  mq.matches.forEach(m => {
+    const mahIcon = m.mah.correct ? '✅' : '❌';
+    const mahColor = m.mah.correct ? '#2ecc71' : '#e74c3c';
+    html += '<div class="model-card" style="margin:10px 0;border-left:3px solid ' + mahColor + '">';
+    html += '<h4>[' + m.group + '组] ' + m.t1 + ' vs ' + m.t2 + ' → <span style="color:#ffd700">' + m.actual + '</span></h4>';
+    html += '<div style="display:flex;gap:15px;flex-wrap:wrap;margin:8px 0">';
+    html += '<span style="color:' + mahColor + ';font-weight:bold">🤖 MAH: ' + m.mah.direction + ' ' + mahIcon + '</span>';
+    html += '<span style="color:#888">共识: ' + m.consensus + ' ' + (m.consensus_correct ? '✅' : '❌') + '</span>';
+    html += '</div>';
+    html += '<details style="margin-top:5px"><summary style="cursor:pointer;color:#3498db;font-size:13px">查看媒体预测明细 (' + m.media.length + '个来源)</summary>';
+    html += '<div style="padding:8px;background:#0a0a1a;border-radius:6px;margin-top:5px">';
+    m.media.forEach(md => {
+      const icon = md.correct === true ? '✅' : md.correct === false ? '❌' : '❓';
+      html += '<div style="padding:4px 0;border-bottom:1px solid #1a1a2e;font-size:13px">';
+      html += '<span style="color:#aaa">' + md.source + '</span> → ' + md.direction + ' ' + icon;
+      html += ' <span style="color:#666;font-size:12px">(' + md.note + ')</span></div>';
+    });
+    html += '</div></details>';
+    html += '<div style="margin-top:5px;padding:6px;background:#1a1a2e;border-radius:4px;font-size:12px;color:#f39c12">💡 ' + m.insight + '</div>';
+    html += '</div>';
+  });
+  
+  // Quadrant visualization
+  html += '<div class="model-card" style="margin:15px 0">';
+  html += '<h3>🗺️ 象限分布</h3>';
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  mq.summary.quadrants.forEach(q => {
+    html += '<div style="padding:12px;background:' + q.color + '15;border:1px solid ' + q.color + ';border-radius:8px">';
+    html += '<div style="font-weight:bold;margin-bottom:5px">' + q.name + '</div>';
+    html += '<div style="font-size:11px;color:#888;margin-bottom:5px">' + q.desc + '</div>';
+    q.matches.forEach(match => {
+      html += '<div style="font-size:12px;padding:2px 0">• ' + match + '</div>';
+    });
+    if (q.matches.length === 0) html += '<div style="font-size:12px;color:#555">无</div>';
+    html += '</div>';
+  });
+  html += '</div></div>';
+  
+  html += '</div>';
+  
+  // Insert into page
+  const container = document.getElementById('media-quadrant-container');
+  if (container) container.innerHTML = html;
+}
+
 </script>
+<div id="media-quadrant-container" style="display:none"></div>
 </body>
 </html>

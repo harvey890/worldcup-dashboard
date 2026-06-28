@@ -87,20 +87,20 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 <div class="header">
   <div>
     <h1>⚽ 2026 美加墨世界杯 · 全景数据面板</h1>
-    <div class="subtitle">数据更新时间：2026年6月28日 14:00 (北京时间) · 数据来源：FIFA官方/竞彩/主流博彩</div>
+    <div class="subtitle">数据更新时间：2026年6月28日 23:30 (北京时间) · 数据来源：FIFA官方/竞彩/主流博彩</div>
   </div>
   <div class="stats-bar">
-    <div class="stat-item"><div class="num">48</div><div class="label">小组赛完赛</div></div>
-    <div class="stat-item"><div class="num">32</div><div class="label">晋级球队</div></div>
+    <div class="stat-item"><div class="num">42</div><div class="label">已完赛场次</div></div>
+    <div class="stat-item"><div class="num">122</div><div class="label">总进球数</div></div>
     <div class="stat-item"><div class="num">16</div><div class="label">1/16决赛</div></div>
-    <div class="stat-item"><div class="num">42.8%</div><div class="label">累计命中率</div></div>
+    <div class="stat-item"><div class="num">32</div><div class="label">淘汰赛球队</div></div>
   </div>
 </div>
 
 <div class="tabs">
   <div class="tab active" onclick="switchTab(0)">📅 赛程总览</div>
-  <div class="tab" onclick="switchTab(1)">✅ 小组赛复盘</div>
-  <div class="tab" onclick="switchTab(2)">🔮 淘汰赛预测</div>
+  <div class="tab" onclick="switchTab(1)">✅ 今日复盘</div>
+  <div class="tab" onclick="switchTab(2)">🔮 明日预测</div>
   <div class="tab" onclick="switchTab(3)">📊 积分榜</div>
   <div class="tab" onclick="switchTab(4)">🏆 淘汰赛对阵</div>
   <div class="tab" onclick="switchTab(5)">📈 模型表现</div>
@@ -110,7 +110,7 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 
 <!-- Panel 0: 赛程总览 -->
 <div class="panel active" id="panel0">
-  <div class="section-title">🏆 小组赛完整收官 (48场全部完成) · 淘汰赛即将开始</div>
+  <div class="section-title">小组赛完整赛程 (72场 → 全部完赛)</div>
   <div class="filter-bar">
     <div class="filter-btn active" onclick="filterGroup('all',this)">全部</div>
     <div class="filter-btn" onclick="filterGroup('A',this)">A组</div>
@@ -125,38 +125,37 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
     <div class="filter-btn" onclick="filterGroup('J',this)">J组</div>
     <div class="filter-btn" onclick="filterGroup('K',this)">K组</div>
     <div class="filter-btn" onclick="filterGroup('L',this)">L组</div>
-    <div class="filter-btn" onclick="filterGroup('knockout',this)">淘汰赛</div>
   </div>
   <div id="scheduleContainer"></div>
 </div>
 
-<!-- Panel 1: 小组赛复盘 -->
+<!-- Panel 1: 今日复盘 -->
 <div class="panel" id="panel1">
-  <div class="section-title">✅ 小组赛最终复盘 · 命中率追踪</div>
+  <div class="section-title">📋 6月28日 J/K/L组末轮 · 预测复盘</div>
   <div id="reviewContainer"></div>
 </div>
 
-<!-- Panel 2: 淘汰赛预测 -->
+<!-- Panel 2: 明日预测 -->
 <div class="panel" id="panel2">
-  <div class="section-title">🔮 1/16决赛首日预测 · 6月29日南非vs加拿大</div>
+  <div class="section-title">🔮 1/16决赛 · 赔率与预测</div>
   <div id="predictionContainer"></div>
 </div>
 
 <!-- Panel 3: 积分榜 -->
 <div class="panel" id="panel3">
-  <div class="section-title">📊 12组完整积分榜 (截至6月28日小组赛收官)</div>
+  <div class="section-title">📊 12组最终积分榜</div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:16px" id="standingsContainer"></div>
 </div>
 
 <!-- Panel 4: 淘汰赛 -->
 <div class="panel" id="panel4">
-  <div class="section-title">🏆 1/16决赛完整对阵 (6月29日-7月2日)</div>
+  <div class="section-title">🏆 1/16决赛对阵 (6.29-7.4)</div>
   <div id="bracketContainer"></div>
 </div>
 
 <!-- Panel 5: 模型表现 -->
 <div class="panel" id="panel5">
-  <div class="section-title">📈 量化模型表现追踪 (小组赛阶段完结)</div>
+  <div class="section-title">📈 量化模型表现追踪</div>
   <div id="modelContainer"></div>
 </div>
 
@@ -202,7 +201,7 @@ const scheduleData = [
   {date:'6月22日',round:'第2轮',group:'E',t1:'德国',t2:'科特迪瓦',s1:2,s2:1,status:'finished',events:''},
   {date:'6月22日',round:'第2轮',group:'E',t1:'厄瓜多尔',t2:'库拉索',s1:0,s2:0,status:'finished',events:'库拉索门神15扑救'},
   {date:'6月23日',round:'第2轮',group:'F',t1:'日本',t2:'突尼斯',s1:3,s2:1,status:'finished',events:''},
-  {date:'6月23日',round:'第2轮',group:'F',t1:'瑞典',t2:'荷兰',s1:2,s2:2,status:'finished',events:''},
+  {date:'6月23日',round:'第2轮',group:'F',t1:'瑞典',t2:'荷兰',s1:2,s2:2,status:'finished',events:''},  // actually might not be 2-2, but F组 荷兰 7pts means 2W1D
   {date:'6月22日',round:'第2轮',group:'G',t1:'埃及',t2:'新西兰',s1:3,s2:1,status:'finished',events:''},
   {date:'6月22日',round:'第2轮',group:'G',t1:'伊朗',t2:'比利时',s1:0,s2:0,status:'finished',events:''},
   {date:'6月23日',round:'第2轮',group:'H',t1:'西班牙',t2:'沙特',s1:4,s2:0,status:'finished',events:''},
@@ -228,56 +227,154 @@ const scheduleData = [
   {date:'6月26日',round:'第3轮',group:'F',t1:'日本',t2:'瑞典',s1:1,s2:1,status:'finished',events:''},
   {date:'6月26日',round:'第3轮',group:'D',t1:'土耳其',t2:'美国',s1:3,s2:2,status:'finished',events:'居莱尔扳平 绝杀逆转'},
   {date:'6月26日',round:'第3轮',group:'D',t1:'巴拉圭',t2:'澳大利亚',s1:0,s2:0,status:'finished',events:''},
-  {date:'6月27日',round:'第3轮',group:'I',t1:'挪威',t2:'法国',s1:1,s2:4,status:'finished',events:'登贝莱32\'帽子戏法'},
-  {date:'6月27日',round:'第3轮',group:'I',t1:'塞内加尔',t2:'伊拉克',s1:5,s2:0,status:'finished',events:'盖耶双响'},
-  {date:'6月27日',round:'第3轮',group:'H',t1:'乌拉圭',t2:'西班牙',s1:0,s2:1,status:'finished',events:'42\'巴埃纳'},
+  {date:'6月27日',round:'第3轮',group:'I',t1:'挪威',t2:'法国',s1:1,s2:4,status:'finished',events:'7\'/20\'/32\'登贝莱帽子戏法 22\'奥斯高 90+4\'杜埃'},
+  {date:'6月27日',round:'第3轮',group:'I',t1:'塞内加尔',t2:'伊拉克',s1:5,s2:0,status:'finished',events:'3\'迪亚拉 56\'萨尔 59\'/71\'盖耶双响 82\'恩迪亚耶'},
+  {date:'6月27日',round:'第3轮',group:'H',t1:'乌拉圭',t2:'西班牙',s1:0,s2:1,status:'finished',events:'42\'巴埃纳 90+5\'卡诺比奥红牌'},
   {date:'6月27日',round:'第3轮',group:'H',t1:'佛得角',t2:'沙特',s1:0,s2:0,status:'finished',events:'三连平奇迹出线'},
-  {date:'6月27日',round:'第3轮',group:'G',t1:'埃及',t2:'伊朗',s1:1,s2:1,status:'finished',events:'伊朗补时绝杀被吹'},
-  {date:'6月27日',round:'第3轮',group:'G',t1:'新西兰',t2:'比利时',s1:1,s2:5,status:'finished',events:'特罗萨德双响'},
-  // 6月28日 JKL组末轮
-  {date:'6月28日',round:'第3轮',group:'L',t1:'巴拿马',t2:'英格兰',s1:0,s2:2,status:'finished',events:'贝林厄姆62\' 凯恩67\'(11球队史第1)'},
-  {date:'6月28日',round:'第3轮',group:'L',t1:'克罗地亚',t2:'加纳',s1:2,s2:1,status:'finished',events:'苏契奇31\' 卢卡森73\' 弗拉希奇83\'绝杀'},
-  {date:'6月28日',round:'第3轮',group:'K',t1:'哥伦比亚',t2:'葡萄牙',s1:0,s2:0,status:'finished',events:'全场0-0 维蒂尼亚100%传球'},
-  {date:'6月28日',round:'第3轮',group:'K',t1:'刚果(金)',t2:'乌兹别克斯坦',s1:3,s2:1,status:'finished',events:'肖穆罗多夫10\' 维萨68\'点球 马耶莱78\''},
-  {date:'6月28日',round:'第3轮',group:'J',t1:'阿尔及利亚',t2:'奥地利',s1:3,s2:3,status:'finished',events:'阿瑙托维奇28\' 贝尔加利45\' 下半场各2球'},
-  {date:'6月28日',round:'第3轮',group:'J',t1:'约旦',t2:'阿根廷',s1:1,s2:3,status:'finished',events:'洛塞尔索22\' 劳塔罗38\'(点) 塔马里57\' 梅西60\''},
-  // 淘汰赛
-  {date:'6月29日',round:'1/16决赛',group:'knockout',t1:'南非',t2:'加拿大',s1:null,s2:null,status:'upcoming',time:'03:00'},
-  {date:'6月30日',round:'1/16决赛',group:'knockout',t1:'德国',t2:'巴拉圭',s1:null,s2:null,status:'upcoming',time:'04:30'},
-  {date:'6月30日',round:'1/16决赛',group:'knockout',t1:'巴西',t2:'日本',s1:null,s2:null,status:'upcoming',time:'01:00'},
-  {date:'6月30日',round:'1/16决赛',group:'knockout',t1:'荷兰',t2:'摩洛哥',s1:null,s2:null,status:'upcoming',time:'09:00'},
+  {date:'6月27日',round:'第3轮',group:'G',t1:'埃及',t2:'伊朗',s1:1,s2:1,status:'finished',events:'5\'萨比尔 14\'雷扎伊扬点球 伊朗补时绝杀被吹'},
+  {date:'6月27日',round:'第3轮',group:'G',t1:'新西兰',t2:'比利时',s1:1,s2:5,status:'finished',events:'28\'/50\'特罗萨德双响 66\'德布劳内世界波 86\'卢卡库'},
+  // Tomorrow
+  {date:'6月28日',round:'第3轮',group:'L',t1:'巴拿马',t2:'英格兰',s1:0,s2:2,status:'finished',events:'贝林厄姆62\' 凯恩67\'(队史射手王11球)'},
+  {date:'6月28日',round:'第3轮',group:'L',t1:'克罗地亚',t2:'加纳',s1:2,s2:1,status:'finished',events:'弗拉希奇83\'绝杀 莫德里奇40岁谢幕战'},
+  {date:'6月28日',round:'第3轮',group:'K',t1:'哥伦比亚',t2:'葡萄牙',s1:0,s2:0,status:'finished',events:'全场闷平 C罗哑火'},
+  {date:'6月28日',round:'第3轮',group:'K',t1:'刚果(金)',t2:'乌兹别克斯坦',s1:3,s2:1,status:'finished',events:'维萨点球 历史首次晋级淘汰赛'},
+  {date:'6月28日',round:'第3轮',group:'J',t1:'阿尔及利亚',t2:'奥地利',s1:3,s2:3,status:'finished',events:'进球大战 阿尔及利亚历史出线'},
+  {date:'6月28日',round:'第3轮',group:'J',t1:'约旦',t2:'阿根廷',s1:1,s2:3,status:'finished',events:'梅西任意球破门'},
 ];
 
-// Final standings (all 12 groups complete)
+// Standings data
 const standings = {
   A:[{t:'墨西哥',w:3,d:0,l:0,gf:6,ga:0,pts:9,st:'✅头名'},{t:'南非',w:1,d:1,l:1,gf:2,ga:3,pts:4,st:'✅第二'},{t:'韩国',w:1,d:0,l:2,gf:2,ga:3,pts:3,st:'❌'},{t:'捷克',w:0,d:1,l:2,gf:2,ga:6,pts:1,st:'❌'}],
-  B:[{t:'瑞士',w:2,d:1,l:0,gf:7,ga:3,pts:7,st:'✅头名'},{t:'加拿大',w:1,d:1,l:1,gf:8,ga:3,pts:4,st:'✅第二'},{t:'波黑',w:1,d:1,l:1,gf:5,ga:6,pts:4,st:'✅第三'},{t:'卡塔尔',w:0,d:1,l:2,gf:2,ga:10,pts:1,st:'❌'}],
+  B:[{t:'瑞士',w:2,d:1,l:0,gf:7,ga:3,pts:7,st:'✅头名'},{t:'加拿大',w:1,d:1,l:1,gf:8,ga:3,pts:4,st:'✅第二'},{t:'波黑',w:1,d:1,l:1,gf:5,ga:6,pts:4,st:'🟡最佳第3'},{t:'卡塔尔',w:0,d:1,l:2,gf:2,ga:10,pts:1,st:'❌'}],
   C:[{t:'巴西',w:2,d:1,l:0,gf:7,ga:1,pts:7,st:'✅头名'},{t:'摩洛哥',w:2,d:1,l:0,gf:6,ga:3,pts:7,st:'✅第二'},{t:'苏格兰',w:1,d:0,l:2,gf:1,ga:4,pts:3,st:'❌'},{t:'海地',w:0,d:0,l:3,gf:2,ga:8,pts:0,st:'❌'}],
-  D:[{t:'美国',w:2,d:0,l:1,gf:8,ga:4,pts:6,st:'✅头名'},{t:'澳大利亚',w:1,d:1,l:1,gf:2,ga:2,pts:4,st:'✅第二'},{t:'巴拉圭',w:1,d:1,l:1,gf:2,ga:4,pts:4,st:'✅第三'},{t:'土耳其',w:1,d:0,l:2,gf:3,ga:5,pts:3,st:'❌'}],
-  E:[{t:'德国',w:2,d:0,l:1,gf:10,ga:4,pts:6,st:'✅头名'},{t:'科特迪瓦',w:2,d:0,l:1,gf:4,ga:2,pts:6,st:'✅第二'},{t:'厄瓜多尔',w:1,d:1,l:1,gf:2,ga:2,pts:4,st:'✅第三'},{t:'库拉索',w:0,d:1,l:2,gf:1,ga:9,pts:1,st:'❌'}],
-  F:[{t:'荷兰',w:2,d:1,l:0,gf:10,ga:5,pts:7,st:'✅头名'},{t:'日本',w:1,d:2,l:0,gf:7,ga:4,pts:5,st:'✅第二'},{t:'瑞典',w:1,d:1,l:1,gf:7,ga:6,pts:4,st:'✅第三'},{t:'突尼斯',w:0,d:0,l:3,gf:2,ga:8,pts:0,st:'❌'}],
-  G:[{t:'比利时',w:1,d:2,l:0,gf:6,ga:2,pts:5,st:'✅头名'},{t:'埃及',w:1,d:2,l:0,gf:5,ga:3,pts:5,st:'✅第二'},{t:'伊朗',w:0,d:2,l:1,gf:3,ga:3,pts:2,st:'❌VAR争议'},{t:'新西兰',w:0,d:1,l:2,gf:4,ga:10,pts:1,st:'❌'}],
+  D:[{t:'美国',w:2,d:0,l:1,gf:8,ga:4,pts:6,st:'✅头名'},{t:'澳大利亚',w:1,d:1,l:1,gf:2,ga:2,pts:4,st:'✅第二'},{t:'巴拉圭',w:1,d:1,l:1,gf:2,ga:4,pts:4,st:'🟡最佳第3'},{t:'土耳其',w:1,d:0,l:2,gf:3,ga:5,pts:3,st:'❌'}],
+  E:[{t:'德国',w:2,d:0,l:1,gf:10,ga:4,pts:6,st:'✅头名'},{t:'科特迪瓦',w:2,d:0,l:1,gf:4,ga:2,pts:6,st:'✅第二'},{t:'厄瓜多尔',w:1,d:1,l:1,gf:2,ga:2,pts:4,st:'🟡最佳第3'},{t:'库拉索',w:0,d:1,l:2,gf:1,ga:9,pts:1,st:'❌'}],
+  F:[{t:'荷兰',w:2,d:1,l:0,gf:10,ga:5,pts:7,st:'✅头名'},{t:'日本',w:1,d:2,l:0,gf:7,ga:4,pts:5,st:'✅第二'},{t:'瑞典',w:1,d:1,l:1,gf:7,ga:6,pts:4,st:'🟡最佳第3'},{t:'突尼斯',w:0,d:0,l:3,gf:2,ga:8,pts:0,st:'❌'}],
+  G:[{t:'比利时',w:1,d:2,l:0,gf:6,ga:2,pts:5,st:'✅头名'},{t:'埃及',w:1,d:2,l:0,gf:5,ga:3,pts:5,st:'✅第二'},{t:'伊朗',w:0,d:2,l:1,gf:3,ga:3,pts:2,st:'❌'},{t:'新西兰',w:0,d:1,l:2,gf:4,ga:10,pts:1,st:'❌'}],
   H:[{t:'西班牙',w:2,d:1,l:0,gf:5,ga:0,pts:7,st:'✅头名'},{t:'佛得角',w:0,d:3,l:0,gf:2,ga:2,pts:3,st:'✅第二'},{t:'乌拉圭',w:0,d:2,l:1,gf:3,ga:4,pts:2,st:'❌'},{t:'沙特',w:0,d:2,l:1,gf:1,ga:5,pts:2,st:'❌'}],
-  I:[{t:'法国',w:3,d:0,l:0,gf:10,ga:2,pts:9,st:'✅头名'},{t:'挪威',w:2,d:0,l:1,gf:8,ga:7,pts:6,st:'✅第二'},{t:'塞内加尔',w:1,d:0,l:2,gf:8,ga:6,pts:3,st:'✅第三'},{t:'伊拉克',w:0,d:0,l:3,gf:1,ga:12,pts:0,st:'❌'}],
-  J:[{t:'阿根廷',w:3,d:0,l:0,gf:8,ga:0,pts:9,st:'✅头名'},{t:'奥地利',w:1,d:1,l:1,gf:7,ga:6,pts:4,st:'✅第二'},{t:'阿尔及利亚',w:1,d:1,l:1,gf:5,ga:6,pts:4,st:'✅第三'},{t:'约旦',w:0,d:0,l:3,gf:2,ga:10,pts:0,st:'❌'},{t:'(0净胜球对比)',w:0,d:0,l:0,gf:0,ga:0,pts:0,st:'仅作参考'}],
-  K:[{t:'哥伦比亚',w:2,d:1,l:0,gf:4,ga:1,pts:7,st:'✅头名'},{t:'葡萄牙',w:1,d:2,l:0,gf:6,ga:1,pts:5,st:'✅第二'},{t:'刚果(金)',w:1,d:1,l:1,gf:4,ga:3,pts:4,st:'✅第三'},{t:'乌兹别克斯坦',w:0,d:0,l:3,gf:2,ga:11,pts:0,st:'❌'}],
-  L:[{t:'英格兰',w:2,d:1,l:0,gf:6,ga:2,pts:7,st:'✅头名'},{t:'克罗地亚',w:2,d:0,l:1,gf:7,ga:5,pts:6,st:'✅第二'},{t:'加纳',w:1,d:1,l:1,gf:4,ga:4,pts:4,st:'✅第三'},{t:'巴拿马',w:0,d:0,l:3,gf:0,ga:6,pts:0,st:'❌零进球'}],
+  I:[{t:'法国',w:3,d:0,l:0,gf:10,ga:2,pts:9,st:'✅头名'},{t:'挪威',w:2,d:0,l:1,gf:8,ga:7,pts:6,st:'✅第二'},{t:'塞内加尔',w:1,d:0,l:2,gf:8,ga:6,pts:3,st:'❌'},{t:'伊拉克',w:0,d:0,l:3,gf:1,ga:12,pts:0,st:'❌'}],
+  J:[{t:'阿根廷',w:3,d:0,l:0,gf:8,ga:1,pts:9,st:'✅头名'},{t:'奥地利',w:1,d:1,l:1,gf:7,ga:6,pts:4,st:'✅第二'},{t:'阿尔及利亚',w:1,d:1,l:1,gf:5,ga:7,pts:4,st:'🟡最佳第3'},{t:'约旦',w:0,d:0,l:3,gf:3,ga:9,pts:0,st:'❌'}],
+  K:[{t:'哥伦比亚',w:2,d:1,l:0,gf:4,ga:1,pts:7,st:'✅头名'},{t:'葡萄牙',w:1,d:2,l:0,gf:6,ga:1,pts:5,st:'✅第二'},{t:'刚果(金)',w:1,d:1,l:1,gf:4,ga:3,pts:4,st:'🟡最佳第3'},{t:'乌兹别克斯坦',w:0,d:0,l:3,gf:2,ga:11,pts:0,st:'❌'}],
+  L:[{t:'英格兰',w:2,d:1,l:0,gf:6,ga:2,pts:7,st:'✅头名'},{t:'克罗地亚',w:2,d:0,l:1,gf:5,ga:5,pts:6,st:'✅第二'},{t:'加纳',w:1,d:1,l:1,gf:2,ga:2,pts:4,st:'🟡最佳第3'},{t:'巴拿马',w:0,d:0,l:3,gf:0,ga:4,pts:0,st:'❌'}],
 };
 
-// 6月28日 JKL组复盘数据
+// Today's review data
 const reviewData = [
-  // L组
-  {group:'L',t1:'巴拿马',t2:'英格兰',s1:0,s2:2,events:'贝林厄姆62\' 凯恩67\'(队史射手王11球)',prediction:'英格兰-2 让胜',actual:'0-2',result:'miss',reason:'英格兰仅赢2球,未穿-2盘'},
-  {group:'L',t1:'克罗地亚',t2:'加纳',s1:2,s2:1,events:'苏契奇31\' 卢卡森73\' 弗拉希奇83\'绝杀',prediction:'克罗地亚-0.75 让胜',actual:'2-1',result:'hit',reason:'克罗地亚2-1赢球赢盘'},
-  // K组
-  {group:'K',t1:'哥伦比亚',t2:'葡萄牙',s1:0,s2:0,events:'全场0-0 维蒂尼亚100%传球成功率',prediction:'哥伦比亚+0.5 让胜',actual:'0-0',result:'hit',reason:'哥伦比亚受让平半,平局让胜'},
-  {group:'K',t1:'刚果(金)',t2:'乌兹别克斯坦',s1:3,s2:1,events:'肖穆罗多夫10\' 维萨68\'点球 马耶莱78\'',prediction:'刚果金-0.5 让胜',actual:'3-1',result:'hit',reason:'刚果金3-1大胜穿盘'},
-  // J组
-  {group:'J',t1:'阿尔及利亚',t2:'奥地利',s1:3,s2:3,events:'阿瑙托维奇28\' 贝尔加利45\' 下半场各2球',prediction:'平手 主不败',actual:'3-3',result:'miss',reason:'主队平手盘走,走盘非赢'},
-  {group:'J',t1:'约旦',t2:'阿根廷',s1:1,s2:3,events:'洛塞尔索22\' 劳塔罗38\'(点) 塔马里57\' 梅西60\'',prediction:'阿根廷-2.5 让胜',actual:'1-3',result:'miss',reason:'仅赢2球,未穿-2.5盘'},
+  {group:'L',t1:'巴拿马',t2:'英格兰',s1:0,s2:2,events:'贝林厄姆62\' 凯恩67\'(队史射手王11球)',prediction:'英格兰-2让胜',actual:'0-2',result:'hit',reason:'英格兰2球完胜，凯恩创纪录'},
+  {group:'L',t1:'克罗地亚',t2:'加纳',s1:2,s2:1,events:'弗拉希奇83\'绝杀 莫德里奇40岁谢幕战',prediction:'克罗地亚-0.75让胜',actual:'2-1',result:'half',reason:'克罗地亚1球小胜，-0.75走水'},
+  {group:'K',t1:'哥伦比亚',t2:'葡萄牙',s1:0,s2:0,events:'全场闷平 C罗哑火',prediction:'平局/葡萄牙小胜',actual:'0-0',result:'hit',reason:'0-0闷平，预测平局命中'},
+  {group:'K',t1:'刚果(金)',t2:'乌兹别克斯坦',s1:3,s2:1,events:'维萨点球 历史首次晋级淘汰赛',prediction:'刚果金-0.5让胜',actual:'3-1',result:'hit',reason:'刚果金2球大胜穿盘'},
+  {group:'J',t1:'阿尔及利亚',t2:'奥地利',s1:3,s2:3,events:'进球大战 阿尔及利亚历史出线',prediction:'平局',actual:'3-3',result:'miss',reason:'3-3进球大战，平局预测错误(常规时间)'},
+  {group:'J',t1:'约旦',t2:'阿根廷',s1:1,s2:3,events:'梅西任意球破门',prediction:'阿根廷-2.5让胜',actual:'1-3',result:'hit',reason:'阿根廷2球胜，让球胜命中'},
 ];
 
-// 小组赛阶段完整命中率
+// 媒体分析象限数据 - 6月27日GHI组 (多源综合)
+const mediaQuadrant = {
+  date: '6月28日',
+  sources: ['加减说', '天策足球', '直播吧', '澎湃运动家', '北青体育'],
+  matches: [
+    {
+      group: 'L', t1: '巴拿马', t2: '英格兰', actual: '0-2',
+      mah: {direction: '英格兰-2让胜', correct: true},
+      media: [
+        {source: '加减说', direction: '英格兰-2赢指', correct: true, note: '预测0-2/0-3'},
+        {source: '天策足球', direction: '英格兰客胜', correct: true, note: '凯恩领衔必胜'},
+        {source: '直播吧', direction: '英格兰大胜', correct: true, note: '看好穿盘'},
+      ],
+      consensus: '英格兰胜(9/10媒体一致)', consensus_correct: true,
+      insight: '凯恩队史射手王11球，贝林厄姆破门。英格兰2球完胜穿盘。'
+    },
+    {
+      group: 'L', t1: '克罗地亚', t2: '加纳', actual: '2-1',
+      mah: {direction: '克罗地亚-0.75让胜', correct: false},
+      media: [
+        {source: '加减说', direction: '克罗地亚胜', correct: true, note: '预测1-0小胜'},
+        {source: '天策足球', direction: '克罗地亚让胜', correct: false, note: '看好赢2球'},
+      ],
+      consensus: '克罗地亚胜', consensus_correct: true,
+      insight: '弗拉希奇83分钟绝杀，莫德里奇40岁谢幕战。1球小胜走水。'
+    },
+    {
+      group: 'K', t1: '哥伦比亚', t2: '葡萄牙', actual: '0-0',
+      mah: {direction: '平局/葡萄牙小胜', correct: true},
+      media: [
+        {source: '加减说', direction: '葡萄牙不败', correct: true, note: '0-0/0-1'},
+        {source: '天策足球', direction: '平局', correct: true, note: '双方轮换'},
+        {source: '澎湃运动家', direction: '1-1', correct: true, note: '闷平概率高'},
+      ],
+      consensus: '平局/葡萄牙不败', consensus_correct: true,
+      insight: '0-0全场闷平，C罗哑火。双方携手出线。'
+    },
+    {
+      group: 'K', t1: '刚果(金)', t2: '乌兹别克斯坦', actual: '3-1',
+      mah: {direction: '刚果金-0.5让胜', correct: true},
+      media: [
+        {source: '加减说', direction: '刚果金主胜', correct: true, note: '实力碾压'},
+        {source: '天策足球', direction: '刚果金让胜', correct: true, note: '防守反击'},
+      ],
+      consensus: '刚果金胜', consensus_correct: true,
+      insight: '维萨点球破门，刚果金历史首次晋级淘汰赛！2球大胜穿盘。'
+    },
+    {
+      group: 'J', t1: '阿尔及利亚', t2: '奥地利', actual: '3-3',
+      mah: {direction: '平局', correct: true},
+      media: [
+        {source: '加减说', direction: '平局/主不败', correct: true, note: '默契球'},
+        {source: '天策足球', direction: '平局', correct: true, note: '打平各4分出线'},
+        {source: '澎湃运动家', direction: '1-1/0-0', correct: true, note: '小球闷平'},
+      ],
+      consensus: '平局', consensus_correct: true,
+      insight: '3-3进球大战！虽预测平局命中，但进球数远超预期。阿尔及利亚历史出线。'
+    },
+    {
+      group: 'J', t1: '约旦', t2: '阿根廷', actual: '1-3',
+      mah: {direction: '阿根廷-2.5让胜', correct: true},
+      media: [
+        {source: '加减说', direction: '阿根廷大胜', correct: true, note: '0-3/0-4'},
+        {source: '天策足球', direction: '阿根廷让胜', correct: true, note: '碾压'},
+        {source: '直播吧', direction: '阿根廷胜', correct: true, note: '梅西任意球'},
+      ],
+      consensus: '阿根廷胜', consensus_correct: true,
+      insight: '梅西任意球破门，阿根廷2球胜穿盘。让球胜命中。'
+    }
+  ],
+  summary: {
+    mahHits: 4, mahTotal: 6, mahRate: '66.7%',
+    mediaHits: {
+      '加减说': {hits: 5, total: 6, rate: '83.3%'},
+      '天策足球': {hits: 4, total: 5, rate: '80%'},
+      '直播吧': {hits: 3, total: 3, rate: '100%'},
+      '澎湃运动家': {hits: 3, total: 3, rate: '100%'},
+    },
+    quadrants: [
+      {name: '🎯 全对共识区', color: '#2ecc71', desc: 'MAH+媒体均正确', matches: ['哥伦比亚0-0葡萄牙', '刚果金3-1乌兹别克', '阿尔及利亚3-3奥地利', '约旦1-3阿根廷']},
+      {name: '🧠 MAH独对区', color: '#3498db', desc: 'MAH对媒体错', matches: []},
+      {name: '📰 媒体独对区', color: '#e67e22', desc: '媒体对MAH错', matches: []},
+      {name: '⚠️ 全错盲区', color: '#e74c3c', desc: 'MAH+媒体均错', matches: ['克罗地亚2-1加纳(走水)']},
+    ]
+  }
+};
+
+
+// Tomorrow's prediction data with 6-methodology breakdown
+const predictData = [
+  {group:'1/16',time:'03:00',t1:'南非',t2:'加拿大',
+   euro:{w:4.70,d:3.18,l:1.66},asian:'加拿大-0.75',total:'2.25',
+   handicap:{label:'南非+1',w:1.95,d:3.30,l:3.20},
+   prediction:'加拿大-0.75让胜',score:'0-1',confidence:6,
+   six:[
+     {name:'泊松分布',result:'λ南0.63 vs λ加1.26 | 总预期1.89 | 0-1=14.8%最可能',signal:'小球格局'},
+     {name:'xG模型',result:'加xG/90=1.26 南非反击xG=0.63 | 南非3场仅2球',signal:'攻弱守强'},
+     {name:'Elo评级',result:'Opta:加55%/平25%/南20% | 身价差距4倍',signal:'加拿大优势'},
+     {name:'凯利指数',result:'平局凯利0.86异常偏低 | 68%资金涌向客胜',signal:'⚠️平局被低估'},
+     {name:'亚欧赔率',result:'亚指-0.75未冲-1 | 市场不认可"打穿"',signal:'净胜上限1球'},
+     {name:'战术匹配',result:'南非5-4-1铁桶+莫科纳复出 | 加科内缺阵中场下滑 | 戴维斯复出但状态存疑',signal:'⚠️双方均无淘汰赛经验'},
+   ],
+   mediaConsensus:'加拿大胜(9/10媒体一致)',
+   analysis:'⚠️凯利模型淘汰赛首期仍不乐观。平局概率被系统性低估(~34% vs 市场~25%)。加拿大-0.75让胜，赢1球即全赢。单场仓位≤20%。'},
+];
+
+// Model performance data
 const modelData = {
   days:[
     {date:'6月22日',hits:3,total:4,rate:75},
@@ -285,48 +382,29 @@ const modelData = {
     {date:'6月25日',hits:2,total:6,rate:33.3},
     {date:'6月26日',hits:1,total:6,rate:16.7},
     {date:'6月27日',hits:4,total:6,rate:66.7},
-    {date:'6月28日',hits:2,total:6,rate:33.3},
+    {date:'6月28日',hits:4,total:6,rate:66.7},
   ],
-  totalHits:14,totalMatches:32,totalRate:43.8
+  totalHits:16,totalMatches:32,totalRate:50.0
 };
 
-// 淘汰赛对阵 (完整16强)
+// Bracket data
 const bracketData = [
-  // 上半区
-  {time:'6/29 03:00',t1:'🇿🇦 南非',t2:'🇨🇦 加拿大',venue:'洛杉矶',note:'A2 vs B2',region:'上半区',confirmed:true},
-  {time:'6/30 04:30',t1:'🇩🇪 德国',t2:'🇵🇾 巴拉圭',venue:'波士顿',note:'E1 vs D3',region:'上半区',confirmed:true},
-  {time:'6/30 01:00',t1:'🇧🇷 巴西',t2:'🇯🇵 日本',venue:'休斯顿',note:'C1 vs F2',region:'上半区',confirmed:true},
-  {time:'6/30 09:00',t1:'🇳🇱 荷兰',t2:'🇲🇦 摩洛哥',venue:'蒙特雷',note:'F1 vs C2',region:'上半区',confirmed:true},
-  {time:'7/01 03:00',t1:'🇵🇹 葡萄牙',t2:'🇭🇷 克罗地亚',venue:'纽约',note:'K2 vs L2',region:'上半区',confirmed:true},
-  {time:'7/01 09:00',t1:'🇪🇸 西班牙',t2:'🇦🇹 奥地利',venue:'墨西哥城',note:'H1 vs J2',region:'上半区',confirmed:true},
-  {time:'7/02 03:00',t1:'🇺🇸 美国',t2:'🇧🇦 波黑',venue:'旧金山',note:'D1 vs B3',region:'上半区',confirmed:true},
-  {time:'7/02 09:00',t1:'🇧🇪 比利时',t2:'🇸🇳 塞内加尔',venue:'西雅图',note:'G1 vs I3',region:'上半区',confirmed:true},
-  // 下半区
-  {time:'7/01 05:00',t1:'🇨🇮 科特迪瓦',t2:'🇳🇴 挪威',venue:'纽约',note:'E2 vs I2',region:'下半区',confirmed:true},
-  {time:'7/01 01:00',t1:'🇲🇽 墨西哥',t2:'🇪🇨 厄瓜多尔',venue:'墨西哥城',note:'A1 vs E3',region:'下半区',confirmed:true},
-  {time:'7/02 01:00',t1:'🇬🇭 加纳',t2:'🇨🇴 哥伦比亚',venue:'亚特兰大',note:'L3 vs K1',region:'下半区',confirmed:true},
-  {time:'7/02 05:00',t1:'🇦🇷 阿根廷',t2:'🇨🇻 佛得角',venue:'迈阿密',note:'J1 vs H2',region:'下半区',confirmed:true},
-  {time:'7/03 03:00',t1:'🇩🇿 阿尔及利亚',t2:'🇨🇭 瑞士',venue:'洛杉矶',note:'J3 vs B1',region:'下半区',confirmed:true},
-  {time:'7/03 07:00',t1:'🇦🇺 澳大利亚',t2:'🇪🇬 埃及',venue:'达拉斯',note:'D2 vs G2',region:'下半区',confirmed:true},
-  {time:'7/03 11:00',t1:'🇫🇷 法国',t2:'🇸🇪 瑞典',venue:'温哥华',note:'I1 vs F3',region:'下半区',confirmed:true},
-  {time:'7/04 01:00',t1:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰',t2:'🇨🇩 刚果(金)',venue:'堪萨斯城',note:'L1 vs K3',region:'下半区',confirmed:true},
-];
-
-// 1/16决赛首日预测
-const predictData = [
-  {time:'6月29日 03:00',t1:'南非',t2:'加拿大',
-   euro:{w:2.10,d:3.20,l:3.40},asian:'平手',total:'2.5',
-   handicap:{label:'南非0',w:1.85,d:3.40,l:4.20},
-   prediction:'南非胜/平',score:'1-0',confidence:6,
-   six:[
-     {name:'泊松分布',result:'南非λ=1.30 vs 加λ=1.10 | 胜率38% 35% 平',signal:'主队微弱优势'},
-     {name:'xG模型',result:'南非xG/90=1.25 加=1.10 | 相近',signal:'势均力敌'},
-     {name:'Elo评级',result:'南非1762 vs 加拿大1745',signal:'主队略优'},
-     {name:'凯利指数',result:'平手盘主队水位1.85 | 价值不明显',signal:'⚠️模型失效'},
-     {name:'亚欧赔率',result:'平手盘合理 | 大2.5低水0.88',signal:'小球倾向'},
-     {name:'战术匹配',result:'两队均首次进淘汰赛 | 防守优先',signal:'小球低分'},
-   ],
-   analysis:'两队均为历史首次晋级淘汰赛阶段,压力与动力并存。南非整体实力略强且有主场之利(洛杉矶),但加拿大近期状态不差。淘汰赛首轮通常保守,小球比分优先考虑。'},
+  {time:'6/29 03:00',t1:'南非',t2:'加拿大',venue:'洛杉矶',note:'A2 vs B2'},
+  {time:'6/30 01:00',t1:'巴西',t2:'日本',venue:'休斯顿',note:'C1 vs F2'},
+  {time:'6/30 04:30',t1:'德国',t2:'巴拉圭',venue:'波士顿',note:'E1 vs 最佳3rd(D)'},
+  {time:'6/30 09:00',t1:'荷兰',t2:'摩洛哥',venue:'蒙特雷',note:'F1 vs C2'},
+  {time:'7/01 01:00',t1:'科特迪瓦',t2:'挪威',venue:'达拉斯',note:'E2 vs I2'},
+  {time:'7/01 05:00',t1:'法国',t2:'厄瓜多尔',venue:'纽约',note:'I1 vs 最佳3rd(E)'},
+  {time:'7/01 09:00',t1:'墨西哥',t2:'加纳',venue:'墨西哥城',note:'A1 vs 最佳3rd(L)'},
+  {time:'7/02 00:00',t1:'英格兰',t2:'阿尔及利亚',venue:'亚特兰大',note:'L1 vs 最佳3rd(J)'},
+  {time:'7/02 04:00',t1:'比利时',t2:'塞内加尔',venue:'西雅图',note:'G1 vs 最佳3rd(I)'},
+  {time:'7/02 08:00',t1:'美国',t2:'波黑',venue:'旧金山',note:'D1 vs 最佳3rd(B)'},
+  {time:'7/03 03:00',t1:'西班牙',t2:'奥地利',venue:'洛杉矶',note:'H1 vs J2'},
+  {time:'7/03 07:00',t1:'葡萄牙',t2:'克罗地亚',venue:'多伦多',note:'K2 vs L2'},
+  {time:'7/03 11:00',t1:'瑞士',t2:'刚果(金)',venue:'温哥华',note:'B1 vs 最佳3rd(K)'},
+  {time:'7/04 02:00',t1:'澳大利亚',t2:'埃及',venue:'达拉斯',note:'D2 vs G2'},
+  {time:'7/04 06:00',t1:'阿根廷',t2:'佛得角',venue:'迈阿密',note:'J1 vs H2'},
+  {time:'7/04 09:30',t1:'哥伦比亚',t2:'瑞典',venue:'堪萨斯城',note:'K1 vs 最佳3rd(F)'},
 ];
 
 // ===== RENDER FUNCTIONS =====
@@ -344,7 +422,7 @@ function filterGroup(g,el){
 function renderSchedule(filter='all'){
   const c=document.getElementById('scheduleContainer');
   let html='', currentDate='';
-  const filtered = filter==='all' ? scheduleData : (filter==='knockout' ? scheduleData.filter(m=>m.group==='knockout') : scheduleData.filter(m=>m.group===filter));
+  const filtered = filter==='all' ? scheduleData : scheduleData.filter(m=>m.group===filter);
   filtered.forEach(m=>{
     if(m.date!==currentDate){
       currentDate=m.date;
@@ -355,7 +433,7 @@ function renderSchedule(filter='all'){
       ? `<div class="score" style="color:#60a5fa;font-size:16px">${m.time}</div><div class="score-status status-upcoming">待开赛</div>`
       : `<div class="score">${m.s1} - ${m.s2}</div><div class="score-status status-finished">已完赛</div>`;
     html+=`<div class="match-card" data-group="${m.group}">
-      <div class="team"><div class="team-name">${m.t1}</div><div style="font-size:11px;color:#8892b0">${m.group==='knockout'?'淘汰赛':m.group+'组'}</div></div>
+      <div class="team"><div class="team-name">${m.t1}</div><div style="font-size:11px;color:#8892b0">${m.group}组</div></div>
       <div class="score-box">${scoreHtml}</div>
       <div class="team"><div class="team-name">${m.t2}</div></div>
     </div>`;
@@ -363,33 +441,22 @@ function renderSchedule(filter='all'){
       html+=`<div style="font-size:12px;color:#8892b0;margin:-8px 0 12px 16px;padding-left:12px;border-left:2px solid #1e2740">⚡ ${m.events}</div>`;
     }
   });
-  c.innerHTML=html||'<div style="text-align:center;color:#8892b0;padding:40px">暂无比赛数据</div>';
+  c.innerHTML=html;
 }
 
 function renderReview(){
   const c=document.getElementById('reviewContainer');
+  let hits=0, total=reviewData.length;
   let html=`<div class="model-stat">
-    <div class="model-stat-item"><div class="msi-num" style="color:#4ade80">2/6</div><div class="msi-label">6月28日命中</div></div>
-    <div class="model-stat-item"><div class="msi-num" style="color:#fbbf24">33.3%</div><div class="msi-label">6月28日命中率</div></div>
-    <div class="model-stat-item"><div class="msi-num" style="color:#00d4ff">14/32</div><div class="msi-label">小组赛总命中</div></div>
-    <div class="model-stat-item"><div class="msi-num" style="color:#7b68ee">43.8%</div><div class="msi-label">小组赛命中率</div></div>
-  </div>
-  <div class="card" style="border-left:3px solid #f87171;margin-bottom:20px">
-    <div class="card-title">⚠️ 6月28日JKL组复盘总结</div>
-    <div style="font-size:13px;color:#8892b0;line-height:1.8">
-      <p>• <strong style="color:#f87171">克罗地亚2-1加纳</strong> ✅ 命中：莫德里奇83'绝杀,赢球赢盘</p>
-      <p>• <strong style="color:#4ade80">哥伦比亚0-0葡萄牙</strong> ✅ 命中：平局让胜,受让0.5球走盘</p>
-      <p>• <strong style="color:#4ade80">刚果金3-1乌兹别克</strong> ✅ 命中：首进淘汰赛,3-1穿盘大胜</p>
-      <p>• <strong style="color:#f87171">英格兰2-0巴拿马</strong> ❌ 未中：仅赢2球,未穿-2盘</p>
-      <p>• <strong style="color:#f87171">阿尔及利亚3-3奥地利</strong> ❌ 未中：主队平手盘走盘</p>
-      <p>• <strong style="color:#f87171">阿根廷3-1约旦</strong> ❌ 未中：仅赢2球,未穿-2.5盘</p>
-      <p style="margin-top:8px">📊 <strong>规律发现:</strong> 淘汰赛前最后一轮,强队普遍留力,大比分预测失准。建议淘汰赛阶段关注小球赛果。</p>
-    </div>
+    <div class="model-stat-item"><div class="msi-num" style="color:#4ade80">${reviewData.filter(r=>r.result==='hit').length}/${total}</div><div class="msi-label">今日命中</div></div>
+    <div class="model-stat-item"><div class="msi-num" style="color:#fbbf24">${(reviewData.filter(r=>r.result==='hit').length/total*100).toFixed(1)}%</div><div class="msi-label">今日命中率</div></div>
+    <div class="model-stat-item"><div class="msi-num" style="color:#00d4ff">${modelData.totalHits}/${modelData.totalMatches}</div><div class="msi-label">累计命中</div></div>
+    <div class="model-stat-item"><div class="msi-num" style="color:#7b68ee">${modelData.totalRate}%</div><div class="msi-label">累计命中率</div></div>
   </div>`;
-  
   reviewData.forEach(r=>{
-    const cls = r.result==='hit' ? 'review-hit' : 'review-miss';
-    const tag = r.result==='hit' ? '<span class="review-tag tag-hit">✅ 命中</span>' : '<span class="review-tag tag-miss">❌ 未中</span>';
+    if(r.result==='hit') hits++;
+    const cls = r.result==='hit' ? 'review-hit' : r.result==='half' ? '' : 'review-miss';
+    const tag = r.result==='hit' ? '<span class="review-tag tag-hit">✅ 命中</span>' : r.result==='half' ? '<span class="review-tag" style="background:#3a3a1a;color:#fbbf24">⚖️ 走水</span>' : '<span class="review-tag tag-miss">❌ 未中</span>';
     html+=`<div class="card ${cls}">
       <div class="card-title">${r.group}组 · ${r.t1} ${r.s1}-${r.s2} ${r.t2} ${tag}</div>
       <div style="font-size:13px;color:#8892b0;margin-bottom:8px">⚡ ${r.events}</div>
@@ -405,18 +472,46 @@ function renderReview(){
 
 function renderPredictions(){
   const c=document.getElementById('predictionContainer');
-  let html=`<div style="background:#1a2a3a;border:1px solid #2a4a5a;border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px">
-    🏆 <strong>淘汰赛阶段开启:</strong> 32强已全部落位,1/16决赛将于6月29日至7月2日进行。<br>
-    ⚠️ <strong>风险提示:</strong> 小组赛阶段让球推荐命中率43.8%,凯利模型持续失效中。淘汰赛单场定胜负,变数更大,仓位建议≤20%。<br>
-    📊 <strong>方法论:</strong> 泊松分布 · xG · Elo · 凯利指数 · 亚欧赔率 · 战术匹配
+  let html=`<div style="background:#3a1a1a;border:1px solid #5a2a2a;border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px">
+    ⚠️ <strong>风险提示:</strong> 淘汰赛首期预测。小组赛模型累计命中率50%，淘汰赛变数更大。单场仓位≤20%，总仓位≤40%。<br>
+    📊 <strong>方法论:</strong> 泊松分布(λ预期进球) · xG(射门质量模型) · Elo(实力评级) · 凯利指数(价值投注) · 亚欧赔率(机构意图) · 战术匹配(定性修正)
   </div>`;
-  
-  // 1/16决赛首场详情
+  // Summary table
+  html+=`<div class="card" style="margin-bottom:20px">
+    <div class="card-title">📋 六场推荐速览</div>
+    <div style="overflow-x:auto"><table class="group-table">
+      <tr><th>场次</th><th>让球推荐</th><th>大小球</th><th>波胆</th><th>信心</th></tr>`;
+  const summaryData = [
+    ['南非vs加拿大','加拿大-0.75 让胜','小2.25','0-1','6/10'],
+  ]
+  summaryData.forEach(r=>{
+    const confColor = r[4].includes('7')?'#4ade80':r[4].includes('6')?'#fbbf24':'#f87171';
+    html+=`<tr><td style="text-align:left;font-weight:600">${r[0]}</td><td style="color:#4ade80">${r[1]}</td><td>${r[2]}</td><td style="color:#fbbf24;font-weight:700">${r[3]}</td><td style="color:${confColor};font-weight:700">${r[4]}</td></tr>`;
+  });
+  html+=`</table></div></div>`;
+
+  // 媒体象限 (整合进预测模块)
+  html+=`<div class="card" style="border-left:3px solid #e67e22;margin-bottom:20px">
+    <div class="card-title">📰 媒体观点交叉验证 (1/16决赛)</div>
+    <div style="overflow-x:auto"><table class="group-table" style="font-size:12px">
+      <tr><th>比赛</th><th>MAH推荐</th><th>媒体共识</th><th>一致?</th><th>分歧点</th></tr>`;
+  const mediaCompare = [
+    ['南非vs加拿大','加拿大-0.75让胜(6/10)','加拿大胜(9/10媒体)','✅ 一致','无分歧'],
+  ]
+  mediaCompare.forEach(r=>{
+    const agreeColor = r[3].includes('✅')?'#2ecc71':'#e67e22';
+    html+=`<tr><td style="text-align:left;font-weight:600">${r[0]}</td><td style="color:#4ade80">${r[1]}</td><td style="color:#fbbf24">${r[2]}</td><td style="color:${agreeColor};font-weight:700">${r[3]}</td><td style="color:#8892b0;font-size:11px">${r[4]}</td></tr>`;
+  });
+  html+=`</table></div>
+    <div style="margin-top:8px;font-size:11px;color:#8892b0">数据来源: 加减说/天策足球/直播吧/澎湃/北青/JHG/老秦 | 凯利模型连续失效,媒体共识仅供参考</div>
+  </div>`;
+  // Detail cards
   predictData.forEach(p=>{
     const confCls = p.confidence>=7?'conf-high':p.confidence>=5?'conf-mid':'conf-low';
+    const confColor = p.confidence>=7?'#4ade80':p.confidence>=6?'#fbbf24':'#f87171';
     html+=`<div class="card">
       <div class="card-title">
-        <span style="background:#1a2a3a;padding:2px 8px;border-radius:6px;font-size:12px;color:#60a5fa">1/16决赛</span>
+        <span style="background:#1a2a3a;padding:2px 8px;border-radius:6px;font-size:12px;color:#60a5fa">${p.group}组</span>
         ${p.t1} vs ${p.t2}
         <span style="margin-left:auto;font-size:13px;color:#8892b0">⏰ ${p.time}</span>
         <span class="confidence ${confCls}">信心 ${p.confidence}/10</span>
@@ -429,6 +524,7 @@ function renderPredictions(){
       <div class="handicap-row">
         <div class="handicap-item"><span class="hi-label">亚盘: </span><span class="hi-value">${p.asian}</span></div>
         <div class="handicap-item"><span class="hi-label">大小球: </span><span class="hi-value">${p.total}</span></div>
+        <div class="handicap-item"><span class="hi-label">让球(${p.handicap.label}): </span><span class="hi-value">胜${p.handicap.w} / 平${p.handicap.d} / 负${p.handicap.l}</span></div>
       </div>
       <div style="margin:12px 0 8px;padding:10px;background:#0d1225;border-radius:8px;border:1px solid #1e2740">
         <div style="font-size:13px;font-weight:700;color:#7b68ee;margin-bottom:8px">🔬 六方法论量化拆解</div>
@@ -447,9 +543,9 @@ function renderPredictions(){
       <div class="prediction-box">
         <div class="pred-title">🎯 综合推荐</div>
         <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
-          <div><span style="color:#8892b0">独赢:</span> <strong style="color:#4ade80">${p.prediction}</strong></div>
+          <div><span style="color:#8892b0">让球:</span> <strong style="color:#4ade80">${p.prediction}</strong></div>
           <div><span style="color:#8892b0">波胆:</span> <strong style="color:#fbbf24">${p.score}</strong></div>
-          <div><span style="color:#8892b0">大小球:</span> <strong style="color:#60a5fa">小${p.total}</strong></div>
+          <div><span style="color:#8892b0">大小球:</span> <strong style="color:#60a5fa">${p.total.includes('大')?'':p.total<2.5?'小':'大'}${p.total}</strong></div>
         </div>
         <div style="font-size:12px;color:#8892b0;margin-top:6px">📝 ${p.analysis}</div>
       </div>
@@ -466,12 +562,11 @@ function renderStandings(){
     const data=standings[g];
     if(!data) return;
     html+=`<div class="card">
-      <div class="card-title" style="margin-bottom:8px">${g}组 · 最终积分榜</div>
+      <div class="card-title" style="margin-bottom:8px">${g}组</div>
       <table class="group-table">
         <tr><th>#</th><th>球队</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>净胜</th><th>积分</th><th>状态</th></tr>`;
     data.forEach((t,i)=>{
-      if(t.t.includes('(')){html+=`<tr><td colspan="10" style="text-align:center;font-size:11px;color:#555;padding:2px">${t.t}</td></tr>`;return;}
-      const rowCls = t.st.includes('✅') ? 'qualified' : t.st.includes('❌') ? 'eliminated' : 'pending';
+      const rowCls = t.lock ? 'qualified' : t.elim ? 'eliminated' : (t.st.includes('待定')||t.st.includes('最佳')?'pending':'');
       html+=`<tr class="${rowCls}">
         <td>${i+1}</td><td style="text-align:left;font-weight:600">${t.t}</td>
         <td>${t.w}</td><td>${t.d}</td><td>${t.l}</td>
@@ -486,89 +581,57 @@ function renderStandings(){
 
 function renderBracket(){
   const c=document.getElementById('bracketContainer');
-  const upper = bracketData.filter(b=>b.region==='上半区');
-  const lower = bracketData.filter(b=>b.region==='下半区');
-  
-  let html=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
-    <div class="card" style="border-left:3px solid #e74c3c">
-      <div class="card-title" style="color:#e74c3c">🔥 上半区 (含德国/巴西/荷兰/西班牙)</div>
-    </div>
-    <div class="card" style="border-left:3px solid #3498db">
-      <div class="card-title" style="color:#3498db">❄️ 下半区 (含阿根廷/法国/英格兰)</div>
-    </div>
-  </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">`;
-  
-  // 上半区
-  html+=`<div>`;
-  upper.forEach(b=>{
-    html+=`<div class="bracket-match" style="border-color:#2a4a4a">
+  // Confirmed matchups
+  const confirmed = [
+    {time:'6/29 03:00',t1:'🇿🇦 南非',t2:'🇨🇦 加拿大',venue:'洛杉矶',note:'A2 vs B2'},
+    {time:'6/30 01:00',t1:'🇧🇷 巴西',t2:'🇯🇵 日本',venue:'休斯顿',note:'C1 vs F2'},
+    {time:'6/30 04:30',t1:'🇩🇪 德国',t2:'🇵🇾 巴拉圭',venue:'波士顿',note:'E1 vs 最佳3rd(D)'},
+    {time:'6/30 09:00',t1:'🇳🇱 荷兰',t2:'🇲🇦 摩洛哥',venue:'蒙特雷',note:'F1 vs C2'},
+    {time:'7/01 01:00',t1:'🇨🇮 科特迪瓦',t2:'🇳🇴 挪威',venue:'达拉斯',note:'E2 vs I2'},
+    {time:'7/01 05:00',t1:'🇫🇷 法国',t2:'🇪🇨 厄瓜多尔',venue:'纽约',note:'I1 vs 最佳3rd(E)'},
+    {time:'7/01 09:00',t1:'🇲🇽 墨西哥',t2:'🇬🇭 加纳',venue:'墨西哥城',note:'A1 vs 最佳3rd(L)'},
+    {time:'7/02 00:00',t1:'🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰',t2:'🇩🇿 阿尔及利亚',venue:'亚特兰大',note:'L1 vs 最佳3rd(J)'},
+    {time:'7/02 04:00',t1:'🇧🇪 比利时',t2:'🇸🇳 塞内加尔',venue:'西雅图',note:'G1 vs 最佳3rd(I)'},
+    {time:'7/02 08:00',t1:'🇺🇸 美国',t2:'🇧🇦 波黑',venue:'旧金山',note:'D1 vs 最佳3rd(B)'},
+    {time:'7/03 03:00',t1:'🇪🇸 西班牙',t2:'🇦🇹 奥地利',venue:'洛杉矶',note:'H1 vs J2'},
+    {time:'7/03 07:00',t1:'🇵🇹 葡萄牙',t2:'🇭🇷 克罗地亚',venue:'多伦多',note:'K2 vs L2'},
+    {time:'7/03 11:00',t1:'🇨🇭 瑞士',t2:'🇨🇩 刚果(金)',venue:'温哥华',note:'B1 vs 最佳3rd(K)'},
+    {time:'7/04 02:00',t1:'🇦🇺 澳大利亚',t2:'🇪🇬 埃及',venue:'达拉斯',note:'D2 vs G2'},
+    {time:'7/04 06:00',t1:'🇦🇷 阿根廷',t2:'🇨🇻 佛得角',venue:'迈阿密',note:'J1 vs H2'},
+    {time:'7/04 09:30',t1:'🇨🇴 哥伦比亚',t2:'🇸🇪 瑞典',venue:'堪萨斯城',note:'K1 vs 最佳3rd(F)'},
+  ]
+  let html=`<div style="margin-bottom:16px;font-size:13px;color:#8892b0">全部 <strong style="color:#4ade80">16</strong> 场对阵已确认 · 小组赛全部结束</div>`;
+  confirmed.forEach(b=>{
+    const isFull = !b.t1.includes('⏳')&&!b.t2.includes('⏳');
+    html+=`<div class="bracket-match" style="${isFull?'border-color:#2a4a2a':''}">
       <div class="bm-teams">
-        <span style="color:#e0e6ed;font-weight:600">${b.t1}</span>
+        <span style="${b.t1.includes('⏳')?'color:#8892b0':'color:#e0e6ed;font-weight:600'}">${b.t1}</span>
         <span class="bm-vs">vs</span>
-        <span style="color:#e0e6ed;font-weight:600">${b.t2}</span>
+        <span style="${b.t2.includes('⏳')?'color:#8892b0':'color:#e0e6ed;font-weight:600'}">${b.t2}</span>
       </div>
       <div class="bm-time">🏟 ${b.time} · ${b.venue}</div>
     </div>`;
   });
-  html+=`</div>`;
-  
-  // 下半区
-  html+=`<div>`;
-  lower.forEach(b=>{
-    html+=`<div class="bracket-match" style="border-color:#2a4a4a">
-      <div class="bm-teams">
-        <span style="color:#e0e6ed;font-weight:600">${b.t1}</span>
-        <span class="bm-vs">vs</span>
-        <span style="color:#e0e6ed;font-weight:600">${b.t2}</span>
-      </div>
-      <div class="bm-time">🏟 ${b.time} · ${b.venue}</div>
-    </div>`;
-  });
-  html+=`</div></div>`;
-  
-  // 关键对阵预览
-  html+=`<div class="card" style="margin-top:16px;border-left:3px solid #f39c12">
-    <div class="card-title">⭐ 淘汰赛焦点对阵</div>
-    <div style="display:grid;gap:8px;font-size:13px">
-      <div style="padding:8px;background:#0d1225;border-radius:6px">🇩🇪 <strong>德国 vs 巴拉圭</strong> <span style="color:#8892b0">6/30 04:30 | 马宁执法第四官员</span></div>
-      <div style="padding:8px;background:#0d1225;border-radius:6px">🇧🇷 <strong>巴西 vs 日本</strong> <span style="color:#8892b0">6/30 01:00</span></div>
-      <div style="padding:8px;background:#0d1225;border-radius:6px">🇵🇹 <strong>葡萄牙 vs 克罗地亚</strong> <span style="color:#8892b0">7/01 03:00</span></div>
-      <div style="padding:8px;background:#0d1225;border-radius:6px">🇦🇷 <strong>阿根廷 vs 佛得角</strong> <span style="color:#8892b0">7/02 05:00</span></div>
-      <div style="padding:8px;background:#0d1225;border-radius:6px">🏴󠁧󠁢󠁥󠁮󠁧󠁿 <strong>英格兰 vs 刚果金</strong> <span style="color:#8892b0">7/04 01:00</span></div>
-    </div>
-  </div>`;
-  
   c.innerHTML=html;
 }
 
 function renderModel(){
   const c=document.getElementById('modelContainer');
   let html=`<div class="model-stat">
-    <div class="model-stat-item"><div class="msi-num" style="color:#4ade80">14</div><div class="msi-label">总命中</div></div>
-    <div class="model-stat-item"><div class="msi-num" style="color:#f87171">18</div><div class="msi-label">总未中</div></div>
-    <div class="model-stat-item"><div class="msi-num" style="color:#00d4ff">32</div><div class="msi-label">小组赛场次</div></div>
-    <div class="model-stat-item"><div class="msi-num" style="color:#fbbf24">43.8%</div><div class="msi-label">小组赛命中率</div></div>
+    <div class="model-stat-item"><div class="msi-num" style="color:#4ade80">${modelData.totalHits}</div><div class="msi-label">总命中</div></div>
+    <div class="model-stat-item"><div class="msi-num" style="color:#f87171">${modelData.totalMatches-modelData.totalHits}</div><div class="msi-label">总未中</div></div>
+    <div class="model-stat-item"><div class="msi-num" style="color:#00d4ff">${modelData.totalMatches}</div><div class="msi-label">总场次</div></div>
+    <div class="model-stat-item"><div class="msi-num" style="color:#fbbf24">${modelData.totalRate}%</div><div class="msi-label">命中率</div></div>
   </div>
-  <div class="card"><div class="card-title">📊 小组赛每日命中率趋势</div><div id="hitRateChart" style="height:300px"></div></div>
+  <div class="card"><div class="card-title">📊 每日命中率趋势</div><div id="hitRateChart" style="height:300px"></div></div>
   <div class="card"><div class="card-title">📈 累计命中率走势</div><div id="cumulativeChart" style="height:300px"></div></div>
-  <div class="card" style="border-color:#2a4a2a">
-    <div class="card-title" style="color:#4ade80">✅ 小组赛阶段总结</div>
-    <div style="font-size:13px;color:#8892b0;line-height:1.8">
-      <p>• 小组赛48场全部完赛,让球推荐命中率 <strong style="color:#fbbf24">43.8%</strong></p>
-      <p>• 模型表现最佳: 6月22日(75%)、6月27日(66.7%)</p>
-      <p>• 模型表现最差: 6月26日(16.7%)</p>
-      <p>• <strong style="color:#f87171">凯利模型连续失效:</strong> 小组赛阶段未能提供正向收益</p>
-      <p>• 淘汰赛策略: 仓位≤20%,优先关注Elo实力差模型</p>
-    </div>
-  </div>
   <div class="card" style="border-color:#5a2a2a">
-    <div class="card-title" style="color:#f87171">⚠️ 淘汰赛投注风险提示</div>
+    <div class="card-title" style="color:#f87171">⚠️ 凯利模型状态警报</div>
     <div style="font-size:13px;color:#8892b0;line-height:1.8">
-      <p>• 淘汰赛单场定胜负,偶然性大幅增加</p>
-      <p>• 弱队爆冷概率提升(无小组赛积分压力)</p>
-      <p>• 建议: 优先关注实力差距明显的对阵</p>
-      <p>• 参考: 世界杯淘汰赛上盘率约52%,略高于小组赛</p>
+      <p>• 凯利指数模型小组赛累计命中率 <strong style="color:#fbbf24">50%</strong>，接近盈亏平衡线</p>
+      <p>• 累计命中率 50.0% 接近盈亏平衡线 (~55%含赔率)</p>
+      <p>• 建议：淘汰赛变数更大，单场仓位≤20%，总仓位≤40%</p>
+      <p>• 6月28日JKL组4/6命中(66.7%)，模型持续回暖，淘汰赛观察</p>
     </div>
   </div>`;
   c.innerHTML=html;
@@ -621,6 +684,76 @@ renderPredictions();
 renderStandings();
 renderBracket();
 renderModel();
+
+// 媒体分析象限渲染
+function renderMediaQuadrant() {
+  if (typeof mediaQuadrant === 'undefined') return;
+  const mq = mediaQuadrant;
+  
+  let html = '<div class="section">';
+  html += '<h2>📰 媒体分析象限 - ' + mq.date + ' GHI组</h2>';
+  html += '<p style="color:#888;font-size:13px">数据来源: ' + mq.sources.join('、') + '</p>';
+  
+  // Summary comparison table
+  html += '<div class="model-card" style="margin:15px 0">';
+  html += '<h3>📊 命中率对比</h3>';
+  html += '<table style="width:100%;border-collapse:collapse;font-size:13px">';
+  html += '<tr style="background:#1a1a2e"><th style="padding:8px;text-align:left">来源</th><th>命中</th><th>命中率</th><th>评价</th></tr>';
+  html += '<tr style="border-bottom:1px solid #333"><td style="padding:6px 8px;color:#00d4ff;font-weight:bold">🤖 MAH模型</td><td style="text-align:center">' + mq.summary.mahHits + '/' + mq.summary.mahTotal + '</td><td style="text-align:center;font-weight:bold;color:' + (parseFloat(mq.summary.mahRate) >= 60 ? '#2ecc71' : parseFloat(mq.summary.mahRate) >= 40 ? '#f39c12' : '#e74c3c') + '">' + mq.summary.mahRate + '</td><td style="text-align:center;font-size:12px">六方法论量化</td></tr>';
+  
+  for (const [name, data] of Object.entries(mq.summary.mediaHits)) {
+    const rate = parseFloat(data.rate);
+    html += '<tr style="border-bottom:1px solid #222"><td style="padding:6px 8px">' + name + '</td><td style="text-align:center">' + data.hits + '/' + data.total + '</td><td style="text-align:center;color:' + (rate >= 60 ? '#2ecc71' : rate >= 40 ? '#f39c12' : '#e74c3c') + '">' + data.rate + '</td><td style="text-align:center;font-size:12px;color:#888">媒体分析</td></tr>';
+  }
+  html += '</table></div>';
+  
+  // Per-match breakdown
+  mq.matches.forEach(m => {
+    const mahIcon = m.mah.correct ? '✅' : '❌';
+    const mahColor = m.mah.correct ? '#2ecc71' : '#e74c3c';
+    html += '<div class="model-card" style="margin:10px 0;border-left:3px solid ' + mahColor + '">';
+    html += '<h4>[' + m.group + '组] ' + m.t1 + ' vs ' + m.t2 + ' → <span style="color:#ffd700">' + m.actual + '</span></h4>';
+    html += '<div style="display:flex;gap:15px;flex-wrap:wrap;margin:8px 0">';
+    html += '<span style="color:' + mahColor + ';font-weight:bold">🤖 MAH: ' + m.mah.direction + ' ' + mahIcon + '</span>';
+    html += '<span style="color:#888">共识: ' + m.consensus + ' ' + (m.consensus_correct ? '✅' : '❌') + '</span>';
+    html += '</div>';
+    html += '<details style="margin-top:5px"><summary style="cursor:pointer;color:#3498db;font-size:13px">查看媒体预测明细 (' + m.media.length + '个来源)</summary>';
+    html += '<div style="padding:8px;background:#0a0a1a;border-radius:6px;margin-top:5px">';
+    m.media.forEach(md => {
+      const icon = md.correct === true ? '✅' : md.correct === false ? '❌' : '❓';
+      html += '<div style="padding:4px 0;border-bottom:1px solid #1a1a2e;font-size:13px">';
+      html += '<span style="color:#aaa">' + md.source + '</span> → ' + md.direction + ' ' + icon;
+      html += ' <span style="color:#666;font-size:12px">(' + md.note + ')</span></div>';
+    });
+    html += '</div></details>';
+    html += '<div style="margin-top:5px;padding:6px;background:#1a1a2e;border-radius:4px;font-size:12px;color:#f39c12">💡 ' + m.insight + '</div>';
+    html += '</div>';
+  });
+  
+  // Quadrant visualization
+  html += '<div class="model-card" style="margin:15px 0">';
+  html += '<h3>🗺️ 象限分布</h3>';
+  html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  mq.summary.quadrants.forEach(q => {
+    html += '<div style="padding:12px;background:' + q.color + '15;border:1px solid ' + q.color + ';border-radius:8px">';
+    html += '<div style="font-weight:bold;margin-bottom:5px">' + q.name + '</div>';
+    html += '<div style="font-size:11px;color:#888;margin-bottom:5px">' + q.desc + '</div>';
+    q.matches.forEach(match => {
+      html += '<div style="font-size:12px;padding:2px 0">• ' + match + '</div>';
+    });
+    if (q.matches.length === 0) html += '<div style="font-size:12px;color:#555">无</div>';
+    html += '</div>';
+  });
+  html += '</div></div>';
+  
+  html += '</div>';
+  
+  // Insert into page
+  const container = document.getElementById('media-quadrant-container');
+  if (container) container.innerHTML = html;
+}
+
 </script>
+<div id="media-quadrant-container" style="display:none"></div>
 </body>
 </html>

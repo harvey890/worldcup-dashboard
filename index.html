@@ -88,13 +88,13 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 <div class="header">
   <div>
     <h1>⚽ 2026 美加墨世界杯 · 全景数据面板</h1>
-    <div class="subtitle">数据更新时间：2026年6月29日 14:00 (北京时间) · 淘汰赛阶段已开始 · 数据来源：FIFA官方/竞彩/主流博彩</div>
+    <div class="subtitle">数据更新时间：2026年6月30日 14:00 (北京时间) · 1/16决赛已进行4场 · 加拿大/巴西/巴拉圭/摩洛哥晋级16强</div>
   </div>
   <div class="stats-bar">
-    <div class="stat-item"><div class="num" style="color:#4ade80">33/42</div><div class="label">已完赛场次</div></div>
-    <div class="stat-item"><div class="num">123</div><div class="label">总进球数</div></div>
-    <div class="stat-item"><div class="num" style="color:#fbbf24">1/16</div><div class="label">进行中</div></div>
-    <div class="stat-item"><div class="num">16</div><div class="label">淘汰赛球队</div></div>
+    <div class="stat-item"><div class="num" style="color:#4ade80">36/48</div><div class="label">已完赛场次</div></div>
+    <div class="stat-item"><div class="num">130</div><div class="label">总进球数</div></div>
+    <div class="stat-item"><div class="num" style="color:#fbbf24">4/16</div><div class="label">淘汰赛进度</div></div>
+    <div class="stat-item"><div class="num">16</div><div class="label">16强球队</div></div>
   </div>
 </div>
 
@@ -123,13 +123,13 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 
 <!-- Panel 1: 今日复盘 -->
 <div class="panel" id="panel1">
-  <div class="section-title">📋 6月29日 1/16决赛首场 · 预测复盘</div>
+  <div class="section-title">📋 6月30日 1/16决赛 · 三场预测复盘</div>
   <div id="reviewContainer"></div>
 </div>
 
 <!-- Panel 2: 明日预测 -->
 <div class="panel" id="panel2">
-  <div class="section-title">🔮 6月30日 1/16决赛 · 三场赔率与预测</div>
+  <div class="section-title">🔮 7月1日 1/16决赛 · 三场赔率与预测</div>
   <div id="predictionContainer"></div>
 </div>
 
@@ -141,7 +141,7 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 
 <!-- Panel 4: 淘汰赛 -->
 <div class="panel" id="panel4">
-  <div class="section-title">🏆 1/16决赛对阵 (6.29-7.4) · 首场已结束</div>
+  <div class="section-title">🏆 1/16决赛对阵 (6.29-7.4) · 4场已结束</div>
   <div id="bracketContainer"></div>
 </div>
 
@@ -232,27 +232,27 @@ const scheduleData = [
   {date:'6月28日',round:'第3轮',group:'J',t1:'阿尔及利亚',t2:'奥地利',s1:3,s2:3,status:'finished',events:'进球大战 阿尔及利亚历史出线'},
   {date:'6月28日',round:'第3轮',group:'J',t1:'约旦',t2:'阿根廷',s1:1,s2:3,status:'finished',events:'梅西任意球破门'},
   // 1/16决赛
-  {date:'6月29日',round:'1/16决赛',group:'KO',t1:'南非',t2:'加拿大',s1:0,s2:1,status:'finished',events:'92\'欧斯塔基奥绝杀 戴维斯75\'替补登场',time:'03:00'},
-  {date:'6月30日',round:'1/16决赛',group:'KO',t1:'巴西',t2:'日本',s1:-1,s2:-1,status:'upcoming',events:'维尼修斯3场4球 久保建英伤缺',time:'01:00'},
-  {date:'6月30日',round:'1/16决赛',group:'KO',t1:'德国',t2:'巴拉圭',s1:-1,s2:-1,status:'upcoming',events:'德国末轮负厄瓜多尔 巴拉圭12年重返世界杯',time:'04:30'},
-  {date:'6月30日',round:'1/16决赛',group:'KO',t1:'荷兰',t2:'摩洛哥',s1:-1,s2:-1,status:'upcoming',events:'2022年世界杯1/4决赛重演',time:'09:00'},
+  {date:'6月29日',round:'1/16决赛',group:'KO',t1:'南非',t2:'加拿大',s1:0,s2:1,status:'finished',events:'92\'欧斯塔基奥绝杀',time:'03:00'},
+  {date:'6月30日',round:'1/16决赛',group:'KO',t1:'巴西',t2:'日本',s1:2,s2:1,status:'finished',events:'29\'佐野海舟 / 56\'卡塞米罗 / 90+6\'马丁内利绝杀',time:'01:00'},
+  {date:'6月30日',round:'1/16决赛',group:'KO',t1:'德国',t2:'巴拉圭',s1:1,s2:1,status:'finished',events:'常规1-1 点球3-4 巴拉圭爆冷晋级',time:'04:30'},
+  {date:'6月30日',round:'1/16决赛',group:'KO',t1:'荷兰',t2:'摩洛哥',s1:1,s2:1,status:'finished',events:'常规1-1 点球2-3 摩洛哥晋级',time:'09:00'},
   {date:'7月1日',round:'1/16决赛',group:'KO',t1:'科特迪瓦',t2:'挪威',s1:-1,s2:-1,status:'upcoming',events:'哈兰德vs科特迪瓦防线',time:'01:00'},
-  {date:'7月1日',round:'1/16决赛',group:'KO',t1:'法国',t2:'瑞典',s1:-1,s2:-1,status:'upcoming',events:'',time:'05:00'},
-  {date:'7月1日',round:'1/16决赛',group:'KO',t1:'墨西哥',t2:'厄瓜多尔',s1:-1,s2:-1,status:'upcoming',events:'',time:'09:00'},
+  {date:'7月1日',round:'1/16决赛',group:'KO',t1:'法国',t2:'瑞典',s1:-1,s2:-1,status:'upcoming',events:'姆巴佩4球领跑射手榜 vs瑞典残阵',time:'05:00'},
+  {date:'7月1日',round:'1/16决赛',group:'KO',t1:'墨西哥',t2:'厄瓜多尔',s1:-1,s2:-1,status:'upcoming',events:'墨西哥高原主场3-0零封',time:'09:00'},
   {date:'7月2日',round:'1/16决赛',group:'KO',t1:'英格兰',t2:'刚果(金)',s1:-1,s2:-1,status:'upcoming',events:'',time:'00:00'},
   {date:'7月2日',round:'1/16决赛',group:'KO',t1:'比利时',t2:'塞内加尔',s1:-1,s2:-1,status:'upcoming',events:'',time:'04:00'},
   {date:'7月2日',round:'1/16决赛',group:'KO',t1:'美国',t2:'波黑',s1:-1,s2:-1,status:'upcoming',events:'',time:'08:00'},
-  {date:'7月3日',round:'1/16决赛',group:'KO',t1:'西班牙',t2:'奥地利',s1:-1,s2:-1,status:'upcoming',events:'萨比策百场里程碑',time:'03:00'},
+  {date:'7月3日',round:'1/16决赛',group:'KO',t1:'西班牙',t2:'奥地利',s1:-1,s2:-1,status:'upcoming',events:'',time:'03:00'},
   {date:'7月3日',round:'1/16决赛',group:'KO',t1:'葡萄牙',t2:'克罗地亚',s1:-1,s2:-1,status:'upcoming',events:'C罗vs莫德里奇 谢幕战',time:'07:00'},
   {date:'7月3日',round:'1/16决赛',group:'KO',t1:'瑞士',t2:'阿尔及利亚',s1:-1,s2:-1,status:'upcoming',events:'',time:'11:00'},
-  {date:'7月4日',round:'1/16决赛',group:'KO',t1:'澳大利亚',t2:'埃及',s1:-1,s2:-1,status:'upcoming',events:'萨拉赫vs澳大利亚防线',time:'02:00'},
+  {date:'7月4日',round:'1/16决赛',group:'KO',t1:'澳大利亚',t2:'埃及',s1:-1,s2:-1,status:'upcoming',events:'萨拉赫伤缺',time:'02:00'},
   {date:'7月4日',round:'1/16决赛',group:'KO',t1:'阿根廷',t2:'佛得角',s1:-1,s2:-1,status:'upcoming',events:'',time:'06:00'},
   {date:'7月4日',round:'1/16决赛',group:'KO',t1:'哥伦比亚',t2:'加纳',s1:-1,s2:-1,status:'upcoming',events:'',time:'09:30'},
 ];
 
 // Standings data (小组赛最终)
 const standings = {
-  A:[{t:'墨西哥',w:3,d:0,l:0,gf:6,ga:0,pts:9,st:'✅头名'},{t:'南非',w:1,d:1,l:1,gf:2,ga:3,pts:4,st:'✅第二(已出局)'},{t:'韩国',w:1,d:0,l:2,gf:2,ga:3,pts:3,st:'❌'},{t:'捷克',w:0,d:1,l:2,gf:2,ga:6,pts:1,st:'❌'}],
+  A:[{t:'墨西哥',w:3,d:0,l:0,gf:6,ga:0,pts:9,st:'✅头名'},{t:'南非',w:1,d:1,l:1,gf:2,ga:3,pts:4,st:'❌已出局'},{t:'韩国',w:1,d:0,l:2,gf:2,ga:3,pts:3,st:'❌'},{t:'捷克',w:0,d:1,l:2,gf:2,ga:6,pts:1,st:'❌'}],
   B:[{t:'瑞士',w:2,d:1,l:0,gf:7,ga:3,pts:7,st:'✅头名'},{t:'加拿大',w:1,d:1,l:1,gf:8,ga:3,pts:4,st:'✅第二→16强'},{t:'波黑',w:1,d:1,l:1,gf:5,ga:6,pts:4,st:'🟡最佳第3→16强'},{t:'卡塔尔',w:0,d:1,l:2,gf:2,ga:10,pts:1,st:'❌'}],
   C:[{t:'巴西',w:2,d:1,l:0,gf:7,ga:1,pts:7,st:'✅头名'},{t:'摩洛哥',w:2,d:1,l:0,gf:6,ga:3,pts:7,st:'✅第二→16强'},{t:'苏格兰',w:1,d:0,l:2,gf:1,ga:4,pts:3,st:'❌'},{t:'海地',w:0,d:0,l:3,gf:2,ga:8,pts:0,st:'❌'}],
   D:[{t:'美国',w:2,d:0,l:1,gf:8,ga:4,pts:6,st:'✅头名'},{t:'澳大利亚',w:1,d:1,l:1,gf:2,ga:2,pts:4,st:'✅第二'},{t:'巴拉圭',w:1,d:1,l:1,gf:2,ga:4,pts:4,st:'🟡最佳第3→16强'},{t:'土耳其',w:1,d:0,l:2,gf:3,ga:5,pts:3,st:'❌'}],
@@ -266,60 +266,65 @@ const standings = {
   L:[{t:'英格兰',w:2,d:1,l:0,gf:6,ga:2,pts:7,st:'✅头名'},{t:'克罗地亚',w:2,d:0,l:1,gf:5,ga:5,pts:6,st:'✅第二'},{t:'加纳',w:1,d:1,l:1,gf:2,ga:2,pts:4,st:'🟡最佳第3→16强'},{t:'巴拿马',w:0,d:0,l:3,gf:0,ga:4,pts:0,st:'❌'}],
 };
 
-// Today's review data (6/29)
+// Today's review data (6/30)
 const reviewData = [
-  {group:'KO',t1:'南非',t2:'加拿大',s1:0,s2:1,events:'92\'欧斯塔基奥凌空绝杀 戴维斯75\'替补登场',prediction:'加拿大-0.75让胜',actual:'0-1',result:'hit',reason:'加拿大1球小胜穿盘成功，预测命中'},
+  // 6/29首场
+  {group:'KO',t1:'南非',t2:'加拿大',s1:0,s2:1,events:'92\'欧斯塔基奥凌空绝杀',prediction:'加拿大-0.75让胜',actual:'0-1',result:'hit',reason:'加拿大1球小胜穿盘成功'},
+  // 6/30三场
+  {group:'KO',t1:'巴西',t2:'日本',s1:2,s2:1,events:'29\'佐野海舟 / 56\'卡塞米罗 / 90+6\'马丁内利绝杀',prediction:'巴西-0.5胜',actual:'2-1',result:'hit',reason:'马丁内利90+6分钟绝杀，巴西2-1晋级'},
+  {group:'KO',t1:'德国',t2:'巴拉圭',s1:1,s2:1,events:'常规1-1 点球3-4',prediction:'德国-1胜',actual:'1-1点球3-4',result:'miss',reason:'德国被淘汰！点球大战3-4惜败，本届最大冷门'},
+  {group:'KO',t1:'荷兰',t2:'摩洛哥',s1:1,s2:1,events:'常规1-1 点球2-3',prediction:'平局/荷兰小胜',actual:'1-1点球2-3',result:'hit',reason:'摩洛哥晋级！连续两届世界杯淘汰荷兰'},
 ];
 
-// 明日预测数据 (6/30 三场)
+// 明日预测数据 (7月1日 三场)
 const predictData = [
-  // 巴西 vs 日本
-  {group:'KO',time:'01:00',t1:'巴西',t2:'日本',
-   euro:{w:1.67,d:3.75,l:5.25},asian:'巴西-0.75',total:'2.5',
-   handicap:{label:'巴西-1',w:2.30,d:3.20,l:2.65},
-   prediction:'巴西-0.5胜',score:'2-1',confidence:6,
+  // 科特迪瓦 vs 挪威
+  {group:'KO',time:'01:00',t1:'科特迪瓦',t2:'挪威',
+   euro:{w:3.50,d:3.40,l:2.05},asian:'挪威-0.5',total:'2.5',
+   handicap:{label:'挪威-0.5',w:2.05,d:3.20,l:3.40},
+   prediction:'科特迪瓦+0.5不败',score:'1-1',confidence:6,
    six:[
-     {name:'泊松分布',result:'λ巴1.68 vs λ日0.92 | 巴西胜率69.1%',signal:'⭐巴西明显优势'},
-     {name:'xG模型',result:'巴场均xG=2.33 日本场均失球仅0.67',signal:'攻防差距大'},
-     {name:'Elo评级',result:'巴西FIFA第2 vs 日本FIFA第16',signal:'实力差距明显'},
-     {name:'凯利指数',result:'巴胜凯利0.88 市场热捧巴西',signal:'⚠️平局被低估'},
-     {name:'亚欧赔率',result:'亚指-0.75 巴西让球力度充分',signal:'机构倾向巴西'},
-     {name:'战术匹配',result:'维尼修斯左路vs日本右路 | 久保建英缺阵',signal:'⭐日本反击威胁下降'},
+     {name:'泊松分布',result:'λ科0.9 vs λ挪1.2 | 挪威胜率45%',signal:'挪威略占优'},
+     {name:'xG模型',result:'挪场均2.67球 科防守失2球',signal:'挪威进攻强'},
+     {name:'Elo评级',result:'挪威FIFA第9 vs 科特迪瓦FIFA第42',signal:'⭐实力差距'},
+     {name:'凯利指数',result:'挪威客胜凯利0.96 | 机构防范科特迪瓦',signal:'⚠️平局被低估'},
+     {name:'亚欧赔率',result:'亚指退至平/半 | 浅开示弱主队',signal:'⚠️指数退让诱客'},
+     {name:'战术匹配',result:'哈兰德4球 vs 科恩迪卡伤缺防线',signal:'双方各有弱点'},
    ],
-   mediaConsensus:'巴西胜(9/10媒体)',
-   analysis:'⚠️信心6/10。巴西整体占优但日本防守顽强，久保缺阵降低威胁。巴西小胜概率高，但存在1-1拖入加时冷门可能。'},
+   mediaConsensus:'挪威胜(6/10媒体) 但需防冷',
+   analysis:'⚠️信心6/10。挪威哈兰德4球领跑射手榜，但科特迪瓦防守强硬且反击犀利。市场亚指退至平/半是典型诱空操作，机构真实防范科特迪瓦不败。首选1-1平局，次选挪威小胜。'},
   
-  // 德国 vs 巴拉圭
-  {group:'KO',time:'04:30',t1:'德国',t2:'巴拉圭',
-   euro:{w:1.45,d:4.20,l:6.50},asian:'德国-1.25',total:'2.75',
-   handicap:{label:'德国-1',w:1.90,d:3.40,l:3.40},
-   prediction:'德国-1胜',score:'2-0',confidence:5,
+  // 法国 vs 瑞典
+  {group:'KO',time:'05:00',t1:'法国',t2:'瑞典',
+   euro:{w:1.30,d:5.50,l:11.00},asian:'法国-1.5',total:'3.25',
+   handicap:{label:'法国-1.5',w:1.95,d:3.50,l:3.20},
+   prediction:'法国-1.5胜',score:'3-1',confidence:7,
    six:[
-     {name:'泊松分布',result:'λ德1.85 vs λ巴0.72 | 德国大胜概率高',signal:'⭐德国进攻优势'},
-     {name:'xG模型',result:'德小组赛10球 巴拉圭防守稳健',signal:'攻守博弈'},
-     {name:'Elo评级',result:'德国FIFA第10 vs 巴拉圭FIFA第41',signal:'⭐实力差距大'},
-     {name:'凯利指数',result:'德胜凯利0.92 赔付压力小',signal:'机构信任德国'},
-     {name:'亚欧赔率',result:'让1.25球 德国需赢2球全赢',signal:'⚠️门槛偏高'},
-     {name:'战术匹配',result:'德国需走出末轮负厄瓜多尔阴影',signal:'巴拉圭防守强硬'},
+     {name:'泊松分布',result:'λ法2.1 vs λ瑞0.8 | 法国大胜概率73%',signal:'⭐法国碾压'},
+     {name:'xG模型',result:'法国场均3.3球 瑞典场均丢2.14球',signal:'攻防差距大'},
+     {name:'Elo评级',result:'法国FIFA第2 vs 瑞典FIFA第19',signal:'⭐实力悬殊'},
+     {name:'凯利指数',result:'法胜凯利0.92 | 赔付控制得当',signal:'机构信任法国'},
+     {name:'亚欧赔率',result:'球半盘 主队水位1.08高水',signal:'⚠️防范赢球输盘'},
+     {name:'战术匹配',result:'姆巴佩4球 vs 希恩伤缺瑞典防线残',signal:'⭐法国多点开花'},
    ],
-   mediaConsensus:'德国胜(7/10媒体)',
-   analysis:'⚠️信心5/10。德国实力占优但末轮负于厄瓜多尔状态存疑，巴拉圭12年重返世界杯防守强硬。德国小胜为主旋律，防冷门。'},
+   mediaConsensus:'法国胜(9/10媒体)',
+   analysis:'信心7/10。法国小组赛3连胜进10球，姆巴佩/登贝莱/图拉姆三叉戟状态火热。瑞典主力中卫希恩伤缺，防线更加脆弱。但亚盘球半盘主队高水，防范法国赢球输盘，小胜概率高。首选3-1，次选2-0。'},
   
-  // 荷兰 vs 摩洛哥
-  {group:'KO',time:'09:00',t1:'荷兰',t2:'摩洛哥',
-   euro:{w:1.95,d:3.00,l:3.80},asian:'荷兰-0.5',total:'2.25',
-   handicap:{label:'荷兰-0.5',w:1.95,d:3.20,l:3.40},
-   prediction:'平局/荷兰小胜',score:'1-1',confidence:6,
+  // 墨西哥 vs 厄瓜多尔
+  {group:'KO',time:'09:00',t1:'墨西哥',t2:'厄瓜多尔',
+   euro:{w:2.25,d:2.85,l:3.50},asian:'墨西哥-0.25',total:'2.0',
+   handicap:{label:'墨西哥-0.25',w:1.95,d:3.20,l:3.50},
+   prediction:'小2.0球 防平局',score:'0-0',confidence:5,
    six:[
-     {name:'泊松分布',result:'λ荷1.48 vs λ摩0.91 | Elo差35分',signal:'⭐荷兰略占优'},
-     {name:'xG模型',result:'荷场均2.0球 摩场均失球0.6',signal:'摩洛哥防守顶级'},
-     {name:'Elo评级',result:'荷兰FIFA第8 vs 摩洛哥FIFA第7',signal:'⭐实力接近'},
-     {name:'凯利指数',result:'平局凯利0.86最低 机构重点防范',signal:'⚠️平局高概率'},
-     {name:'亚欧赔率',result:'平赔3.0极低 市场预期胶着',signal:'⭐平局被防范'},
-     {name:'战术匹配',result:'摩洛哥2022世界杯淘汰赛曾点球击败荷兰',signal:'⚠️心理优势在摩洛哥'},
+     {name:'泊松分布',result:'λ墨1.4 vs λ厄1.0 | 墨西哥略优',signal:'进攻差距小'},
+     {name:'xG模型',result:'墨3场零封 def=0.143 | 厄3场2球',signal:'⭐墨西哥防守顶级'},
+     {name:'Elo评级',result:'墨西哥FIFA第11 vs 厄瓜多尔FIFA第29',signal:'墨略占优'},
+     {name:'凯利指数',result:'平赔凯利0.82最低 | 机构重点防平',signal:'⚠️平局高概率'},
+     {name:'亚欧赔率',result:'退盘至平/半 | 降低上盘门槛',signal:'⚠️机构诱上'},
+     {name:'战术匹配',result:'墨高原主场(2240m) vs 厄高原适应问题',signal:'主场优势明显'},
    ],
-   mediaConsensus:'荷兰不胜(6/10媒体倾向防冷)',
-   analysis:'⚠️信心6/10。本轮最胶着对决，Opta模拟荷兰47.6%/平27%/摩洛哥25%。历史2022世界杯摩洛哥曾淘汰荷兰，平局概率被市场严重低估。首选1-1，次选荷兰1-0小胜。'},
+   mediaConsensus:'墨西哥不败(6/10) 平局优先',
+   analysis:'⚠️信心5/10。墨西哥阿兹特克高原主场3连胜零失球，但厄瓜多尔来自更高海拔的基多。亚盘从0.5退至0.25，机构主动降低上盘门槛。平局被严重低估，首选0-0或1-1。'},
 ];
 
 // Model performance data
@@ -332,22 +337,23 @@ const modelData = {
     {date:'6月27日',hits:4,total:6,rate:66.7},
     {date:'6月28日',hits:4,total:6,rate:66.7},
     {date:'6月29日',hits:1,total:1,rate:100},
+    {date:'6月30日',hits:2,total:3,rate:66.7},
   ],
-  totalHits:17,totalMatches:33,totalRate:51.5
+  totalHits:19,totalMatches:36,totalRate:52.8
 };
 
 // Bracket data
 const bracketData = [
   // 已完赛
   {time:'6/29 03:00',t1:'南非',t2:'加拿大',venue:'洛杉矶',result:'0-1',winner:'加拿大',status:'finished'},
-  // 明日待赛
-  {time:'6/30 01:00',t1:'巴西',t2:'日本',venue:'休斯顿',winner:null,status:'upcoming'},
-  {time:'6/30 04:30',t1:'德国',t2:'巴拉圭',venue:'波士顿',winner:null,status:'upcoming'},
-  {time:'6/30 09:00',t1:'荷兰',t2:'摩洛哥',venue:'蒙特雷',winner:null,status:'upcoming'},
-  // 后天
+  {time:'6/30 01:00',t1:'巴西',t2:'日本',venue:'休斯顿',result:'2-1',winner:'巴西',status:'finished'},
+  {time:'6/30 04:30',t1:'德国',t2:'巴拉圭',venue:'波士顿',result:'1-1(点3-4)',winner:'巴拉圭',status:'finished'},
+  {time:'6/30 09:00',t1:'荷兰',t2:'摩洛哥',venue:'蒙特雷',result:'1-1(点2-3)',winner:'摩洛哥',status:'finished'},
+  // 7/1待赛
   {time:'7/01 01:00',t1:'科特迪瓦',t2:'挪威',venue:'达拉斯',winner:null,status:'upcoming'},
   {time:'7/01 05:00',t1:'法国',t2:'瑞典',venue:'纽约',winner:null,status:'upcoming'},
   {time:'7/01 09:00',t1:'墨西哥',t2:'厄瓜多尔',venue:'墨西哥城',winner:null,status:'upcoming'},
+  // 7/2待赛
   {time:'7/02 00:00',t1:'英格兰',t2:'刚果(金)',venue:'亚特兰大',winner:null,status:'upcoming'},
   {time:'7/02 04:00',t1:'比利时',t2:'塞内加尔',venue:'西雅图',winner:null,status:'upcoming'},
   {time:'7/02 08:00',t1:'美国',t2:'波黑',venue:'旧金山',winner:null,status:'upcoming'},
@@ -407,10 +413,10 @@ function renderSchedule(filter='all'){
 function renderReview(){
   const c=document.getElementById('reviewContainer');
   let html=`<div class="model-stat">
-    <div class="model-stat-item"><div class="msi-num" style="color:#4ade80">${reviewData.filter(r=>r.result==='hit').length}/${reviewData.length}</div><div class="msi-label">今日命中</div></div>
+    <div class="model-stat-item"><div class="msi-num" style="color:#4ade80">2/3</div><div class="msi-label">今日命中</div></div>
     <div class="model-stat-item"><div class="msi-num" style="color:#fbbf24">${modelData.totalHits}/${modelData.totalMatches}</div><div class="msi-label">累计命中</div></div>
     <div class="model-stat-item"><div class="msi-num" style="color:#00d4ff">${modelData.totalRate}%</div><div class="msi-label">累计命中率</div></div>
-    <div class="model-stat-item"><div class="msi-num" style="color:#7b68ee">${modelData.days.length}</div><div class="msi-label">追踪天数</div></div>
+    <div class="model-stat-item"><div class="msi-num" style="color:#f87171">2场冷门</div><div class="msi-label">德国/摩洛哥</div></div>
   </div>`;
   reviewData.forEach(r=>{
     const cls = r.result==='hit' ? 'review-hit' : 'review-miss';
@@ -431,18 +437,18 @@ function renderReview(){
 function renderPredictions(){
   const c=document.getElementById('predictionContainer');
   let html=`<div style="background:#3a1a1a;border:1px solid #5a2a2a;border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px">
-    ⚠️ <strong>风险提示:</strong> 淘汰赛阶段变数更大，单场仓位≤20%，总仓位≤40%。小组赛模型累计命中率51.5%，凯利模型持续失效。<br>
+    ⚠️ <strong>风险提示:</strong> 淘汰赛冷门频发！6月30日德国点球负于巴拉圭、摩洛哥再次淘汰荷兰，模型正遭遇挑战。单场仓位≤15%，总仓位≤30%。<br>
     📊 <strong>方法论:</strong> 泊松分布(λ预期进球) · xG(射门质量模型) · Elo(实力评级) · 凯利指数(价值投注) · 亚欧赔率(机构意图) · 战术匹配(定性修正)
   </div>`;
   
   // Summary table
   html+=`<div class="card" style="margin-bottom:20px">
-    <div class="card-title">📋 6月30日 三场推荐速览</div>
+    <div class="card-title">📋 7月1日 三场推荐速览</div>
     <div style="overflow-x:auto"><table class="group-table">
       <tr><th>场次</th><th>让球推荐</th><th>大小球</th><th>波胆</th><th>信心</th></tr>
-      <tr><td style="text-align:left;font-weight:600">🇧🇷 巴西 vs 日本 🇯🇵</td><td style="color:#4ade80">巴西-0.5胜</td><td>大2.5</td><td style="color:#fbbf24;font-weight:700">2-1</td><td style="color:#fbbf24;font-weight:700">6/10</td></tr>
-      <tr><td style="text-align:left;font-weight:600">🇩🇪 德国 vs 巴拉圭 🇵🇾</td><td style="color:#4ade80">德国-1胜</td><td>大2.75</td><td style="color:#fbbf24;font-weight:700">2-0</td><td style="color:#f87171;font-weight:700">5/10</td></tr>
-      <tr><td style="text-align:left;font-weight:600">🇳🇱 荷兰 vs 摩洛哥 🇲🇦</td><td style="color:#fbbf24">平局防冷</td><td>小2.25</td><td style="color:#fbbf24;font-weight:700">1-1</td><td style="color:#fbbf24;font-weight:700">6/10</td></tr>
+      <tr><td style="text-align:left;font-weight:600">🇨🇮 科特迪瓦 vs 挪威 🇳🇴</td><td style="color:#4ade80">科特迪瓦+0.5</td><td>大2.5</td><td style="color:#fbbf24;font-weight:700">1-1</td><td style="color:#fbbf24;font-weight:700">6/10</td></tr>
+      <tr><td style="text-align:left;font-weight:600">🇫🇷 法国 vs 瑞典 🇸🇪</td><td style="color:#4ade80">法国-1.5胜</td><td>大3.25</td><td style="color:#fbbf24;font-weight:700">3-1</td><td style="color:#4ade80;font-weight:700">7/10</td></tr>
+      <tr><td style="text-align:left;font-weight:600">🇲🇽 墨西哥 vs 厄瓜多尔 🇪🇨</td><td style="color:#fbbf24">小2.0 防平</td><td>小2.0</td><td style="color:#fbbf24;font-weight:700">0-0</td><td style="color:#f87171;font-weight:700">5/10</td></tr>
     </table></div></div>`;
   
   // Detail cards
@@ -463,7 +469,7 @@ function renderPredictions(){
       <div class="handicap-row">
         <div class="handicap-item"><span class="hi-label">亚盘: </span><span class="hi-value">${p.asian}</span></div>
         <div class="handicap-item"><span class="hi-label">大小球: </span><span class="hi-value">${p.total}</span></div>
-        <div class="handicap-item"><span class="hi-label">让球(${p.handicap.label}): </span><span class="hi-value">胜${p.handicap.w}</span></div>
+        <div class="handicap-item"><span class="hi-label">让球: </span><span class="hi-value">${p.handicap.label}胜${p.handicap.w}</span></div>
       </div>
       <div style="margin:12px 0 8px;padding:10px;background:#0d1225;border-radius:8px;border:1px solid #1e2740">
         <div style="font-size:13px;font-weight:700;color:#7b68ee;margin-bottom:8px">🔬 六方法论量化拆解</div>
@@ -523,33 +529,35 @@ function renderStandings(){
 function renderBracket(){
   const c=document.getElementById('bracketContainer');
   let html=`<div style="margin-bottom:16px;font-size:13px;color:#8892b0">
-    淘汰赛进度: <strong style="color:#4ade80">1/16</strong> 已进行 <strong style="color:#4ade80">1</strong> 场 · 剩余 <strong style="color:#60a5fa">15</strong> 场<br>
-    首场结果: 加拿大 1-0 南非 🇇�🇦 <span style="color:#4ade80">✅ 晋级16强</span>
+    淘汰赛进度: <strong style="color:#4ade80">1/16</strong> 已进行 <strong style="color:#4ade80">4</strong> 场 · 剩余 <strong style="color:#60a5fa">12</strong> 场<br>
+    晋级16强: 加拿大🇨🇦 / 巴西🇧🇷 / 巴拉圭🇵🇾 / 摩洛哥🇲🇦<br>
+    <span style="color:#f87171">⚠️ 冷门警报: 德国1-4巴拉圭点球出局 摩洛哥点球淘汰荷兰</span>
   </div>`;
   
   // 分区展示
   html+=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
     <div class="card" style="border-color:#2a4a2a">
       <div class="card-title" style="color:#f87171">⚔️ 上半区 (死亡半区)</div>
-      <div style="font-size:12px;color:#8892b0;margin-bottom:8px">法国·德国·荷兰·葡萄牙·西班牙·美国·比利时</div>`;
-  const upper=['南非0-1加拿大(加)','德国-巴拉圭','荷兰-摩洛哥','法国-瑞典','比利时-塞内加尔','美国-波黑','西班牙-奥地利','葡萄牙-克罗地亚'];
+      <div style="font-size:12px;color:#8892b0;margin-bottom:8px">法国·德国❌·荷兰❌·葡萄牙·西班牙·美国·比利时</div>`;
+  const upper=['南非0-1加拿大❌','德国1-1点球负巴拉圭❌','荷兰1-1点球负摩洛哥❌','法国-瑞典','比利时-塞内加尔','美国-波黑','西班牙-奥地利','葡萄牙-克罗地亚'];
   upper.forEach((m,i)=>{
-    const isFinished=m.includes('加');
-    const isNext=(i===1);
-    html+=`<div style="padding:8px;background:${isNext?'#1a2a3a':isFinished?'#1a2a1a':'#0d1225'};border-radius:6px;margin-bottom:6px;font-size:13px;border-left:3px solid ${isFinished?'#4ade80':'#2a3050'}">
+    const isFinished=m.includes('❌')||m.includes('加拿大');
+    const isNext=(i===3);
+    html+=`<div style="padding:8px;background:${isNext?'#1a2a3a':isFinished?'#1a2a1a':'#0d1225'};border-radius:6px;margin-bottom:6px;font-size:13px;border-left:3px solid ${isFinished?'#4ade80':isNext?'#fbbf24':'#2a3050'}">
       <span style="color:${isFinished?'#4ade80':isNext?'#60a5fa':'#e0e6ed'}">${m}</span>
-      ${isNext?'<span style="margin-left:8px;padding:1px 6px;background:#1a3a2a;color:#4ade80;border-radius:4px;font-size:11px">明日</span>':''}
+      ${isNext?'<span style="margin-left:8px;padding:1px 6px;background:#1a3a2a;color:#4ade80;border-radius:4px;font-size:11px">明日05:00</span>':''}
     </div>`;
   });
   html+=`</div><div class="card" style="border-color:#2a4a2a">
       <div class="card-title" style="color:#60a5fa">🛡️ 下半区 (豪门半区)</div>
-      <div style="font-size:12px;color:#8892b0;margin-bottom:8px">巴西·阿根廷·英格兰·墨西哥·哥伦比亚·日本</div>`;
-  const lower=['巴西-日本','科特迪瓦-挪威','墨西哥-厄瓜多尔','英格兰-刚果金','瑞士-阿尔及利亚','澳大利亚-埃及','阿根廷-佛得角','哥伦比亚-加纳'];
+      <div style="font-size:12px;color:#8892b0;margin-bottom:8px">巴西✅·阿根廷·英格兰·墨西哥·哥伦比亚·日本❌</div>`;
+  const lower=['巴西2-1日本✅','科特迪瓦-挪威','墨西哥-厄瓜多尔','英格兰-刚果金','瑞士-阿尔及利亚','澳大利亚-埃及','阿根廷-佛得角','哥伦比亚-加纳'];
   lower.forEach((m,i)=>{
-    const isNext=(i===0);
-    html+=`<div style="padding:8px;background:${isNext?'#1a2a3a':'#0d1225'};border-radius:6px;margin-bottom:6px;font-size:13px;border-left:3px solid ${isNext?'#fbbf24':'#2a3050'}">
-      <span style="color:${isNext?'#60a5fa':'#e0e6ed'}">${m}</span>
-      ${isNext?'<span style="margin-left:8px;padding:1px 6px;background:#1a3a2a;color:#4ade80;border-radius:4px;font-size:11px">明日01:00</span>':''}
+    const isFinished=m.includes('✅');
+    const isNext=(i===1)||(i===2);
+    html+=`<div style="padding:8px;background:${isNext?'#1a2a3a':isFinished?'#1a2a1a':'#0d1225'};border-radius:6px;margin-bottom:6px;font-size:13px;border-left:3px solid ${isFinished?'#4ade80':isNext?'#fbbf24':'#2a3050'}">
+      <span style="color:${isFinished?'#4ade80':isNext?'#60a5fa':'#e0e6ed'}">${m}</span>
+      ${isNext?'<span style="margin-left:8px;padding:1px 6px;background:#1a3a2a;color:#4ade80;border-radius:4px;font-size:11px">明日</span>':''}
     </div>`;
   });
   html+=`</div></div>`;
@@ -558,7 +566,7 @@ function renderBracket(){
   html+=`<div class="section-title" style="margin-top:16px">📋 完整1/16决赛赛程</div>`;
   bracketData.forEach(b=>{
     const isFinished=b.status==='finished';
-    const isNext=b.time.includes('6/30');
+    const isNext=b.time.includes('7/01');
     const bgColor=isFinished?'#1a2a1a':isNext?'#1a2a3a':'#0d1225';
     const borderColor=isFinished?'#4ade80':isNext?'#fbbf24':'#1e2740';
     html+=`<div class="bracket-match" style="background:${bgColor};border-color:${borderColor}">
@@ -589,10 +597,10 @@ function renderModel(){
   <div class="card" style="border-color:#5a2a2a">
     <div class="card-title" style="color:#fbbf24">📋 模型追踪日志</div>
     <div style="font-size:13px;color:#8892b0;line-height:1.8">
-      <p>• 6/29南非vs加拿大: 加拿大-0.75让胜 → 结果0-1 <strong style="color:#4ade80">✅ 命中</strong></p>
-      <p>• 6/28 JKL组: 4/6=66.7% 哥伦比亚0-0葡萄牙命中</p>
-      <p>• 6/27 GHI组: 4/6=66.7% 塞内加尔5-0伊拉克大球命中</p>
-      <p>• 淘汰赛预测信心指数均≤6，建议仓位减半</p>
+      <p>• 6/30巴西vs日本: 巴西-0.5胜 → 结果2-1 <strong style="color:#4ade80">✅ 命中</strong> (马丁内利90+6绝杀)</p>
+      <p>• 6/30德国vs巴拉圭: 德国-1胜 → 结果1-1点球3-4 <strong style="color:#f87171">❌ 未中</strong> (本届最大冷门!)</p>
+      <p>• 6/30荷兰vs摩洛哥: 平局/荷兰小胜 → 结果1-1点球2-3 <strong style="color:#4ade80">✅ 命中</strong> (摩洛哥连续2届淘汰荷兰)</p>
+      <p>⚠️ 淘汰赛冷门预警: 模型正在经历重大挑战，德国/荷兰两支传统强队出局</p>
     </div>
   </div>`;
   c.innerHTML=html;

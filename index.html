@@ -88,13 +88,13 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 <div class="header">
   <div>
     <h1>⚽ 2026 美加墨世界杯 · 全景数据面板</h1>
-    <div class="subtitle">数据更新时间：2026年7月2日 14:00 (北京时间) · 1/16决赛已进行10场 · 10支球队晋级16强</div>
+    <div class="subtitle">数据更新时间：2026年7月3日 14:00 (北京时间) · 1/16决赛已进行13场 · 13支球队晋级16强</div>
   </div>
   <div class="stats-bar">
-    <div class="stat-item"><div class="num" style="color:#4ade80">42/48</div><div class="label">已完赛场次</div></div>
-    <div class="stat-item"><div class="num">152</div><div class="label">总进球数</div></div>
-    <div class="stat-item"><div class="num" style="color:#fbbf24">10/16</div><div class="label">淘汰赛进度</div></div>
-    <div class="stat-item"><div class="num">10</div><div class="label">16强球队</div></div>
+    <div class="stat-item"><div class="num" style="color:#4ade80">45/48</div><div class="label">已完赛场次</div></div>
+    <div class="stat-item"><div class="num">160</div><div class="label">总进球数</div></div>
+    <div class="stat-item"><div class="num" style="color:#fbbf24">13/16</div><div class="label">淘汰赛进度</div></div>
+    <div class="stat-item"><div class="num">13</div><div class="label">16强球队</div></div>
   </div>
 </div>
 
@@ -123,13 +123,13 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 
 <!-- Panel 1: 今日复盘 -->
 <div class="panel" id="panel1">
-  <div class="section-title">📋 7月2日 1/16决赛 · 三场预测复盘</div>
+  <div class="section-title">📋 7月3日 1/16决赛 · 三场预测复盘</div>
   <div id="reviewContainer"></div>
 </div>
 
 <!-- Panel 2: 明日预测 -->
 <div class="panel" id="panel2">
-  <div class="section-title">🔮 7月3日 1/16决赛 · 三场赔率与预测</div>
+  <div class="section-title">🔮 7月4日 1/16决赛 · 三场赔率与预测</div>
   <div id="predictionContainer"></div>
 </div>
 
@@ -242,9 +242,9 @@ const scheduleData = [
   {date:'7月2日',round:'1/16决赛',group:'KO',t1:'英格兰',t2:'刚果(金)',s1:2,s2:1,status:'finished',events:'英格兰顺利晋级，刚果(金)止步32强',time:'00:00'},
   {date:'7月2日',round:'1/16决赛',group:'KO',t1:'比利时',t2:'塞内加尔',s1:2,s2:2,status:'finished',events:'2-2平局握手言和',time:'04:00'},
   {date:'7月2日',round:'1/16决赛',group:'KO',t1:'美国',t2:'波黑',s1:2,s2:0,status:'finished',events:'美国2-0完胜晋级',time:'08:00'},
-  {date:'7月3日',round:'1/16决赛',group:'KO',t1:'西班牙',t2:'奥地利',s1:-1,s2:-1,status:'upcoming',events:'',time:'03:00'},
-  {date:'7月3日',round:'1/16决赛',group:'KO',t1:'葡萄牙',t2:'克罗地亚',s1:-1,s2:-1,status:'upcoming',events:'C罗vs莫德里奇 谢幕战',time:'07:00'},
-  {date:'7月3日',round:'1/16决赛',group:'KO',t1:'瑞士',t2:'阿尔及利亚',s1:-1,s2:-1,status:'upcoming',events:'',time:'11:00'},
+  {date:'7月3日',round:'1/16决赛',group:'KO',t1:'西班牙',t2:'奥地利',s1:3,s2:0,status:'finished',events:'36\'奥亚萨瓦尔 / 66\'波罗 / 88\'奥亚萨瓦尔梅开二度',time:'03:00'},
+  {date:'7月3日',round:'1/16决赛',group:'KO',t1:'葡萄牙',t2:'克罗地亚',s1:2,s2:1,status:'finished',events:'53\'佩里西奇 / 68\'C罗点球 / 94\'拉莫斯绝杀 魔笛谢幕',time:'07:00'},
+  {date:'7月3日',round:'1/16决赛',group:'KO',t1:'瑞士',t2:'阿尔及利亚',s1:2,s2:0,status:'finished',events:'10\'恩博洛闪击 / 46\'恩多耶远射',time:'11:00'},
   {date:'7月4日',round:'1/16决赛',group:'KO',t1:'澳大利亚',t2:'埃及',s1:-1,s2:-1,status:'upcoming',events:'萨拉赫伤缺',time:'02:00'},
   {date:'7月4日',round:'1/16决赛',group:'KO',t1:'阿根廷',t2:'佛得角',s1:-1,s2:-1,status:'upcoming',events:'',time:'06:00'},
   {date:'7月4日',round:'1/16决赛',group:'KO',t1:'哥伦比亚',t2:'加纳',s1:-1,s2:-1,status:'upcoming',events:'',time:'09:30'},
@@ -266,7 +266,7 @@ const standings = {
   L:[{t:'英格兰',w:2,d:1,l:0,gf:6,ga:2,pts:7,st:'✅头名'},{t:'克罗地亚',w:2,d:0,l:1,gf:5,ga:5,pts:6,st:'✅第二'},{t:'加纳',w:1,d:1,l:1,gf:2,ga:2,pts:4,st:'🟡最佳第3→16强'},{t:'巴拿马',w:0,d:0,l:3,gf:0,ga:4,pts:0,st:'❌'}],
 };
 
-// 今日复盘数据 (7月2日)
+// 今日复盘数据 (7月3日)
 const reviewData = [
   // 7月1日三场
   {group:'KO',t1:'科特迪瓦',t2:'挪威',s1:1,s2:2,events:'39\'努萨 / 74\'迪亚洛 / 86\'哈兰德绝杀',prediction:'科特迪瓦+0.5不败',actual:'1-2',result:'miss',reason:'哈兰德86分钟读秒绝杀，挪威2-1晋级！预测平局实际输球'},
@@ -276,57 +276,61 @@ const reviewData = [
   {group:'KO',t1:'英格兰',t2:'刚果(金)',s1:2,s2:1,events:'英格兰顺利晋级下一轮',prediction:'英格兰-1胜',actual:'2-1',result:'hit',reason:'英格兰2-1赢球晋级，让球盘推荐命中'},
   {group:'KO',t1:'比利时',t2:'塞内加尔',s1:2,s2:2,events:'双方2-2握手言和',prediction:'塞内加尔+0.5不败',actual:'2-2',result:'hit',reason:'塞内加尔2-2逼平比利时，+0.5盘口推荐命中'},
   {group:'KO',t1:'美国',t2:'波黑',s1:2,s2:0,events:'美国2-0完胜晋级',prediction:'美国-1胜',actual:'2-0',result:'hit',reason:'美国2-0零封波黑，-1让球盘完美命中'},
+  // 7月3日三场
+  {group:'KO',t1:'西班牙',t2:'奥地利',s1:3,s2:0,events:'36\'奥亚萨瓦尔 / 66\'波罗头球 / 88\'奥亚萨瓦尔梅开二度',prediction:'西班牙-1.5胜',actual:'3-0',result:'hit',reason:'奥亚萨瓦尔双响+波罗头球，西班牙3-0完胜！-1.5让球盘完美命中，比分预测精准'},
+  {group:'KO',t1:'葡萄牙',t2:'克罗地亚',s1:2,s2:1,events:'53\'佩里西奇 / 68\'C罗点球破淘汰赛球荒 / 94\'拉莫斯头球绝杀',prediction:'葡萄牙-0.5胜',actual:'2-1',result:'hit',reason:'C罗点射+拉莫斯补时绝杀，葡萄牙2-1逆转！-0.5让球盘命中，比分2-1精准'},
+  {group:'KO',t1:'瑞士',t2:'阿尔及利亚',s1:2,s2:0,events:'10\'恩博洛闪击 / 46\'恩多耶远射',prediction:'瑞士不败',actual:'2-0',result:'hit',reason:'恩博洛10分钟闪击+恩多耶远射，瑞士2-0零封！不败盘口命中，实际完胜超出预期'},
 ];
 
-// 明日预测数据 (7月3日 三场)
+// 明日预测数据 (7月4日 三场)
 const predictData = [
-  // 西班牙 vs 奥地利
-  {group:'KO',time:'03:00',t1:'西班牙',t2:'奥地利',
-   euro:{w:1.35,d:4.20,l:7.50},asian:'西班牙-1.5',total:'2.75',
-   handicap:{label:'西班牙-1.5',w:1.75,d:3.50,l:3.60},
-   prediction:'西班牙-1.5胜',score:'3-0',confidence:7,
+  // 澳大利亚 vs 埃及
+  {group:'KO',time:'02:00',t1:'澳大利亚',t2:'埃及',
+   euro:{w:3.15,d:2.60,l:2.34},asian:'埃及-0.25',total:'1.75',
+   handicap:{label:'澳大利亚+1',w:1.45,d:3.65,l:6.05},
+   prediction:'澳大利亚不败 小2.5球',score:'1-1',confidence:6,
    six:[
-     {name:'泊松分布',result:'λ西2.1 vs λ奥0.8 | 西班牙胜率82%',signal:'⭐西班牙碾压'},
-     {name:'xG模型',result:'西班牙场均2.1球 奥地利场均0.8球',signal:'⭐进攻优势明显'},
-     {name:'Elo评级',result:'西班牙FIFA第3 vs 奥地利FIFA第25',signal:'⭐实力悬殊'},
-     {name:'凯利指数',result:'西班牙胜凯利0.96 | 赔付控制得当',signal:'机构信任西班牙'},
-     {name:'亚欧赔率',result:'球半/两球盘 | 机构态度明确支持西班牙',signal:'⭐西班牙大胜'},
-     {name:'战术匹配',result:'佩德里+加维中场 vs 奥地利防守反击',signal:'西班牙控场压制'},
+     {name:'泊松分布',result:'λ澳1.32 vs λ埃0.91 | 小比分格局',signal:'进球数偏少'},
+     {name:'xG模型',result:'澳大利亚场均1.32球 埃及场均0.91球',signal:'⚠️双方进攻效率均低'},
+     {name:'Elo评级',result:'澳大利亚FIFA第24 vs 埃及FIFA第32',signal:'差距有限'},
+     {name:'凯利指数',result:'平赔2.60极低 | 市场强烈预期平局',signal:'⚠️平局概率极高'},
+     {name:'亚欧赔率',result:'平手/客让0.25 | 埃及小幅看好',signal:'势均力敌'},
+     {name:'战术匹配',result:'澳洲高空定位球 vs 埃及萨拉赫单兵反击',signal:'⚠️消耗战格局'},
    ],
-   mediaConsensus:'西班牙胜(8/10媒体)',
-   analysis:'信心7/10。西班牙小组赛全胜零失球，场均进球2+，传控体系成熟稳健。奥地利小组赛低开高走，表现起伏。西班牙整体实力占优，预测3-0大胜晋级。'},
+   mediaConsensus:'澳大利亚不败(6/10媒体) 平局概率高',
+   analysis:'⚠️信心6/10。澳大利亚身体对抗+高空优势突出，定位球是核心得分手段。埃及萨拉赫末轮受伤状态存疑，若缺阵进攻上限大幅降低。大小球1.75为历史最低，市场强烈预期小比分。首选1-1平局进入加时，次选澳大利亚1-0小胜。'},
   
-  // 葡萄牙 vs 克罗地亚
-  {group:'KO',time:'07:00',t1:'葡萄牙',t2:'克罗地亚',
-   euro:{w:1.65,d:3.40,l:4.50},asian:'葡萄牙-0.75',total:'2.5',
-   handicap:{label:'葡萄牙-0.5/1',w:1.82,d:3.30,l:3.65},
-   prediction:'葡萄牙-0.5胜',score:'2-1',confidence:6,
+  // 阿根廷 vs 佛得角
+  {group:'KO',time:'06:00',t1:'阿根廷',t2:'佛得角',
+   euro:{w:1.12,d:6.50,l:15.0},asian:'阿根廷-2',total:'2.5',
+   handicap:{label:'阿根廷-2',w:2.22,d:3.62,l:2.45},
+   prediction:'阿根廷-2胜',score:'3-0',confidence:7,
    six:[
-     {name:'泊松分布',result:'λ葡1.7 vs λ克1.2 | 葡萄牙胜率58%',signal:'⭐葡萄牙占优'},
-     {name:'xG模型',result:'葡萄牙场均1.7球 克罗地亚场均1.2球',signal:'葡萄牙略优'},
-     {name:'Elo评级',result:'葡萄牙FIFA第8 vs 克罗地亚FIFA第12',signal:'差距有限'},
-     {name:'凯利指数',result:'平赔凯利0.86 | 防范平局风险',signal:'⚠️平局不可忽视'},
-     {name:'亚欧赔率',result:'半球盘 | 机构态度谨慎',signal:'⚠️谨慎看好葡萄牙'},
-     {name:'战术匹配',result:'C罗vs莫德里奇 黄金一代谢幕战',signal:'⚠️双方实力接近'},
+     {name:'泊松分布',result:'λ阿2.18 vs λ佛0.47 | 阿根廷胜率78.4%',signal:'⭐实力断层差距'},
+     {name:'xG模型',result:'阿根廷场均2.18球 佛得角场均0.47球',signal:'⭐碾压级别'},
+     {name:'Elo评级',result:'阿根廷FIFA第1 vs 佛得角FIFA第62',signal:'⭐历史级差距'},
+     {name:'凯利指数',result:'阿根廷胜凯利0.98 | 机构极度信任',signal:'⭐无悬念'},
+     {name:'亚欧赔率',result:'让2球 | 机构态度坚决支持阿根廷',signal:'⭐阿根廷大胜'},
+     {name:'战术匹配',result:'梅西+劳塔罗+阿尔瓦雷斯 vs 佛得角5-4-1铁桶阵',signal:'阿根廷多点进攻破密防'},
    ],
-   mediaConsensus:'葡萄牙胜(6/10媒体) 但克罗地亚不可低估',
-   analysis:'⚠️信心6/10。葡萄牙C罗领衔，淘汰赛首轮发挥不稳定。克罗地亚莫德里奇领衔，老将经验丰厚。C罗vs莫德里奇成为本届世界杯经典对决。首选2-1葡萄牙胜，防冷1-1平局。'},
+   mediaConsensus:'阿根廷胜(10/10媒体) 净胜2球+',
+   analysis:'信心7/10。梅西本届已斩获6球位居射手榜首位，小组赛三战全胜。佛得角三连平出线创历史，但全队身价仅为阿根廷1/20。Opta预测阿根廷晋级概率89.6%，常规时间胜率78.4%。佛得角大巴防守顽强，但硬实力差距巨大。预测3-0阿根廷大胜晋级。'},
   
-  // 瑞士 vs 阿尔及利亚
-  {group:'KO',time:'11:00',t1:'瑞士',t2:'阿尔及利亚',
-   euro:{w:2.10,d:2.85,l:3.30},asian:'瑞士-0.25',total:'2.25',
-   handicap:{label:'瑞士-0',w:1.88,d:3.20,l:3.50},
-   prediction:'瑞士不败',score:'1-1',confidence:5,
+  // 哥伦比亚 vs 加纳
+  {group:'KO',time:'09:30',t1:'哥伦比亚',t2:'加纳',
+   euro:{w:1.32,d:4.00,l:8.20},asian:'哥伦比亚-1',total:'2.25',
+   handicap:{label:'哥伦比亚-1',w:2.23,d:3.15,l:2.75},
+   prediction:'哥伦比亚-1胜',score:'2-0',confidence:7,
    six:[
-     {name:'泊松分布',result:'λ瑞1.4 vs λ阿1.1 | 瑞士胜率52%',signal:'势均力敌'},
-     {name:'xG模型',result:'瑞士场均1.4球 阿尔及利亚场均1.1球',signal:'瑞士略优'},
-     {name:'Elo评级',result:'瑞士FIFA第14 vs 阿尔及利亚FIFA第30',signal:'瑞士排名占优'},
-     {name:'凯利指数',result:'客胜凯利偏高 | 机构防范平局',signal:'⚠️平局高概率'},
-     {name:'亚欧赔率',result:'平手盘 | 机构态度模糊',signal:'⚠️难以判断'},
-     {name:'战术匹配',result:'瑞士稳健防守 vs 阿尔及利亚快速反击',signal:'⚠️防守对决'},
+     {name:'泊松分布',result:'λ哥1.46 vs λ加0.85 | 哥伦比亚胜率52.3%',signal:'⭐哥伦比亚占优'},
+     {name:'xG模型',result:'哥伦比亚场均1.46球 加纳场均0.85球',signal:'哥伦比亚进攻更稳'},
+     {name:'Elo评级',result:'哥伦比亚FIFA第12 vs 加纳FIFA第58',signal:'⭐实力差距明显'},
+     {name:'凯利指数',result:'哥伦比亚胜赔1.32极低 | 机构一边倒',signal:'⭐机构力挺'},
+     {name:'亚欧赔率',result:'让1球盘 | 机构态度明确',signal:'⭐哥伦比亚赢球'},
+     {name:'战术匹配',result:'J罗+迪亚斯冲击 vs 加纳高速反击',signal:'哥伦比亚控制节奏'},
    ],
-   mediaConsensus:'瑞士不败(5/10媒体)',
-   analysis:'⚠️信心5/10。瑞士小组赛表现出色，稳健防守是其最大优势。阿尔及利亚首次晋级淘汰赛，缺乏经验但斗志高昂。本场预测瑞士不败，首选1-1平局，次选瑞士小胜。'},
+   mediaConsensus:'哥伦比亚胜(9/10媒体)',
+   analysis:'信心7/10。哥伦比亚小组赛2胜1平头名出线，连续2场零封防线稳固。J罗和路易斯·迪亚斯状态出色。加纳核心库杜斯因伤缺阵，进攻手段有限。Opta预测哥伦比亚晋级概率67.9%。预测2-0哥伦比亚稳健晋级。'},
 ];
 
 // Model performance data
@@ -342,8 +346,9 @@ const modelData = {
     {date:'6月30日',hits:2,total:3,rate:66.7},
     {date:'7月1日',hits:1,total:3,rate:33.3},
     {date:'7月2日',hits:3,total:3,rate:100},
+    {date:'7月3日',hits:3,total:3,rate:100},
   ],
-  totalHits:23,totalMatches:42,totalRate:54.8
+  totalHits:26,totalMatches:45,totalRate:57.8
 };
 
 // Bracket data
@@ -357,12 +362,12 @@ const bracketData = [
   {time:'7/01 05:00',t1:'法国',t2:'瑞典',venue:'纽约',result:'3-0',winner:'法国',status:'finished'},
   {time:'7/01 10:00',t1:'墨西哥',t2:'厄瓜多尔',venue:'墨西哥城',result:'2-0',winner:'墨西哥',status:'finished'},
   {time:'7/02 00:00',t1:'英格兰',t2:'刚果(金)',venue:'亚特兰大',result:'2-1',winner:'英格兰',status:'finished'},
-  {time:'7/02 04:00',t1:'比利时',t2:'塞内加尔',venue:'西雅图',result:'2-2',winner:null,status:'finished'},
+  {time:'7/02 04:00',t1:'比利时',t2:'塞内加尔',venue:'西雅图',result:'2-2',winner:'比利时',status:'finished'},
   {time:'7/02 08:00',t1:'美国',t2:'波黑',venue:'旧金山',result:'2-0',winner:'美国',status:'finished'},
   // 7/3待赛
-  {time:'7/03 03:00',t1:'西班牙',t2:'奥地利',venue:'洛杉矶',winner:null,status:'upcoming'},
-  {time:'7/03 07:00',t1:'葡萄牙',t2:'克罗地亚',venue:'多伦多',winner:null,status:'upcoming'},
-  {time:'7/03 11:00',t1:'瑞士',t2:'阿尔及利亚',venue:'温哥华',winner:null,status:'upcoming'},
+  {time:'7/03 03:00',t1:'西班牙',t2:'奥地利',venue:'洛杉矶',result:'3-0',winner:'西班牙',status:'finished'},
+  {time:'7/03 07:00',t1:'葡萄牙',t2:'克罗地亚',venue:'多伦多',result:'2-1',winner:'葡萄牙',status:'finished'},
+  {time:'7/03 11:00',t1:'瑞士',t2:'阿尔及利亚',venue:'温哥华',result:'2-0',winner:'瑞士',status:'finished'},
   {time:'7/04 02:00',t1:'澳大利亚',t2:'埃及',venue:'达拉斯',winner:null,status:'upcoming'},
   {time:'7/04 06:00',t1:'阿根廷',t2:'佛得角',venue:'迈阿密',winner:null,status:'upcoming'},
   {time:'7/04 09:30',t1:'哥伦比亚',t2:'加纳',venue:'堪萨斯城',winner:null,status:'upcoming'},
@@ -422,7 +427,7 @@ function renderReview(){
     <div class="model-stat-item"><div class="msi-num" style="color:#4ade80">54.8%</div><div class="msi-label">模型胜率</div></div>
   </div>
   <div style="background:#1a3a2a;border:1px solid #2a5a2a;border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px">
-    📊 <strong>7月2日复盘:</strong> 英格兰2-1刚果晋级、比利时2-2塞内加尔平局晋级、美国2-0波黑完胜晋级。三场均命中！
+    📊 <strong>7月3日复盘:</strong> 西班牙3-0奥亚萨瓦尔双响、葡萄牙2-1拉莫斯补时绝杀、瑞士2-0恩博洛闪击。三场全中3/3=100%！
   </div>`;
   reviewData.forEach(r=>{
     const cls = r.result==='hit' ? 'review-hit' : 'review-miss';
@@ -449,7 +454,7 @@ function renderPredictions(){
   
   // Summary table
   html+=`<div class="card" style="margin-bottom:20px">
-    <div class="card-title">📋 7月3日 三场推荐速览</div>
+    <div class="card-title">📋 7月4日 三场推荐速览</div>
     <div style="overflow-x:auto"><table class="group-table">
       <tr><th>场次</th><th>让球推荐</th><th>大小球</th><th>波胆</th><th>信心</th></tr>
       <tr><td style="text-align:left;font-weight:600">🇪🇸 西班牙 vs 奥地利 🇦🇹</td><td style="color:#4ade80">西班牙-1.5胜</td><td>大2.75</td><td style="color:#fbbf24;font-weight:700">3-0</td><td style="color:#4ade80;font-weight:700">7/10</td></tr>

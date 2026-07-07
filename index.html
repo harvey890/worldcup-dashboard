@@ -88,20 +88,20 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 <div class="header">
   <div>
     <h1>⚽ 2026 美加墨世界杯 · 全景数据面板</h1>
-    <div class="subtitle">数据更新时间：2026年7月6日 14:00 (北京时间) · 1/8决赛第2日完赛 · 挪威淘汰巴西!英格兰十人破墨 · 8强对阵: 挪威vs英格兰 | 摩洛哥vs法国</div>
+    <div class="subtitle">数据更新时间：2026年7月7日 14:00 (北京时间) · 1/8决赛第3日完赛 · 西班牙绝杀葡萄牙(C罗告别) · 比利时4-1美国(三东道主全出局!) · 8强: 摩洛哥/法国/挪威/英格兰/西班牙/比利时</div>
   </div>
   <div class="stats-bar">
-    <div class="stat-item"><div class="num" style="color:#4ade80">68/68</div><div class="label">已完赛场次</div></div>
-    <div class="stat-item"><div class="num">179</div><div class="label">总进球数</div></div>
-    <div class="stat-item"><div class="num" style="color:#fbbf24">4/8</div><div class="label">8强已产生</div></div>
-    <div class="stat-item"><div class="num">4</div><div class="label">待争8强席位</div></div>
+    <div class="stat-item"><div class="num" style="color:#4ade80">70</div><div class="label">已完赛场次</div></div>
+    <div class="stat-item"><div class="num">185</div><div class="label">总进球数</div></div>
+    <div class="stat-item"><div class="num" style="color:#fbbf24">6/8</div><div class="label">8强已产生</div></div>
+    <div class="stat-item"><div class="num">2</div><div class="label">待争8强席位</div></div>
   </div>
 </div>
 
 <div class="tabs">
   <div class="tab active" onclick="switchTab(0)">📅 赛程总览</div>
-  <div class="tab" onclick="switchTab(1)">✅ 7/6复盘</div>
-  <div class="tab" onclick="switchTab(2)">🔮 7/7预测</div>
+  <div class="tab" onclick="switchTab(1)">✅ 7/7复盘</div>
+  <div class="tab" onclick="switchTab(2)">🔮 7/8预测</div>
   <div class="tab" onclick="switchTab(3)">📊 积分榜</div>
   <div class="tab" onclick="switchTab(4)">🏆 淘汰赛对阵</div>
   <div class="tab" onclick="switchTab(5)">📈 模型表现</div>
@@ -123,13 +123,13 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 
 <!-- Panel 1: 今日复盘 -->
 <div class="panel" id="panel1">
-  <div class="section-title">📋 7月5-6日 1/8决赛 · 四场预测复盘</div>
+  <div class="section-title">📋 7月7日 1/8决赛 · 两场预测复盘</div>
   <div id="reviewContainer"></div>
 </div>
 
 <!-- Panel 2: 明日预测 -->
 <div class="panel" id="panel2">
-  <div class="section-title">🔮 7月7日 1/8决赛 · 两场赔率与预测</div>
+  <div class="section-title">🔮 7月8日 1/8决赛 · 两场赔率与预测</div>
   <div id="predictionContainer"></div>
 </div>
 
@@ -141,7 +141,7 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 
 <!-- Panel 4: 淘汰赛 -->
 <div class="panel" id="panel4">
-  <div class="section-title">🏆 1/8决赛对阵 (7.5-7.8) · 4场已完赛 · 4场待战</div>
+  <div class="section-title">🏆 1/8决赛对阵 (7.5-7.8) · 6场已完赛 · 2场待战</div>
   <div id="bracketContainer"></div>
 </div>
 
@@ -251,6 +251,10 @@ const scheduleData = [
   // 1/8决赛
   {date:'7月5日',round:'1/8决赛',group:'KO16',t1:'加拿大',t2:'摩洛哥',s1:0,s2:3,status:'finished',events:'50\'乌纳希(阿什拉夫助攻) / 82\'乌纳希梅开二度(迪亚斯助攻) / 90+8\'拉希米(迪亚斯助攻) 全场8黄牌',time:'01:00'},
   {date:'7月5日',round:'1/8决赛',group:'KO16',t1:'巴拉圭',t2:'法国',s1:0,s2:1,status:'finished',events:'70\'姆巴佩点球(杜埃造点) 巴拉圭13犯规0黄牌引争议 体感温度超40°C',time:'05:00'},
+  {date:'7月6日',round:'1/8决赛',group:'KO16',t1:'巴西',t2:'挪威',s1:1,s2:2,status:'finished',events:'80\'哈兰德头球 / 90\'哈兰德直射双响 / 90+10\'内马尔点球 哈兰德7球领跑射手榜 内马尔泪洒赛场',time:'04:00'},
+  {date:'7月6日',round:'1/8决赛',group:'KO16',t1:'墨西哥',t2:'英格兰',s1:2,s2:3,status:'finished',events:'36\'38\'贝林厄姆98秒双响 / 42\'基尼奥内斯 / 53\'宽萨红牌 / 58\'凯恩点球 / 65\'希门尼斯点球 十人英格兰破阿兹特克不败',time:'08:00'},
+  {date:'7月7日',round:'1/8决赛',group:'KO16',t1:'葡萄牙',t2:'西班牙',s1:0,s2:1,status:'finished',events:'91\'梅里诺绝杀(费兰·托雷斯助攻) C罗第六次世界杯之旅结束 西班牙连续6场零封创历史',time:'03:00'},
+  {date:'7月7日',round:'1/8决赛',group:'KO16',t1:'美国',t2:'比利时',s1:1,s2:4,status:'finished',events:'9\'33\'德凯特拉雷双响 / 31\'蒂尔曼任意球 / 57\'范纳肯(美国门将失误) / 90+3\'卢卡库 三东道主全部出局!',time:'08:00'},
 ];
 
 // Standings data (小组赛最终)
@@ -271,46 +275,44 @@ const standings = {
 
 // 今日复盘数据 (7月5日 1/8决赛)
 const reviewData = [
-  // 7月5-6日四场
-  {group:'KO16',t1:'加拿大',t2:'摩洛哥',s1:0,s2:3,events:'50\'乌纳希(阿什拉夫助攻) / 82\'乌纳希梅开二度(迪亚斯助攻) / 90+8\'拉希米推射破门',prediction:'摩洛哥不败(-0.5)',actual:'0-3',result:'hit',reason:'摩洛哥3-0完胜加拿大！乌纳希双响+拉希米补时破门，-0.5盘口完美命中。加拿大成为首支被淘汰的东道主'},
-  {group:'KO16',t1:'巴拉圭',t2:'法国',s1:0,s2:1,events:'70\'姆巴佩点球(杜埃61分钟替补登场造点)',prediction:'法国-1.5胜',actual:'0-1',result:'miss',reason:'法国仅1-0小胜！姆巴佩点球制胜但未能覆盖-1.5让球盘。巴拉圭铁桶阵+高温消耗'},
-  {group:'KO16',t1:'巴西',t2:'挪威',s1:1,s2:2,events:'80\'哈兰德头球 / 90\'哈兰德直射双响 / 90+10\'内马尔点球 哈兰德7球领跑射手榜 内马尔泪洒赛场',prediction:'巴西不败 防平',actual:'1-2',result:'miss',reason:'挪威爆冷淘汰巴西！哈兰德第80+90分钟连入两球完成绝杀。90分钟补时第10分钟内马尔点球扳回一球为时已晚。巴西自1990年以来首次止步16强'},
-  {group:'KO16',t1:'墨西哥',t2:'英格兰',s1:2,s2:3,events:'36\'38\'贝林厄姆98秒双响 / 42\'基尼奥内斯 / 53\'宽萨红牌 / 58\'凯恩点球 / 65\'希门尼斯点球 十人英格兰破阿兹特克不败',prediction:'墨西哥受让不败(+1)',actual:'2-3',result:'hit',reason:'英格兰3-2险胜！贝林厄姆98秒完成世界杯最快梅开二度。十人应战后凯恩点球扩大优势。虽然宽萨红牌+希门尼斯点球让比赛悬念重生，英格兰最终守住胜利。推荐墨西哥受让+1命中(1球差距)'},
+  // 7月7日两场
+  {group:'KO16',t1:'葡萄牙',t2:'西班牙',s1:0,s2:1,events:'91\'梅里诺绝杀(费兰·托雷斯直塞) C罗赛后落泪告别世界杯 西班牙连续6场零封创世界杯历史',prediction:'葡萄牙受让不败(+1)',actual:'0-1',result:'miss',reason:'西班牙补时绝杀! 91分钟梅里诺单刀推射破门。葡萄牙受让+1走盘(0-1+1=平局推回),但推荐方向未明确命中。C罗全场3射0正,第56分钟门德斯伤退打乱部署。西班牙乌奈·西蒙延续零封纪录。伊比利亚德比以最小比分收场'},
+  {group:'KO16',t1:'美国',t2:'比利时',s1:1,s2:4,events:'9\'33\'德凯特拉雷双响 / 31\'蒂尔曼任意球扳平 / 57\'范纳肯(弗里兹出击失误空门) / 90+3\'卢卡库锁定胜局 巴洛贡红牌特赦首发仍未救主',prediction:'美国不败(主让平半)',actual:'1-4',result:'miss',reason:'比利时4-1大胜! 东道主惨败。德凯特拉雷9分钟闪击+33分钟头球双响,美国门将57分钟致命失误送礼。巴洛贡虽获FIFA特赦首发但毫无建树。美国成为继加拿大、墨西哥后第三支出局的东道主。推荐美国不败方向完全错误'},
 ];
 
 // 明日预测数据 (7月6日 1/8决赛 两场)
 const predictData = [
-  // 葡萄牙 vs 西班牙 (1/8决赛 伊比利亚德比)
-  {group:'R16',time:'7/7 03:00',t1:'葡萄牙',t2:'西班牙',
-   euro:{w:3.83,d:3.30,l:1.77},asian:'西班牙-0.5',total:'2.5',
-   handicap:{label:'葡萄牙+1',w:1.62,d:3.40,l:5.50},
-   prediction:'葡萄牙受让不败(+1)',score:'1-1',confidence:6,
+  // 阿根廷 vs 埃及 (1/8决赛)
+  {group:'R16',time:'7/8 00:00',t1:'阿根廷',t2:'埃及',
+   euro:{w:1.23,d:5.20,l:11.00},asian:'阿根廷-1.25',total:'2.5',
+   handicap:{label:'阿根廷-1.5',w:2.10,d:3.20,l:3.40},
+   prediction:'阿根廷胜(-1.25)',score:'2-0',confidence:6,
    six:[
-     {name:'泊松分布',result:'λ葡0.85 vs λ西1.10 | 西班牙胜率45% 平局30%',signal:'⚠️平局概率最高'},
-     {name:'xG模型',result:'西班牙xG7.93仅进5球 攻坚转化率低 葡萄牙反击xG高',signal:'⚠️西班牙攻坚堪忧'},
-     {name:'Elo评级',result:'西班牙FIFA第1 葡萄牙第6 | 身价10.2亿vs8.5亿',signal:'⭐西班牙纸面优势'},
-     {name:'凯利指数',result:'主胜3.83偏高 机构对西班牙信心不足 资金偏葡萄牙',signal:'⭐葡萄牙受让价值'},
-     {name:'亚欧赔率',result:'西班牙让0.5浅盘 近7次交手6平 | 1-1赔率最低5.85',signal:'⭐平局信号强烈'},
-     {name:'战术匹配',result:'西班牙传控(控球69%) vs 葡萄牙防反+莱奥爆点 近6年葡不败',signal:'⭐葡萄牙心理优势'},
+     {name:'泊松分布',result:'λ阿2.10 vs λ埃0.55 | 阿根廷胜率68% 平局19%',signal:'⭐阿根廷碾压'},
+     {name:'xG模型',result:'阿根廷xG场均2.50 梅西7球状态火热 埃及xG仅0.85',signal:'⭐阿根廷进攻火力足'},
+     {name:'Elo评级',result:'阿根廷FIFA第1 埃及第24 | 身价8亿vs1.2亿',signal:'⭐绝对实力碾压'},
+     {name:'凯利指数',result:'初盘1.5退至1.25 | 11家机构上调胜赔 机构降温大胜预期',signal:'⚠️退盘信号警惕'},
+     {name:'亚欧赔率',result:'亚盘从1.5退1.25 大小球从2.5降2.25 | 80%资金买主胜但赔率反升',signal:'⚠️诱盘风险'},
+     {name:'战术匹配',result:'阿根廷传控64% vs 埃及541铁桶阵 1/16对佛得角26射仅3-2加时 破密集防守堪忧',signal:'⚠️铁桶阵克制传控'},
    ],
-   mediaConsensus:'西班牙略被看好但平局概率极高 小比分格局',
-   analysis:'⚠️信心6/10。伊比利亚德比！西班牙四战零封(乌奈·西蒙519分钟不失球)vs葡萄牙近6年不败西班牙(2025欧国联决赛点球胜)。C罗41岁体能vs亚马尔18岁爆发力。葡萄牙1/16鏖战120分钟体能堪忧，但西班牙也需长途跋涉2000km。尼科·威廉姆斯伤缺影响西班牙左路。1-1平局赔率最低(5.85)，近7次交手6场平局。推荐葡萄牙受让不败(+1)，总进球≤2.5。加时/点球概率35%。'},
+   mediaConsensus:'阿根廷大热但机构退盘降温 冷门概率42%为本轮最高 萨拉赫反击是最大变量',
+   analysis:'⚠️信心6/10。卫冕冠军vs非洲黑马! 梅西7球状态火热(连续8场世界杯进球),但1/16对佛得角暴露破密集防守短板(26射90分钟未破,加时3-2)。埃及541铁桶阵是佛得角升级版(中场身高1.82m+),萨拉赫反击威胁极大。关键信号: 亚盘从1.5退至1.25(11家同步),大小球降至2.25,80%资金买主胜但赔率反升(典型机构对冲)。1/16佛得角把阿根廷逼到加时,埃及防守硬度只高不低。推荐阿根廷胜但谨慎追深盘,首选2-0,防冷1-1。萨拉赫体能透支(连续4场打满)是埃及唯一隐患。'},
 
-  // 美国 vs 比利时 (1/8决赛)
-  {group:'R16',time:'7/7 08:00',t1:'美国',t2:'比利时',
-   euro:{w:2.60,d:3.10,l:2.75},asian:'美国-0.25',total:'2.5',
-   handicap:{label:'美国-0.5',w:2.80,d:3.00,l:2.55},
-   prediction:'美国不败(主让平半)',score:'2-1',confidence:5,
+  // 瑞士 vs 哥伦比亚 (1/8决赛)
+  {group:'R16',time:'7/8 04:00',t1:'瑞士',t2:'哥伦比亚',
+   euro:{w:2.98,d:2.85,l:2.26},asian:'平手盘 哥伦比亚-0.125',total:'2.25',
+   handicap:{label:'哥伦比亚-0.5',w:2.60,d:3.00,l:2.80},
+   prediction:'平局 防瑞士不败',score:'1-1',confidence:5,
    six:[
-     {name:'泊松分布',result:'λ美1.20 vs λ比1.00 | 美国胜率42% 平局28%',signal:'⭐主场优势明显'},
-     {name:'xG模型',result:'美国小组赛xG场均1.80 比利时xG偏高但1/16体能透支',signal:'⭐美国体能充沛'},
-     {name:'Elo评级',result:'美国FIFA第16 比利时第11 | 身价3.2亿vs5.5亿',signal:'⚠️纸面差距存在'},
-     {name:'凯利指数',result:'平手盘→美让0.25 | 机构倾向东道主 但信心不坚定',signal:'⚠️信心不足'},
-     {name:'亚欧赔率',result:'大小球2.5 机构压小球 | 比利时1/16踢满120分钟',signal:'⭐体能是关键变量'},
-     {name:'战术匹配',result:'美国高位逼抢+普利西奇速度 vs 比利时德布劳内+卢卡库 巴洛贡停赛',signal:'⚠️巴洛贡停赛削弱美国'},
+     {name:'泊松分布',result:'λ瑞0.95 vs λ哥1.05 | 平局42% 瑞士38% 哥伦比亚20%',signal:'⭐平局概率最高'},
+     {name:'xG模型',result:'瑞士xG场均1.80 哥伦比亚xG场均1.45 哥伦比亚主力中锋伤缺',signal:'⭐哥进攻受损'},
+     {name:'Elo评级',result:'瑞士FIFA第15 哥伦比亚第13 | 身价3.33亿vs3.02亿',signal:'⚠️旗鼓相当'},
+     {name:'凯利指数',result:'平赔2.85最低区间 客胜凯利偏高 | 15家机构下调平赔4%',signal:'⭐平局赔付压力最小'},
+     {name:'亚欧赔率',result:'平手/平半盘 小球2.25 | 大小球后市走低 机构看好小比分',signal:'⭐小球+平局'},
+     {name:'战术匹配',result:'瑞士铁血防守(4场失3球) vs 哥伦比亚边路爆点迪亚斯 哥伦比亚主力中锋科尔多瓦伤缺 历史2次哥全胜',signal:'⚠️交锋哥占优但缺中锋'},
    ],
-   mediaConsensus:'比利时账面略优 但美国东道主+体能优势不可小觑',
-   analysis:'⚠️信心5/10。极度胶着场次。美国巴洛贡停赛(1/16红牌)失去核心支点，但体能充沛(1/16十人2-0省力)。比利时1/16让二追三塞内加尔踢满120分钟+读秒点球，体能消耗巨大。德布劳内34岁+卢卡库31岁60分钟后断崖。库尔图瓦未入选门将位置是隐患。美国普利西奇+蒂尔曼边路速度专打比利时老化边卫。推荐美国不败方向(让平半)，首选2-1。60分钟后是美国体能窗口。'},
+   mediaConsensus:'平局为核心基调 小球格局确定 瑞士体能优势(留守温哥华)是隐藏利好 1-1最高概率比分',
+   analysis:'⚠️信心5/10。技术型胶着战! 瑞士连续在温哥华作战无需奔波(体能碾压),哥伦比亚跨区飞行体能劣势。关键变量: 哥伦比亚主力中锋科尔多瓦伤缺(对加纳开场8分钟大腿拉伤),锋线支点缺失进攻打折。瑞士扎卡+弗罗伊勒双后腰专克J罗传球线路。历史2次交手哥伦比亚全胜但最近一次是2007年。瑞士连续三届止步16强心理包袱 vs 已打破88年淘汰赛不胜魔咒信心大增。平局42%为本场最高概率,首选1-1。若分胜负大概率1球差距。加时/点球概率40%+。推荐平局方向+小2.5球。'},
 ];
 
 // Model performance data
@@ -330,8 +332,9 @@ const modelData = {
     {date:'7月4日',hits:2,total:3,rate:66.7},
     {date:'7月5日',hits:1,total:2,rate:50},
     {date:'7月6日',hits:2,total:2,rate:100},
+    {date:'7月7日',hits:0,total:2,rate:0},
   ],
-  totalHits:31,totalMatches:52,totalRate:59.6
+  totalHits:31,totalMatches:54,totalRate:57.4
 };
 
 // Bracket data
@@ -341,8 +344,8 @@ const bracketData = [
   {time:'7/05 05:00',t1:'巴拉圭',t2:'法国',venue:'费城',winner:'法国',result:'0-1',status:'finished'},
   {time:'7/06 04:00',t1:'巴西',t2:'挪威',venue:'纽约',winner:'挪威',result:'1-2',status:'finished'},
   {time:'7/06 08:00',t1:'墨西哥',t2:'英格兰',venue:'墨西哥城',winner:'英格兰',result:'2-3',status:'finished'},
-  {time:'7/07 03:00',t1:'葡萄牙',t2:'西班牙',venue:'达拉斯',winner:null,status:'upcoming'},
-  {time:'7/07 08:00',t1:'美国',t2:'比利时',venue:'西雅图',winner:null,status:'upcoming'},
+  {time:'7/07 03:00',t1:'葡萄牙',t2:'西班牙',venue:'达拉斯',winner:'西班牙',result:'0-1',status:'finished'},
+  {time:'7/07 08:00',t1:'美国',t2:'比利时',venue:'西雅图',winner:'比利时',result:'1-4',status:'finished'},
   {time:'7/08 00:00',t1:'阿根廷',t2:'埃及',venue:'亚特兰大',winner:null,status:'upcoming'},
   {time:'7/08 04:00',t1:'瑞士',t2:'哥伦比亚',venue:'温哥华',winner:null,status:'upcoming'},
 ];
@@ -395,14 +398,15 @@ function renderSchedule(filter='all'){
 function renderReview(){
   const c=document.getElementById('reviewContainer');
   let html=`<div class="model-stat">
-    <div class="model-stat-item"><div class="msi-num" style="color:#fbbf24">2/2</div><div class="msi-label">今日命中</div></div>
+    <div class="model-stat-item"><div class="msi-num" style="color:#f87171">0/2</div><div class="msi-label">今日命中</div></div>
     <div class="model-stat-item"><div class="msi-num" style="color:#fbbf24">${modelData.totalHits}/${modelData.totalMatches}</div><div class="msi-label">累计命中</div></div>
     <div class="model-stat-item"><div class="msi-num" style="color:#00d4ff">${modelData.totalRate}%</div><div class="msi-label">累计命中率</div></div>
-    <div class="model-stat-item"><div class="msi-num" style="color:#4ade80">59.6%</div><div class="msi-label">模型胜率</div></div>
+    <div class="model-stat-item"><div class="msi-num" style="color:#f87171">0%</div><div class="msi-label">今日命中率</div></div>
   </div>
   <div style="background:#1a2a3a;border:1px solid #2a4a5a;border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px">
-    📊 <strong>7月5-6日复盘:</strong> 1/8决赛4场已完赛！🔥 挪威2-1爆冷淘汰巴西(哈兰德80'+90'双响!内马尔90+10'点球为时已晚)，英格兰3-2十人破墨(贝林厄姆98秒最快双响+凯恩点射，宽萨红牌后仍守住胜利)。摩洛哥&法国&挪威&英格兰率先晋级8强！<br>
-    🏆 <strong>8强对阵:</strong> 摩洛哥vs法国(7/10) | 挪威vs英格兰(7/11) | 剩余4席待7/7-7/8产生
+    📊 <strong>7月7日复盘:</strong> 1/8决赛第3日2场完赛！🔥 西班牙91分钟绝杀葡萄牙(梅里诺补时单刀,C罗含泪告别第六次世界杯之旅,西班牙6场零封创历史)。比利时4-1大胜美国(德凯特拉雷双响+范纳肯空门+卢卡库补时,三东道主全部出局!)。<br>
+    🏆 <strong>8强已确定6席:</strong> 摩洛哥/法国/挪威/英格兰/西班牙/比利时<br>
+    📋 <strong>1/4决赛对阵:</strong> 摩洛哥vs法国 | 挪威vs英格兰 | 西班牙vs比利时 | 待7/8产生最后1席
   </div>`;
   reviewData.forEach(r=>{
     const cls = r.result==='hit' ? 'review-hit' : 'review-miss';
@@ -423,18 +427,18 @@ function renderReview(){
 function renderPredictions(){
   const c=document.getElementById('predictionContainer');
   let html=`<div style="background:#1a2a3a;border:1px solid #2a4a6a;border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px">
-    🏆 <strong>1/8决赛第3日！</strong> 8强已产生4席:摩洛哥/法国/挪威/英格兰。模型累计31/52=59.6%。<br>
-    ⚠️ <strong>风险提示:</strong> 凯利模型连续失效期，淘汰赛冷门频发。单场仓位≤15%，总仓位≤30%。<br>
+    🏆 <strong>1/8决赛收官日！</strong> 8强已产生6席:摩洛哥/法国/挪威/英格兰/西班牙/比利时。模型累计31/54=57.4%。<br>
+    ⚠️ <strong>风险提示:</strong> 凯利模型连续失效期，今日0/2全失。淘汰赛冷门频发，单场仓位≤15%，总仓位≤30%。<br>
     📊 <strong>方法论:</strong> 泊松分布(λ预期进球) · xG(射门质量模型) · Elo(实力评级) · 凯利指数(价值投注) · 亚欧赔率(机构意图) · 战术匹配(定性修正)
   </div>`;
   
   // Summary table
   html+=`<div class="card" style="margin-bottom:20px">
-    <div class="card-title">📋 7月7日 1/8决赛 两场推荐速览</div>
+    <div class="card-title">📋 7月8日 1/8决赛 两场推荐速览</div>
     <div style="overflow-x:auto"><table class="group-table">
       <tr><th>场次</th><th>让球推荐</th><th>大小球</th><th>波胆</th><th>信心</th></tr>
-      <tr><td style="text-align:left;font-weight:600">🇵🇹 葡萄牙 vs 西班牙 🇪🇸 🔥</td><td style="color:#fbbf24">葡萄牙受让不败(+1)</td><td>小2.5</td><td style="color:#fbbf24;font-weight:700">1-1</td><td style="color:#fbbf24;font-weight:700">6/10⚠️</td></tr>
-      <tr><td style="text-align:left;font-weight:600">🇺🇸 美国 vs 比利时 🇧🇪</td><td style="color:#fbbf24">美国不败(主让平半)</td><td>小2.5</td><td style="color:#fbbf24;font-weight:700">2-1</td><td style="color:#f87171;font-weight:700">5/10⚠️</td></tr>
+      <tr><td style="text-align:left;font-weight:600">🇦🇷 阿根廷 vs 埃及 🇪🇬 🔥</td><td style="color:#fbbf24">阿根廷胜(-1.25)</td><td>小2.5</td><td style="color:#fbbf24;font-weight:700">2-0</td><td style="color:#fbbf24;font-weight:700">6/10⚠️</td></tr>
+      <tr><td style="text-align:left;font-weight:600">🇨🇭 瑞士 vs 哥伦比亚 🇨🇴</td><td style="color:#fbbf24">平局 防瑞士不败</td><td>小2.25</td><td style="color:#fbbf24;font-weight:700">1-1</td><td style="color:#f87171;font-weight:700">5/10⚠️</td></tr>
     </table></div></div>`;
   
   // Detail cards
@@ -515,16 +519,16 @@ function renderStandings(){
 function renderBracket(){
   const c=document.getElementById('bracketContainer');
   let html=`<div style="margin-bottom:16px;font-size:13px;color:#8892b0">
-    🏆 <strong style="color:#4ade80">8强争夺战！</strong> 4队已晋级:摩洛哥/法国/挪威/英格兰<br>
-    <strong style="color:#e0e6ed">1/4决赛对阵:</strong> 摩洛哥vs法国 | 挪威vs英格兰<br>
-    <strong style="color:#e0e6ed">剩余16强:</strong> 葡萄牙🇵🇹 / 西班牙🇪🇸 / 美国🇺🇸 / 比利时🇧🇪 / 阿根廷🇦🇷 / 埃及🇪🇬 / 瑞士🇨🇭 / 哥伦比亚🇨🇴<br>
-    <span style="color:#f87171">⚡ 已出局: 加拿大(东道主) 巴拉圭 巴西🔥 墨西哥(东道主)</span>
+    🏆 <strong style="color:#4ade80">8强争夺收官！</strong> 6队已晋级:摩洛哥/法国/挪威/英格兰/西班牙/比利时<br>
+    <strong style="color:#e0e6ed">1/4决赛已确定:</strong> 摩洛哥vs法国 | 挪威vs英格兰 | 西班牙vs比利时<br>
+    <strong style="color:#e0e6ed">剩余16强:</strong> 阿根廷🇦🇷 / 埃及🇪🇬 / 瑞士🇨🇭 / 哥伦比亚🇨🇴<br>
+    <span style="color:#f87171">⚡ 已出局: 加拿大🔥 巴拉圭 巴西 墨西哥🔥 葡萄牙(C罗告别) 美国🔥 (三东道主全出局!)</span>
   </div>`;
   
   // 1/8决赛分区展示
   html+=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
     <div class="card" style="border-color:#2a4a2a">
-      <div class="card-title" style="color:#f87171">⚔️ 上半区 (7.5-7.7)</div>
+      <div class="card-title" style="color:#f87171">⚔️ 上半区 (7.5-7.7) · 全部完赛</div>
       <div style="font-size:12px;color:#8892b0;margin-bottom:8px">加拿大vs摩洛哥 | 巴拉圭vs法国 | 巴西vs挪威 | 墨西哥vs英格兰</div>`;
   const upper=[
     {m:'🇨🇦加拿大 0-3 摩洛哥🇲🇦 ✅',t:'7/5 01:00 休斯顿 · 乌纳希双响+拉希米补时',hot:true,done:true},
@@ -541,17 +545,19 @@ function renderBracket(){
     </div>`;
   });
   html+=`</div><div class="card" style="border-color:#2a4a2a">
-      <div class="card-title" style="color:#60a5fa">🛡️ 下半区 (7.7-7.8)</div>
+      <div class="card-title" style="color:#60a5fa">🛡️ 下半区 (7.7-7.8) · 2场完赛 · 2场待战</div>
       <div style="font-size:12px;color:#8892b0;margin-bottom:8px">葡萄牙vs西班牙(伊比利亚德比!) | 美国vs比利时 | 阿根廷vs埃及 | 瑞士vs哥伦比亚</div>`;
   const lower=[
-    {m:'🇵🇹葡萄牙 vs 西班牙🇪🇸',t:'7/7 03:00 达拉斯 · 🔥伊比利亚德比! C罗vs亚马尔',hot:true,derby:true},
-    {m:'🇺🇸美国 vs 比利时🇧🇪',t:'7/7 08:00 西雅图 · 东道主复仇战 巴洛贡停赛',hot:false,next:true},
-    {m:'🇦🇷阿根廷 vs 埃及🇪🇬',t:'7/8 00:00 亚特兰大 · 梅西vs萨拉赫',hot:false},
-    {m:'🇨🇭瑞士 vs 哥伦比亚🇨🇴',t:'7/8 04:00 温哥华',hot:false},
+    {m:'🇵🇹葡萄牙 0-1 西班牙🇪🇸 ✅',t:'7/7 03:00 达拉斯 · 91\'梅里诺绝杀 C罗含泪告别 西班牙6场零封创历史',hot:true,done:true},
+    {m:'🇺🇸美国 1-4 比利时🇧🇪 ✅',t:'7/7 08:00 西雅图 · 德凯特拉雷双响 三东道主全出局!',hot:true,done:true},
+    {m:'🇦🇷阿根廷 vs 埃及🇪🇬',t:'7/8 00:00 亚特兰大 · 🔥梅西vs萨拉赫 卫冕冠军vs铁桶阵',hot:true,derby:true},
+    {m:'🇨🇭瑞士 vs 哥伦比亚🇨🇴',t:'7/8 04:00 温哥华 · 平局信号强 小球格局',hot:false,next:true},
   ];
   lower.forEach(r=>{
-    html+=`<div style="padding:10px;background:${r.hot?'#3a1a2a':'#0d1225'};border-radius:6px;margin-bottom:6px;font-size:13px;border-left:3px solid ${r.derby?'#f87171':r.hot?'#fbbf24':'#60a5fa'}">
-      <div style="font-weight:600;color:#e0e6ed">${r.m}${r.derby?' 🔥':''}
+    const bg=r.done?'#1a2a1a':r.derby?'#3a1a2a':r.next?'#1a2a3a':'#0d1225';
+    const bc=r.done?'#4ade80':r.derby?'#f87171':r.next?'#fbbf24':'#60a5fa';
+    html+=`<div style="padding:10px;background:${bg};border-radius:6px;margin-bottom:6px;font-size:13px;border-left:3px solid ${bc}">
+      <div style="font-weight:600;color:${r.done?'#4ade80':'#e0e6ed'}">${r.m}${r.derby?' 🔥':''}${r.next?' ⏳':''}
       </div>
       <div style="font-size:11px;color:#8892b0;margin-top:4px">${r.t}</div>
     </div>`;

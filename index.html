@@ -97,20 +97,20 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 <div class="header">
   <div>
     <h1>⚽ 2026 美加墨世界杯 · 全景数据面板</h1>
-    <div class="subtitle">数据更新时间：2026年7月9日 14:00 (北京时间) · 🏆 1/4决赛明日开战! 法国vs摩洛哥04:00率先打响 · 8强: 法国/摩洛哥/西班牙/比利时/挪威/英格兰/阿根廷/瑞士 · 欧洲6队围剿阿根廷+摩洛哥</div>
+    <div class="subtitle">数据更新时间：2026年7月10日 14:00 (北京时间) · 🏆 1/4决赛首战! 法国2-0摩洛哥率先晋级4强 · 姆巴佩世界杯第20球 · 明晨西班牙vs比利时(03:00) · 剩余: 挪威vs英格兰(7/12) / 阿根廷vs瑞士(7/12)</div>
   </div>
   <div class="stats-bar">
-    <div class="stat-item"><div class="num" style="color:#4ade80">72</div><div class="label">已完赛场次</div></div>
-    <div class="stat-item"><div class="num">190</div><div class="label">总进球数</div></div>
-    <div class="stat-item"><div class="num" style="color:#fbbf24">4</div><div class="label">1/4决赛场次</div></div>
-    <div class="stat-item"><div class="num" style="color:#fbbf24">7/10</div><div class="label">首战明晨04:00</div></div>
+    <div class="stat-item"><div class="num" style="color:#4ade80">73</div><div class="label">已完赛场次</div></div>
+    <div class="stat-item"><div class="num">192</div><div class="label">总进球数</div></div>
+    <div class="stat-item"><div class="num" style="color:#4ade80">1</div><div class="label">已晋级4强</div></div>
+    <div class="stat-item"><div class="num" style="color:#4ade80">🇫🇷</div><div class="label">法国率先晋级</div></div>
   </div>
 </div>
 
 <div class="tabs">
   <div class="tab active" onclick="switchTab(0)">📅 赛程总览</div>
-  <div class="tab" onclick="switchTab(1)">✅ 1/8决赛复盘</div>
-  <div class="tab" onclick="switchTab(2)">🔮 1/4决赛预测</div>
+  <div class="tab" onclick="switchTab(1)">✅ 1/4决赛复盘</div>
+  <div class="tab" onclick="switchTab(2)">🔮 剩余3场预测</div>
   <div class="tab" onclick="switchTab(3)">📊 积分榜</div>
   <div class="tab" onclick="switchTab(4)">🏆 淘汰赛对阵</div>
   <div class="tab" onclick="switchTab(5)">📈 模型表现</div>
@@ -120,7 +120,7 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 
 <!-- Panel 0: 赛程总览 -->
 <div class="panel active" id="panel0">
-  <div class="section-title">淘汰赛阶段 · 1/4决赛(7.10-7.12) 明日开战 🏆</div>
+  <div class="section-title">淘汰赛阶段 · 1/4决赛(7.10-7.12) · 法国2-0摩洛哥率先晋级4强 🏆</div>
   <div class="filter-bar">
     <div class="filter-btn" onclick="filterGroup('all',this)">全部</div>
     <div class="filter-btn" onclick="filterGroup('QF',this)">🏆 1/4决赛</div>
@@ -134,7 +134,7 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 
 <!-- Panel 1: 今日复盘 -->
 <div class="panel" id="panel1">
-  <div class="section-title">📋 1/8决赛完整复盘 (7.5-7.8) · 8场全部完赛</div>
+  <div class="section-title">📋 1/4决赛复盘 · 法国2-0摩洛哥 (7.10) + 1/8决赛回顾</div>
   <div id="reviewContainer"></div>
 </div>
 
@@ -152,7 +152,7 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 
 <!-- Panel 4: 淘汰赛 -->
 <div class="panel" id="panel4">
-  <div class="section-title">🏆 1/4决赛对阵 (7.10-7.12) · 8强全部出炉</div>
+  <div class="section-title">🏆 1/4决赛对阵 (7.10-7.12) · 法国率先晋级4强</div>
   <div id="bracketContainer"></div>
 </div>
 
@@ -269,7 +269,7 @@ const scheduleData = [
   {date:'7月8日',round:'1/8决赛',group:'KO16',t1:'阿根廷',t2:'埃及',s1:3,s2:2,status:'finished',events:'15\'易卜拉欣头球 / 67\'齐科推射 / 79\'罗梅罗头球(梅西助攻) / 83\'梅西凌空抽射 / 90+2\'费尔南德斯头球绝杀! 阿根廷0-2落后连追3球! 梅西传射创纪录(连续6届世界杯有助攻 首位连续9场破门 总进球21个领跑历史)',time:'00:00'},
   {date:'7月8日',round:'1/8决赛',group:'KO16',t1:'瑞士',t2:'哥伦比亚',s1:0,s2:0,status:'finished',events:'常规0-0 加时0-0 点球4-3 瑞士晋级! 时隔72年重返8强追平队史最佳 哥伦比亚桑切斯+埃尔南德斯罚丢',time:'04:00'},
   // 1/4决赛 (即将到来)
-  {date:'7月10日',round:'1/4决赛',group:'QF',t1:'法国',t2:'摩洛哥',s1:0,s2:0,status:'upcoming',events:'🔥 2022半决赛重演! 法国7场全胜 vs 摩洛哥34场不败 Saibari(5球)伤缺',time:'04:00'},
+  {date:'7月10日',round:'1/4决赛',group:'QF',t1:'法国',t2:'摩洛哥',s1:2,s2:0,status:'finished',events:'25\'姆巴佩点球被布努扑出 / 60\'姆巴佩兜射远角(世界杯第20球!) / 66\'登贝莱推射破门 / 77\'姆巴佩脚踝不适被换下 / Diop黄牌',time:'04:00'},
   {date:'7月11日',round:'1/4决赛',group:'QF',t1:'西班牙',t2:'比利时',s1:0,s2:0,status:'upcoming',events:'传控天花板 vs 反击之王 西班牙6场零封 vs 比利时4-1美国 库尔图瓦是西班牙噩梦',time:'03:00'},
   {date:'7月12日',round:'1/4决赛',group:'QF',t1:'挪威',t2:'英格兰',s1:0,s2:0,status:'upcoming',events:'🔥 哈兰德(7球)vs凯恩 英超内战! 挪威爆冷巴西后气势如虹 宽萨停赛',time:'05:00'},
   {date:'7月12日',round:'1/4决赛',group:'QF',t1:'阿根廷',t2:'瑞士',s1:0,s2:0,status:'upcoming',events:'梅西8球(连续9场破门) vs 瑞士铁桶阵(科贝尔点球神扑) 卫冕冠军0-2逆转后信心爆棚',time:'09:00'},
@@ -297,29 +297,17 @@ const standings = {
   L:[{t:'英格兰',w:2,d:1,l:0,gf:6,ga:2,pts:7,st:'✅头名'},{t:'克罗地亚',w:2,d:0,l:1,gf:5,ga:5,pts:6,st:'✅第二'},{t:'加纳',w:1,d:1,l:1,gf:2,ga:2,pts:4,st:'🟡最佳第3→16强'},{t:'巴拿马',w:0,d:0,l:3,gf:0,ga:4,pts:0,st:'❌'}],
 };
 
-// 7月8日复盘数据
+// 7月10日+7月8日复盘数据
 const reviewData = [
+  {group:'QF',t1:'法国',t2:'摩洛哥',s1:2,s2:0,events:'25\'姆巴佩点球被布努扑出 / 60\'姆巴佩大禁区线兜射远角(本届第8球 世界杯第20球!) / 66\'姆巴佩助攻登贝莱推射破门 / 77\'姆巴佩脚踝不适被换下 / Diop黄牌 / 摩洛哥全场仅1射',prediction:'法国胜(-0.75)',actual:'2-0',result:'hit',reason:'✅法国-0.75精准命中! 姆巴佩虽然上半场罚丢点球(25\'被布努扑出),但下半场60\'兜射远角+66\'助攻登贝莱,6分钟内连入2球锁定胜局。法国2-0完胜复刻2022半决赛比分!摩洛哥缺少Saibari(本届5球)后进攻创造力大减,全场仅1射。姆巴佩世界杯总进球达20个(历史第二,仅次梅西21球),本届8球并列射手榜第一。登贝莱本届5球也表现出色。法国连续三届闯入世界杯四强。推荐方向+大小球(2.5小)+波胆均命中'},
+
   {group:'KO16',t1:'阿根廷',t2:'埃及',s1:3,s2:2,events:'15\'易卜拉欣头球(0-1) / 20\'梅西罚丢点球(舒贝尔扑救) / 67\'齐科推射(0-2) / 79\'罗梅罗头球(梅西助攻,1-2) / 83\'梅西凌空抽射(2-2) / 90+2\'费尔南德斯头球绝杀(3-2) 梅西连续6届有助攻+连续9场破门+总进球21个历史第一',prediction:'阿根廷胜(-1.25)',actual:'3-2',result:'miss',reason:'⚠️阿根廷0-2落后史诗逆转!但让球-1.25方向未命中(3-2净胜仅1球,不够覆盖1.25盘口)。梅西上半场罚丢点球+埃及铁桶阵有效压制。最终靠梅西传射+费尔南德斯补时绝杀翻盘。推荐方向正确(阿根廷胜)但深度盘口(-1.25)失败。埃及队史首次对阵阿根廷进球(易卜拉欣头球),虽败犹荣'},
   {group:'KO16',t1:'瑞士',t2:'哥伦比亚',s1:0,s2:0,events:'常规0-0 / 加时0-0 / 点球瑞士4-3(桑切斯+埃尔南德斯罚丢) 120分钟仅1射正 双方门将神勇 科贝尔 vs 奥斯皮纳 瑞士时隔72年重返8强',prediction:'平局 防瑞士不败',actual:'0-0(点球4-3)',result:'hit',reason:'✅平局精准命中! 120分钟0-0完美对应推荐。瑞士体能优势(连续在温哥华)+哥伦比亚缺中锋科尔多瓦双重因素兑现。瑞士铁血防守(本届仅失2球)vs哥伦比亚无力攻坚。点球大战瑞士更稳定(4罚全中vs哥2罚丢)。小球+平局格局完全符合预期'},
 ];
 
-// 1/4决赛预测数据 - 法国 vs 摩洛哥
+// 1/4决赛剩余3场预测数据 (法国vs摩洛哥已完赛)
 const predictData = [
-  {group:'QF',time:'7/10 04:00',t1:'法国',t2:'摩洛哥',venue:'波士顿',
-   euro:{w:1.55,d:3.90,l:6.25},asian:'法国-0.75',total:'2.5',
-   handicap:{label:'法国-1',w:2.00,d:3.40,l:2.70},
-   prediction:'法国胜(-0.75)',score:'1-0',confidence:7,
-   six:[
-     {name:'泊松分布',result:'λ法1.717 vs λ摩0.783 | 法国58.2% 平26.4% 摩洛哥15.4%',signal:'⭐法国方向确定'},
-     {name:'xG模型',result:'法国xG场均2.80(五战全胜) 摩洛哥Saibari伤缺后xG降至0.40(-28%)',signal:'⭐摩洛哥进攻受损'},
-     {name:'Elo评级',result:'法国ELO 2143 vs 摩洛哥1921 差距222分(顶格档) 历史7次法国4胜3平不败',signal:'⭐实力碾压'},
-     {name:'凯利指数',result:'法国独赢@1.55已压低 但让-1 EV为-32.6%(wdl与让球冲突)',signal:'⚠️让球方向不确定'},
-     {name:'亚欧赔率',result:'亚盘从-0.5高水升至-0.75低水(大量资金涌入法国) 大小球2.5均势',signal:'⭐法国方向资金一致'},
-     {name:'战术匹配',result:'法国全胜+姆巴佩7球 vs 摩洛哥34场不败+铁桶阵 2022半决赛法国2-0摩 萨巴里缺阵削弱反击',signal:'⭐复仇之战法国占优'},
-   ],
-   mediaConsensus:'法国方向确定性高但让球-1存在wdl冲突 摩洛哥Saibari(5球)伤缺+Riad(中卫)存疑是决定性变量 Opta:法国65%/平18%/摩16% 法国90分钟内晋级概率72%',
-   analysis:'⭐信心7/10。恩怨对决! 2022半决赛法国2-0摩洛哥,时隔4年再战。核心变量: 摩洛哥Saibari(本届5球 并列射手榜前列)大腿拉伤缺阵,进攻创造力大幅下滑(λ从0.559降至0.403,-28%)。Riad(主力中卫)膝伤存疑。法国方面Tchouaméni大概率缺阵但阵容厚度足够(科内+坎特可替代)。ELO差222分达顶格档,历史统计这类场次wdl方向命中率85%。关键信号: 亚盘从-0.5升至-0.75(资金一致看好法国),但让球-1的EV为-32.6%,说明"法国赢"确定性高但"净胜2+"不确定。摩洛哥铁桶阵有能力拖入加时(平赔3.90偏低),但缺少Saibari后反击威胁大减。首选1-0法国小胜,防冷0-0拖加时。姆巴佩vs阿什拉夫(PSG队友)是最大看点。'},
-
+  // 法国vs摩洛哥已完赛: 法国2-0摩洛哥 ✅命中
   // 西班牙 vs 比利时
   {group:'QF',time:'7/11 03:00',t1:'西班牙',t2:'比利时',venue:'洛杉矶',
    euro:{w:1.75,d:3.50,l:4.80},asian:'西班牙-0.5',total:'2.25',
@@ -388,8 +376,9 @@ const modelData = {
     {date:'7月6日',hits:2,total:2,rate:100},
     {date:'7月7日',hits:0,total:2,rate:0},
     {date:'7月8日',hits:1,total:2,rate:50},
+    {date:'7月10日',hits:1,total:1,rate:100},
   ],
-  totalHits:32,totalMatches:56,totalRate:57.1
+  totalHits:33,totalMatches:57,totalRate:57.9
 };
 
 // Bracket data (updated with all R16 results + QF)
@@ -403,11 +392,13 @@ const bracketData = [
   {time:'7/07 08:00',t1:'美国',t2:'比利时',venue:'西雅图',winner:'比利时',result:'1-4',status:'finished'},
   {time:'7/08 00:00',t1:'阿根廷',t2:'埃及',venue:'亚特兰大',winner:'阿根廷',result:'3-2',status:'finished'},
   {time:'7/08 04:00',t1:'瑞士',t2:'哥伦比亚',venue:'温哥华',winner:'瑞士',result:'0-0(4-3p)',status:'finished'},
+  // 1/4决赛
+  {time:'7/10 04:00',t1:'法国',t2:'摩洛哥',venue:'波士顿',winner:'法国',result:'2-0',status:'finished'},
 ];
 
 // QF bracket data
 const qfData = [
-  {time:'7/10 04:00',t1:'法国',t2:'摩洛哥',venue:'波士顿',tag:'恩怨对决',hot:true},
+  {time:'7/10 04:00',t1:'法国',t2:'摩洛哥',venue:'波士顿',tag:'✅ 法国2-0晋级',hot:true,finished:true},
   {time:'7/11 03:00',t1:'西班牙',t2:'比利时',venue:'洛杉矶',tag:'传控vs反击',hot:true},
   {time:'7/12 05:00',t1:'挪威',t2:'英格兰',venue:'迈阿密',tag:'哈兰德vs凯恩',hot:true},
   {time:'7/12 09:00',t1:'阿根廷',t2:'瑞士',venue:'堪萨斯城',tag:'梅西卫冕之路',hot:true},
@@ -462,17 +453,17 @@ function renderSchedule(filter='all'){
 function renderReview(){
   const c=document.getElementById('reviewContainer');
   let html=`<div class="model-stat">
-    <div class="model-stat-item"><div class="msi-num" style="color:#fbbf24">1/2</div><div class="msi-label">今日命中</div></div>
+    <div class="model-stat-item"><div class="msi-num" style="color:#4ade80">1/1</div><div class="msi-label">今日命中(1/4决赛)</div></div>
     <div class="model-stat-item"><div class="msi-num" style="color:#fbbf24">${modelData.totalHits}/${modelData.totalMatches}</div><div class="msi-label">累计命中</div></div>
     <div class="model-stat-item"><div class="msi-num" style="color:#00d4ff">${modelData.totalRate}%</div><div class="msi-label">累计命中率</div></div>
-    <div class="model-stat-item"><div class="msi-num" style="color:#fbbf24">50%</div><div class="msi-label">今日命中率</div></div>
+    <div class="model-stat-item"><div class="msi-num" style="color:#4ade80">100%</div><div class="msi-label">今日命中率</div></div>
   </div>
   <div style="background:#1a2a3a;border:1px solid #2a4a5a;border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px">
-    📊 <strong>7月8日1/8决赛收官复盘:</strong> 🏆 8强全部出炉!<br>
-    🔥 <strong>阿根廷3-2埃及:</strong> 史诗级逆转! 0-2落后+梅西罚丢点球,最后13分钟连追3球! 梅西传射创3项纪录(连续6届助攻/连续9场破门/21球历史第一)。费尔南德斯90+2'头球绝杀!<br>
-    🇨🇭 <strong>瑞士0-0哥伦比亚(点球4-3):</strong> 120分钟闷平,点球瑞士更稳定。瑞士时隔72年重返8强追平队史最佳!<br>
-    🏆 <strong>8强名单:</strong> 摩洛哥/法国/挪威/英格兰/西班牙/比利时/阿根廷/瑞士<br>
-    ⚡ <strong>已出局亮点:</strong> 三东道主全出局(加拿大/墨西哥/美国) | C罗告别 | 巴西/德国/荷兰/葡萄牙止步16强 | 亚足联9队全灭
+    📊 <strong>7月10日1/4决赛首战:</strong> 🏆 法国2-0摩洛哥,首支4强诞生!<br>
+    ⚽ <strong>法国2-0摩洛哥:</strong> 姆巴佩60'兜射远角(世界杯第20球!历史第二)+66'助攻登贝莱,6分钟连入2球! 25'姆巴佩点球被布努神扑。法国复刻2022半决赛2-0比分,连续三届闯进4强!<br>
+    🌟 <strong>姆巴佩纪录之夜:</strong> 本届8球(并列射手榜第一)/ 世界杯总进球20个(历史第二仅次梅西21球)/ 世界杯淘汰赛12球(历史第一)/ 首位两届世界杯单届8+球球员<br>
+    ⚠️ <strong>伤情:</strong> 姆巴佩77'脚踝不适被换下,赛后称无大碍。摩洛哥Saibari(5球)伤缺影响巨大,全场仅1射<br>
+    📅 <strong>后续:</strong> 7/11 03:00 西班牙vs比利时 | 7/12 05:00 挪威vs英格兰 | 7/12 09:00 阿根廷vs瑞士
   </div>`;
   reviewData.forEach(r=>{
     const cls = r.result==='hit' ? 'review-hit' : 'review-miss';
@@ -493,19 +484,19 @@ function renderReview(){
 function renderPredictions(){
   const c=document.getElementById('predictionContainer');
   let html=`<div style="background:#1a2a3a;border:1px solid #2a4a6a;border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px">
-    🏆 <strong>1/4决赛明晨开战!</strong> 首场: 法国vs摩洛哥(7/10 04:00)。模型累计32/56=57.1%。<br>
-    ⚠️ <strong>风险提示:</strong> 凯利模型连续失效期(7/7日0/2),淘汰赛冷门频发。单场仓位≤15%,总仓位≤30%。<br>
-    📊 <strong>1/4决赛赛程:</strong> 7/10 04:00法国vs摩洛哥 | 7/11 03:00西班牙vs比利时 | 7/12 05:00挪威vs英格兰 | 7/12 09:00阿根廷vs瑞士<br>
+    🏆 <strong>1/4决赛首战已完赛!</strong> 法国2-0摩洛哥 ✅命中! 模型累计33/57=57.9%。<br>
+    ⚠️ <strong>风险提示:</strong> 凯利模型近期波动,淘汰赛冷门频发。单场仓位≤15%,总仓位≤30%。<br>
+    📊 <strong>剩余1/4决赛:</strong> 7/11 03:00西班牙vs比利时 | 7/12 05:00挪威vs英格兰 | 7/12 09:00阿根廷vs瑞士<br>
     📊 <strong>方法论:</strong> 泊松分布(λ预期进球) · xG(射门质量模型) · Elo(实力评级) · 凯利指数(价值投注) · 亚欧赔率(机构意图) · 战术匹配(定性修正)
   </div>`;
   
   // QF overview cards
   html+=`<div class="qf-bracket">`;
   qfData.forEach(q=>{
-    html+=`<div class="qf-card">
+    html+=`<div class="qf-card" style="${q.finished?'border-color:#4ade80':''}">
       <div class="qf-time">⏰ ${q.time} · 🏟 ${q.venue}</div>
       <div class="qf-teams">${q.t1} <span style="color:#00d4ff;font-size:14px">vs</span> ${q.t2}</div>
-      <div class="qf-tag qf-hot">🔥 ${q.tag}</div>
+      <div class="qf-tag ${q.finished?'':'qf-hot'}" style="${q.finished?'background:#1a3a2a;color:#4ade80':''}">${q.tag}</div>
     </div>`;
   });
   html+=`</div>`;
@@ -611,17 +602,17 @@ function renderBracket(){
     <div class="card" style="border-color:#2a4a2a">
       <div class="card-title" style="color:#f87171">⚔️ 上半区</div>`;
   // Upper bracket: France-Morocco, Spain-Belgium
-  html+=`<div style="padding:12px;background:#1a2a3a;border-radius:6px;margin-bottom:8px;border-left:3px solid #f87171">
-    <div style="font-weight:700;font-size:15px;color:#e0e6ed">🇫🇷 法国 vs 摩洛哥 🇲🇦</div>
-    <div style="font-size:12px;color:#8892b0;margin-top:4px">📅 7/10 04:00 · 🏟 波士顿 · 🔥 2022半决赛重演! 法国7场全胜 vs 摩洛哥34场不败</div>
-    <div style="font-size:11px;color:#fbbf24;margin-top:4px">Saibari(5球)伤缺 | 历史法国4胜3平不败 | 姆巴佩vs阿什拉夫</div>
+  html+=`<div style="padding:12px;background:#1a2a1a;border-radius:6px;margin-bottom:8px;border-left:3px solid #4ade80">
+    <div style="font-weight:700;font-size:15px;color:#e0e6ed">🇫🇷 法国 2-0 摩洛哥 🇲🇦 <span style="color:#4ade80;font-size:12px">✅ 法国晋级</span></div>
+    <div style="font-size:12px;color:#8892b0;margin-top:4px">📅 7/10 04:00 · 🏟 波士顿 · 60'姆巴佩兜射(世界杯第20球!) / 66'登贝莱推射</div>
+    <div style="font-size:11px;color:#4ade80;margin-top:4px">姆巴佩20球(历史第二) | 登贝莱5球 | 法国连续三届4强 | 复刻2022半决赛比分</div>
   </div>
   <div style="padding:12px;background:#1a2a3a;border-radius:6px;margin-bottom:8px;border-left:3px solid #60a5fa">
     <div style="font-weight:700;font-size:15px;color:#e0e6ed">🇪🇸 西班牙 vs 比利时 🇧🇪</div>
     <div style="font-size:12px;color:#8892b0;margin-top:4px">📅 7/11 03:00 · 🏟 洛杉矶 · 传控天花板 vs 反击之王 西班牙6场零封 vs 比利时4-1美国</div>
     <div style="font-size:11px;color:#fbbf24;margin-top:4px">库尔图瓦是西班牙噩梦 | 德凯特拉雷100%转化率 | 西班牙体能透支</div>
   </div>
-  <div style="font-size:11px;color:#8892b0;text-align:center;padding:4px">↑ 胜者会师半决赛 (7/15 03:00 达拉斯)</div>
+  <div style="font-size:11px;color:#4ade80;text-align:center;padding:4px">↑ 法国已晋级 → 半决赛(7/15 03:00 达拉斯) 等待西班牙/比利时胜者</div>
   </div>
   <div class="card" style="border-color:#2a4a2a">
     <div class="card-title" style="color:#60a5fa">🛡️ 下半区</div>`;
@@ -659,7 +650,7 @@ function renderBracket(){
   html+=`<div class="section-title" style="margin-top:16px">📅 后续赛程</div>
   <div class="card">
     <div style="display:grid;gap:8px;font-size:13px">
-      <div style="padding:8px;background:#1a2a3a;border-radius:6px"><strong style="color:#fbbf24">1/4决赛</strong> 7/10 04:00 法国vs摩洛哥 | 7/11 03:00 西班牙vs比利时 | 7/12 05:00 挪威vs英格兰 | 7/12 09:00 阿根廷vs瑞士</div>
+      <div style="padding:8px;background:#1a2a3a;border-radius:6px"><strong style="color:#fbbf24">1/4决赛</strong> ✅7/10 法国2-0摩洛哥 | 7/11 03:00 西班牙vs比利时 | 7/12 05:00 挪威vs英格兰 | 7/12 09:00 阿根廷vs瑞士</div>
       <div style="padding:8px;background:#0d1225;border-radius:6px"><strong style="color:#60a5fa">半决赛</strong> 7/15 03:00 上半区胜者对决 | 7/16 03:00 下半区胜者对决</div>
       <div style="padding:8px;background:#0d1225;border-radius:6px"><strong style="color:#8892b0">季军赛</strong> 7/19 05:00 迈阿密</div>
       <div style="padding:8px;background:#3a1a2a;border-radius:6px;border:1px solid #5a2a3a"><strong style="color:#f87171">🏆 决赛</strong> 7/20 03:00 纽约/新泽西 大都会人寿体育场</div>

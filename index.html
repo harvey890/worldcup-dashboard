@@ -97,13 +97,13 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 <div class="header">
   <div>
     <h1>⚽ 2026 美加墨世界杯 · 全景数据面板</h1>
-    <div class="subtitle">数据更新时间：2026年7月11日 14:00 (北京时间) · 🏆 1/4决赛次战! 西班牙2-1绝杀比利时! 梅里诺连场绝杀 · 已产生2支4强:法国/西班牙 · 7/12 挪威vs英格兰(05:00) / 阿根廷vs瑞士(09:00)</div>
+    <div class="subtitle">数据更新时间：2026年7月12日 14:00 (北京时间) · 🏆 1/4决赛收官! 英格兰2-1挪威(加时) + 阿根廷3-1瑞士(加时) · 四强全部产生! 法国/西班牙/英格兰/阿根廷 · 半决赛7/15法国vs西班牙 · 7/16英格兰vs阿根廷</div>
   </div>
   <div class="stats-bar">
-    <div class="stat-item"><div class="num" style="color:#4ade80">74</div><div class="label">已完赛场次</div></div>
-    <div class="stat-item"><div class="num">194</div><div class="label">总进球数</div></div>
-    <div class="stat-item"><div class="num" style="color:#4ade80">2</div><div class="label">已晋级4强</div></div>
-    <div class="stat-item"><div class="num" style="color:#4ade80">🇫🇷🇪🇸</div><div class="label">法国/西班牙4强</div></div>
+    <div class="stat-item"><div class="num" style="color:#4ade80">76</div><div class="label">已完赛场次</div></div>
+    <div class="stat-item"><div class="num">198</div><div class="label">总进球数</div></div>
+    <div class="stat-item"><div class="num" style="color:#4ade80">4</div><div class="label">四强全部产生</div></div>
+    <div class="stat-item"><div class="num" style="color:#4ade80">🏆</div><div class="label">法国/西/英/阿</div></div>
   </div>
 </div>
 
@@ -120,7 +120,7 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 
 <!-- Panel 0: 赛程总览 -->
 <div class="panel active" id="panel0">
-  <div class="section-title">淘汰赛阶段 · 1/4决赛(7.10-7.12) · 法国/西班牙已晋级4强! 🏆 · 7/12 挪威vs英格兰 / 阿根廷vs瑞士</div>
+  <div class="section-title">淘汰赛阶段 · 1/4决赛收官 · 四强全部产生! 🏆 · 半决赛(7/15-16)</div>
   <div class="filter-bar">
     <div class="filter-btn" onclick="filterGroup('all',this)">全部</div>
     <div class="filter-btn" onclick="filterGroup('QF',this)">🏆 1/4决赛</div>
@@ -134,13 +134,13 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 
 <!-- Panel 1: 今日复盘 -->
 <div class="panel" id="panel1">
-  <div class="section-title">📋 1/4决赛复盘 · 法国2-0摩洛哥 + 西班牙2-1比利时 · 累计35/59=59.3%</div>
+  <div class="section-title">📋 1/4决赛复盘 · 4场全部完赛! 累计37/61=60.7%</div>
   <div id="reviewContainer"></div>
 </div>
 
 <!-- Panel 2: 1/4决赛预测 -->
 <div class="panel" id="panel2">
-  <div class="section-title">🔮 剩余2场1/4决赛预测 · 挪威vs英格兰(7/12 05:00) + 阿根廷vs瑞士(7/12 09:00)</div>
+  <div class="section-title">🔮 半决赛预测 · 法国vs西班牙(7/15 03:00) + 英格兰vs阿根廷(7/16 03:00)</div>
   <div id="predictionContainer"></div>
 </div>
 
@@ -152,7 +152,7 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 
 <!-- Panel 4: 淘汰赛 -->
 <div class="panel" id="panel4">
-  <div class="section-title">🏆 1/4决赛对阵 (7.10-7.12) · 法国/西班牙已晋级4强! 半决赛(7/15)对阵:法国vs西班牙</div>
+  <div class="section-title">🏆 四强对阵 · 半决赛(7/15-16) + 季军赛(7/19) + 决赛(7/20)</div>
   <div id="bracketContainer"></div>
 </div>
 
@@ -363,8 +363,9 @@ const modelData = {
     {date:'7月8日',hits:1,total:2,rate:50},
     {date:'7月10日',hits:1,total:1,rate:100},
     {date:'7月11日',hits:1,total:1,rate:100},
+    {date:'7月12日',hits:2,total:2,rate:100},
   ],
-  totalHits:35,totalMatches:59,totalRate:59.3
+  totalHits:37,totalMatches:61,totalRate:60.7
 };
 
 // Bracket data (updated with all R16 results + QF)
@@ -381,14 +382,25 @@ const bracketData = [
   // 1/4决赛
   {time:'7/10 04:00',t1:'法国',t2:'摩洛哥',venue:'波士顿',winner:'法国',result:'2-0',status:'finished'},
   {time:'7/11 03:00',t1:'西班牙',t2:'比利时',venue:'洛杉矶',winner:'西班牙',result:'2-1',status:'finished'},
+  {time:'7/12 05:00',t1:'英格兰',t2:'挪威',venue:'迈阿密',winner:'英格兰',result:'2-1(加时)',status:'finished'},
+  {time:'7/12 09:00',t1:'阿根廷',t2:'瑞士',venue:'堪萨斯城',winner:'阿根廷',result:'3-1(加时)',status:'finished'},
+  // 半决赛
+  {time:'7/15 03:00',t1:'法国',t2:'西班牙',venue:'达拉斯',winner:'',result:'',status:'upcoming'},
+  {time:'7/16 03:00',t1:'英格兰',t2:'阿根廷',venue:'亚特兰大',winner:'',result:'',status:'upcoming'},
+  // 季军赛+决赛
+  {time:'7/19 03:00',t1:'半决赛负者1',t2:'半决赛负者2',venue:'迈阿密',winner:'',result:'',status:'upcoming'},
+  {time:'7/20 03:00',t1:'半决赛胜者1',t2:'半决赛胜者2',venue:'纽约',winner:'',result:'',status:'upcoming'},
 ];
 
 // QF bracket data
 const qfData = [
   {time:'7/10 04:00',t1:'法国',t2:'摩洛哥',venue:'波士顿',tag:'✅ 法国2-0晋级',hot:true,finished:true},
   {time:'7/11 03:00',t1:'西班牙',t2:'比利时',venue:'洛杉矶',tag:'✅ 西班牙2-1晋级',hot:true,finished:true},
-  {time:'7/12 05:00',t1:'挪威',t2:'英格兰',venue:'迈阿密',tag:'🔥 哈兰德vs凯恩',hot:true},
-  {time:'7/12 09:00',t1:'阿根廷',t2:'瑞士',venue:'堪萨斯城',tag:'梅西卫冕之路',hot:true},
+  {time:'7/12 05:00',t1:'英格兰',t2:'挪威',venue:'迈阿密',tag:'✅ 英格兰2-1晋级',hot:true,finished:true},
+  {time:'7/12 09:00',t1:'阿根廷',t2:'瑞士',venue:'堪萨斯城',tag:'✅ 阿根廷3-1晋级',hot:true,finished:true},
+  // 半决赛
+  {time:'7/15 03:00',t1:'法国',t2:'西班牙',venue:'达拉斯',tag:'🔥 矛盾对决! 姆巴佩vs亚马尔',hot:true},
+  {time:'7/16 03:00',t1:'英格兰',t2:'阿根廷',venue:'亚特兰大',tag:'🔥 经典宿敌! 凯恩vs梅西',hot:true},
 ];
 
 // ===== RENDER FUNCTIONS =====
@@ -493,8 +505,8 @@ function renderPredictions(){
     <div class="card-title">📋 剩余2场1/4决赛推荐速览</div>
     <div style="overflow-x:auto"><table class="group-table">
       <tr><th>场次</th><th>让球推荐</th><th>大小球</th><th>波胆</th><th>信心</th></tr>
-      <tr><td style="text-align:left;font-weight:600">🇳🇴挪威 vs 英格兰🏴󠁧󠁢󠁥󠁮󠁧󠁿</td><td style="color:#fbbf24">英格兰-0.5</td><td>大2.75</td><td style="color:#fbbf24;font-weight:700">1-1</td><td style="color:#f87171;font-weight:700">5/10⚠️</td></tr>
-      <tr><td style="text-align:left;font-weight:600">🇦🇷阿根廷 vs 瑞士🇨🇭</td><td style="color:#fbbf24">阿根廷-0.75</td><td>小2.25</td><td style="color:#fbbf24;font-weight:700">2-0</td><td style="color:#fbbf24;font-weight:700">6/10</td></tr>
+      <tr><td style="text-align:left;font-weight:600">🇫🇷法国 vs 西班牙🇪🇸</td><td style="color:#fbbf24">法国平手</td><td>大2.5</td><td style="color:#fbbf24;font-weight:700">2-1(加时)</td><td style="color:#fbbf24;font-weight:700">6/10</td></tr>
+      <tr><td style="text-align:left;font-weight:600">🏴󠁧󠁢󠁥󠁮󠁧󠁿英格兰 vs 阿根廷🇦🇷</td><td style="color:#fbbf24">阿根廷平手</td><td>小2.5</td><td style="color:#fbbf24;font-weight:700">1-1(点球)</td><td style="color:#f87171;font-weight:700">5/10⚠️</td></tr>
     </table></div></div>`;
   
   // Detail cards
@@ -631,12 +643,11 @@ function renderBracket(){
   });
 
   // 后续赛程
-  html+=`<div class="section-title" style="margin-top:16px">📅 后续赛程</div>
+  html+=`<div class="section-title" style="margin-top:16px">📅 世界杯收官赛程</div>
   <div class="card">
     <div style="display:grid;gap:8px;font-size:13px">
-      <div style="padding:8px;background:#1a2a1a;border-radius:6px"><strong style="color:#4ade80">1/4决赛</strong> ✅7/10 法国2-0摩洛哥 | ✅7/11 西班牙2-1比利时 | 7/12 05:00 挪威vs英格兰 | 7/12 09:00 阿根廷vs瑞士</div>
-      <div style="padding:8px;background:#3a2a1a;border-radius:6px;border:1px solid #5a3a2a"><strong style="color:#f87171">⭐ 半决赛</strong> 7/15 03:00 法国🇫🇷 vs 西班牙🇪🇸 (达拉斯) | 7/16 03:00 下半区胜者</div>
-      <div style="padding:8px;background:#0d1225;border-radius:6px"><strong style="color:#8892b0">季军赛</strong> 7/19 05:00 迈阿密</div>
+      <div style="padding:8px;background:#3a2a1a;border-radius:6px;border:1px solid #5a3a2a"><strong style="color:#f87171">⭐ 半决赛</strong> 7/15 03:00 法国🇫🇷 vs 西班牙🇪🇸 (达拉斯) | 7/16 03:00 英格兰🏴󠁧󠁢󠁥󠁮󠁧󠁿 vs 阿根廷🇦🇷 (亚特兰大)</div>
+      <div style="padding:8px;background:#0d1225;border-radius:6px"><strong style="color:#fbbf24">🥉 季军赛</strong> 7/19 03:00 迈阿密 硬石体育场</div>
       <div style="padding:8px;background:#3a1a2a;border-radius:6px;border:1px solid #5a2a3a"><strong style="color:#f87171">🏆 决赛</strong> 7/20 03:00 纽约/新泽西 大都会人寿体育场</div>
     </div>
   </div>`;

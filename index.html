@@ -54,6 +54,8 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 .conf-low{background:#3a1a1a;color:#f87171}
 .semifinal-card{background:linear-gradient(135deg,#1a1f36,#0d1225);border:2px solid #fbbf24;border-radius:16px;padding:24px;margin-bottom:20px}
 .semifinal-card .sc-header{font-size:18px;font-weight:700;color:#fbbf24;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.final-card{background:linear-gradient(135deg,#1a1f36,#2a1f1a);border:2px solid #ff6b6b;border-radius:16px;padding:24px;margin-bottom:20px}
+.final-card .fc-header{font-size:18px;font-weight:700;color:#ff6b6b;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 </style>
 </head>
 <body>
@@ -61,19 +63,19 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 <div class="header">
   <div>
     <h1>⚽ 2026 美加墨世界杯 · 全景数据面板</h1>
-    <div class="subtitle">数据更新时间：2026年7月17日 14:00 (北京时间) · 半决赛结束 · 决赛倒计时3天</div>
+    <div class="subtitle">数据更新时间：2026年7月19日 14:00 (北京时间) · 季军赛结束 · 决赛倒计时13小时</div>
   </div>
   <div class="stats-bar">
-    <div class="stat-item"><div class="num" style="color:#4ade80">62/64</div><div class="label">已完赛场次</div></div>
-    <div class="stat-item"><div class="num">198</div><div class="label">总进球数</div></div>
-    <div class="stat-item"><div class="num" style="color:#fbbf24">🏆</div><div class="label">决赛待赛</div></div>
-    <div class="stat-item"><div class="num">4</div><div class="label">4强球队</div></divdiv>
+    <div class="stat-item"><div class="num" style="color:#4ade80">63/64</div><div class="label">已完赛场次</div></div>
+    <div class="stat-item"><div class="num">208</div><div class="label">总进球数</div></div>
+    <div class="stat-item"><div class="num" style="color:#ff6b6b">🏆</div><div class="label">决赛待赛</div></div>
+    <div class="stat-item"><div class="num">4</div><div class="label">4强球队</div></div></div>
   </div>
 </div>
 
 <div class="tabs">
   <div class="tab active" onclick="switchTab(0)">🏆 决赛前瞻</div>
-  <div class="tab" onclick="switchTab(1)">🥉 季军赛</div>
+  <div class="tab" onclick="switchTab(1)">🥉 季军赛复盘</div>
   <div class="tab" onclick="switchTab(2)">📊 模型表现</div>
 </div>
 
@@ -81,33 +83,34 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 
 <!-- Panel 0: 决赛前瞻 -->
 <div class="panel active" id="panel0">
-  <div class="section-title">🏆 世界杯决赛 · 7月20日 03:00 · 纽约大都会人寿体育场</div>
-  
-  <div class="semifinal-card">
-    <div class="sc-header">🎖️ 决赛对阵：西班牙 🇪🇸 vs 阿根廷 🇦🇷</div>
+  <div class="final-card">
+    <div class="fc-header">🔥 世界杯终极决战 · 7月20日 03:00 · 纽约大都会人寿体育场</div>
     <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center;margin:20px 0">
       <div style="text-align:center">
         <div style="font-size:48px;margin-bottom:8px">🇪🇸</div>
         <div style="font-size:24px;font-weight:700;color:#00d4ff">西班牙</div>
         <div style="color:#8892b0;margin-top:4px">FIFA排名第2 · 37场不败</div>
+        <div style="color:#fbbf24;margin-top:8px">身价: 12.2亿欧元</div>
       </div>
       <div style="text-align:center">
-        <div style="font-size:36px;font-weight:800;color:#fbbf24">VS</div>
+        <div style="font-size:36px;font-weight:800;color:#ff6b6b">VS</div>
         <div style="font-size:12px;color:#8892b0;margin-top:8px">7月20日 03:00</div>
+        <div style="font-size:10px;color:#ff6b6b;margin-top:4px">⚠️ 仅剩13小时</div>
       </div>
       <div style="text-align:center">
         <div style="font-size:48px;margin-bottom:8px">🇦🇷</div>
         <div style="font-size:24px;font-weight:700;color:#00d4ff">阿根廷</div>
         <div style="color:#8892b0;margin-top:4px">FIFA排名第1 · 卫冕冠军</div>
+        <div style="color:#fbbf24;margin-top:8px">身价: 8.08亿欧元</div>
       </div>
     </div>
     <div style="background:#0d1225;border-radius:8px;padding:16px;margin-top:16px">
-      <div style="font-size:14px;font-weight:600;color:#fbbf24;margin-bottom:12px">📊 赔率对比</div>
+      <div style="font-size:14px;font-weight:600;color:#ff6b6b;margin-bottom:12px">📊 赛前最新赔率 (7月19日)</div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center">
-        <div><div style="color:#8892b0;font-size:12px">西班牙胜</div><div style="color:#4ade80;font-size:20px;font-weight:700">1.47</div></div>
-        <div><div style="color:#8892b0;font-size:12px">平局</div><div style="color:#fbbf24;font-size:20px;font-weight:700">3.35</div></div>
-        <div><div style="color:#8892b0;font-size:12px">阿根廷胜</div><div style="color:#60a5fa;font-size:20px;font-weight:700">2.25</div></div>
-        <div><div style="color:#8892b0;font-size:12px">Opta概率</div><div style="color:#00d4ff;font-size:20px;font-weight:700">56.3%</div></div>
+        <div><div style="color:#8892b0;font-size:12px">西班牙胜</div><div style="color:#4ade80;font-size:20px;font-weight:700">2.02-2.27</div></div>
+        <div><div style="color:#8892b0;font-size:12px">平局</div><div style="color:#fbbf24;font-size:20px;font-weight:700">2.87-3.11</div></div>
+        <div><div style="color:#8892b0;font-size:12px">阿根廷胜</div><div style="color:#60a5fa;font-size:20px;font-weight:700">3.50</div></div>
+        <div><div style="color:#8892b0;font-size:12px">Opta概率</div><div style="color:#ff6b6b;font-size:20px;font-weight:700">56.3% vs 43.7%</div></div>
       </div>
     </div>
   </div>
@@ -121,7 +124,7 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
       </div>
       <div style="background:#0d1225;border-radius:8px;padding:12px">
         <div style="font-size:13px;font-weight:600;color:#7b68ee;margin-bottom:6px">2️⃣ xG模型</div>
-        <div style="font-size:12px;color:#8892b0">西班牙淘汰赛零失球 | 阿根廷7场丢7球<br>防线差距显著 ⚠️</div>
+        <div style="font-size:12px;color:#8892b0">西班牙7场仅失1球创纪录<br>阿根廷19球火力最强 | ⚠️防线隐患</div>
       </div>
       <div style="background:#0d1225;border-radius:8px;padding:12px">
         <div style="font-size:13px;font-weight:600;color:#7b68ee;margin-bottom:6px">3️⃣ Elo评级</div>
@@ -129,15 +132,15 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
       </div>
       <div style="background:#0d1225;border-radius:8px;padding:12px">
         <div style="font-size:13px;font-weight:600;color:#7b68ee;margin-bottom:6px">4️⃣ 凯利指数</div>
-        <div style="font-size:12px;color:#8892b0">西班牙胜凯利0.92 | 赔付控制得当<br>平局凯利0.87 ⚠️机构防范</div>
+        <div style="font-size:12px;color:#8892b0">机构防范平局<br>西班牙赔率持续下调 | 平局权重33%</div>
       </div>
       <div style="background:#0d1225;border-radius:8px;padding:12px">
-        <div style="font-size:13px;font-weight:600;color:#7b68ee;margin-bottom:6px">5️⃣ 体能分析</div>
-        <div style="font-size:12px;color:#f87171">⭐西班牙7场0加时 | 阿根廷4场2加时<br>阿根廷70分钟后跑动-29%</div>
+        <div style="font-size:13px;font-weight:600;color:#f87171;margin-bottom:6px">5️⃣ 体能分析</div>
+        <div style="font-size:12px;color:#f87171">⭐西班牙多休息1天 | 淘汰赛0加时<br>阿根廷4场2加时 | 70分钟后跑动-12%</div>
       </div>
       <div style="background:#0d1225;border-radius:8px;padding:12px">
         <div style="font-size:13px;font-weight:600;color:#7b68ee;margin-bottom:6px">6️⃣ 战术匹配</div>
-        <div style="font-size:12px;color:#8892b0">传控vs防反 | 梅西vs 罗德里<br>关键:边路突破+定位球</div>
+        <div style="font-size:12px;color:#8892b0">传控vs防反 | 罗德里切梅西喂球线<br>关键:边路突破+定位球+体能分配</div>
       </div>
     </div>
   </div>
@@ -147,24 +150,24 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
       <div style="background:#1a3a2a;border:1px solid #2a4a2a;border-radius:8px;padding:16px;text-align:center">
         <div style="color:#8892b0;font-size:12px">首选推荐</div>
-        <div style="color:#4ade80;font-size:18px;font-weight:700;margin:8px 0">西班牙-0.25胜</div>
-        <div style="color:#fbbf24;font-size:16px">波胆 2-1</div>
+        <div style="color:#4ade80;font-size:18px;font-weight:700;margin:8px 0">小球 + 平局</div>
+        <div style="color:#fbbf24;font-size:16px">波胆 1-1</div>
         <span class="confidence conf-mid" style="margin-top:8px">信心 6/10 ⚠️</span>
       </div>
       <div style="background:#1a2a3a;border:1px solid #2a3a5a;border-radius:8px;padding:16px;text-align:center">
-        <div style="color:#8892b0;font-size:12px">防冷方向</div>
-        <div style="color:#60a5fa;font-size:18px;font-weight:700;margin:8px 0">阿根廷+0.25</div>
-        <div style="color:#fbbf24;font-size:16px">波胆 1-1</div>
-        <span class="confidence conf-low" style="margin-top:8px">平局不可忽视</span>
+        <div style="color:#8892b0;font-size:12px">次选推荐</div>
+        <div style="color:#60a5fa;font-size:18px;font-weight:700;margin:8px 0">西班牙小胜</div>
+        <div style="color:#fbbf24;font-size:16px">波胆 2-1</div>
+        <span class="confidence conf-low" style="margin-top:8px">机构防范平局</span>
       </div>
     </div>
     <div style="background:#0d1225;border-radius:8px;padding:12px;font-size:13px;line-height:1.8">
       <p><strong style="color:#fbbf24">📝 核心分析:</strong></p>
-      <p>• 西班牙本届7场仅丢1球，防线历史级别；阿根廷4场淘汰赛2场加时，老将体能堪忧</p>
-      <p>• 梅西本届8球4助攻领跑金靴，但37岁体能是隐患；劳塔罗90+2'绝杀状态正佳</p>
-      <p>• 19岁 亚马尔 vs 39岁 梅西——巴萨两代10号决赛对决</p>
-      <p>• <strong style="color:#f87171">⚠️ 风险提示:</strong> 决赛不确定性极高，建议仓位≤20%</p>
-      <p>• "大热必死"魔咒:1994年以来头号热门从未夺冠</p>
+      <p>• 西班牙7场仅丢1球创世界杯纪录，阿根廷19球火力最强——矛盾对决</p>
+      <p>• 赔率机构重点防范平局(33%)，小球概率64%，全场≤2球</p>
+      <p>• Opta 25000次模拟：西班牙56.3% vs 阿根廷43.7%，超4成需加时</p>
+      <p>• 19岁 亚马尔 vs 39岁 梅西——巴萨两代10号终极对决</p>
+      <p>• <strong style="color:#f87171">⚠️ 风险提示:</strong> 决赛不确定性极高，建议仓位≤15%，严禁重注</p>
     </div>
   </div>
 
@@ -173,99 +176,86 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
     <div style="font-size:13px;color:#8892b0;line-height:1.8">
       <p>• <strong style="color:#4ade80">Opta超级计算机:</strong> 25000次模拟西班牙56.31% vs 阿根廷43.69%</p>
       <p>• <strong style="color:#4ade80">EA Sports游戏引擎:</strong> 连续4届精准预测，本届看好西班牙</p>
-      <p>• <strong style="color:#60a5fa">瓜迪奥拉(曼城/前巴萨主帅):</strong> "只要梅西健康，阿根廷永远有机会"——力挺阿根廷</p>
-      <p>• <strong style="color:#fbbf24">高盛模型:</strong> 50000次模拟，西班牙26%夺冠概率(未区分决赛前)</p>
+      <p>• <strong style="color:#60a5fa">瓜迪奥拉(曼城/前巴萨主帅):</strong> "只要梅西健康，阿根廷永远有机会"</p>
+      <p>• <strong style="color:#fbbf24">六媒预测:</strong> 90分钟平局概率41%，最可能比分1-1/2-1</p>
+      <p>• <strong style="color:#ff6b6b">点球概率:</strong> Opta点球环节阿根廷65% vs 西班牙35%（大马丁7场决赛全胜）</p>
     </div>
   </div>
 </div>
 
-<!-- Panel 1: 季军赛 -->
+<!-- Panel 1: 季军赛复盘 -->
 <div class="panel" id="panel1">
-  <div class="section-title">🥉 季军争夺战 · 7月19日 05:00 · 迈阿密硬石体育场</div>
+  <div class="section-title">🥉 季军赛完整复盘 · 7月19日 05:00 · 英格兰 6-4 法国</div>
   
-  <div style="background:linear-gradient(135deg,#1a1f36,#0d1225);border:1px solid #2a3050;border-radius:16px;padding:24px;margin-bottom:20px">
+  <div style="background:linear-gradient(135deg,#1a3a2a,#0d1a0d);border:2px solid #4ade80;border-radius:16px;padding:24px;margin-bottom:20px">
+    <div style="font-size:18px;font-weight:700;color:#4ade80;margin-bottom:12px">🏆 英格兰 6-4 法国（全场10球！世界杯历史单场第5高）</div>
     <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:center">
       <div style="text-align:center">
-        <div style="font-size:48px;margin-bottom:8px">🇫🇷</div>
-        <div style="font-size:24px;font-weight:700;color:#00d4ff">法国</div>
-        <div style="color:#8892b0;margin-top:4px">半决赛0-2负西班牙</div>
-      </div>
-      <div style="text-align:center">
-        <div style="font-size:36px;font-weight:800;color:#fbbf24">VS</div>
-        <div style="font-size:12px;color:#8892b0;margin-top:8px">7月19日 05:00</div>
-      </div>
-      <div style="text-align:center">
         <div style="font-size:48px;margin-bottom:8px">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
-        <div style="font-size:24px;font-weight:700;color:#00d4ff">英格兰</div>
-        <div style="color:#8892b0;margin-top:4px">半决赛1-2负阿根廷</div>
+        <div style="font-size:24px;font-weight:700;color:#4ade80">英格兰</div>
+        <div style="color:#4ade80;margin-top:8px;font-size:18px">🥉 季军</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:48px;font-weight:800;color:#fbbf24">6-4</div>
+        <div style="font-size:12px;color:#8892b0;margin-top:8px">10球大战</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:48px;margin-bottom:8px">🇫🇷</div>
+        <div style="font-size:24px;font-weight:700;color:#60a5fa">法国</div>
+        <div style="color:#f87171;margin-top:8px;font-size:18px">殿军</div>
       </div>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-title">📊 赔率与预测</div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px">
-      <div style="background:#0d1225;border-radius:8px;padding:12px;text-align:center">
-        <div style="color:#8892b0;font-size:12px">法国胜</div>
-        <div style="color:#4ade80;font-size:24px;font-weight:700">1.73</div>
-      </div>
-      <div style="background:#0d1225;border-radius:8px;padding:12px;text-align:center">
-        <div style="color:#8892b0;font-size:12px">平局</div>
-        <div style="color:#fbbf24;font-size:24px;font-weight:700">3.75</div>
-      </div>
-      <div style="background:#0d1225;border-radius:8px;padding:12px;text-align:center">
-        <div style="color:#8892b0;font-size:12px">英格兰胜</div>
-        <div style="color:#60a5fa;font-size:24px;font-weight:700">3.52</div>
-      </div>
-    </div>
-    <div style="background:#0d1225;border-radius:8px;padding:12px">
-      <div style="font-size:13px;color:#8892b0;margin-bottom:8px">🏆 比分赔率</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <span style="background:#1a3a2a;padding:4px 12px;border-radius:6px;font-size:12px">法国2-1: <strong style="color:#4ade80">7.00</strong></span>
-        <span style="background:#1a2a3a;padding:4px 12px;border-radius:6px;font-size:12px">1-1: <strong style="color:#fbbf24">7.50</strong></span>
-        <span style="background:#0d1225;padding:4px 12px;border-radius:6px;font-size:12px">2-0: <strong style="color:#e0e6ed">12.00</strong></span>
-        <span style="background:#0d1225;padding:4px 12px;border-radius:6px;font-size:12px">3球: <strong style="color:#00d4ff">3.45</strong></span>
-      </div>
+    <div class="card-title">⚽ 完整进球记录</div>
+    <div style="font-size:12px;color:#8892b0;line-height:2">
+      <p><strong style="color:#4ade80">英格兰进球:</strong></p>
+      <p>3' 赖斯远射破门 (1-0)</p>
+      <p>18' 赖斯角球助攻，孔萨头球破门 (2-0)</p>
+      <p>37' 拉什福德助攻，萨卡推射破门 (3-0)</p>
+      <p>45+1' 埃泽助攻，萨卡梅开二度 (4-0)</p>
+      <p>87' 萨卡点球命中，帽子戏法 (5-3)</p>
+      <p>90+8' 贝林厄姆单刀破门 (6-4)</p>
+      <br/>
+      <p><strong style="color:#60a5fa">法国进球:</strong></p>
+      <p>48' 奥利塞助攻，姆巴佩推射破门 (1-4)</p>
+      <p>54' 姆巴佩助攻，巴尔科拉破门 (2-4)</p>
+      <p>66' 奥利塞助攻，姆巴佩双响 (3-4)</p>
+      <p>90+6' 于帕梅卡诺助攻，登贝莱破门 (4-5)</p>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-title">🎯 季军赛推荐</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-      <div style="background:#1a3a2a;border:1px solid #2a4a2a;border-radius:8px;padding:16px">
-        <div style="color:#4ade80;font-weight:700;margin-bottom:8px">🇫🇷 法国方向</div>
-        <div style="font-size:13px;color:#8892b0">
-          <p>• 德尚谢幕战，全队战意强</p>
-          <p>• 姆巴佩8球冲金靴(与梅西并列)</p>
-          <p>• 姆巴佩+登贝莱速度优势</p>
-          <p>• 历史6胜2平1负占优</p>
-        </div>
-        <div style="margin-top:12px;text-align:center">
-          <div style="color:#fbbf24;font-weight:700">推荐: 法国-0.5胜</div>
-          <div style="color:#8892b0;font-size:12px">波胆 2-1</div>
-        </div>
+    <div class="card-title">📊 关键数据</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+      <div style="background:#0d1225;border-radius:8px;padding:12px;text-align:center">
+        <div style="color:#8892b0;font-size:12px">全场进球</div>
+        <div style="color:#ff6b6b;font-size:24px;font-weight:700">10球</div>
       </div>
-      <div style="background:#1a2a3a;border:1px solid #2a3a5a;border-radius:8px;padding:16px">
-        <div style="color:#60a5fa;font-weight:700;margin-bottom:8px">🏴󠁧󠁢󠁥󠁮󠁧󠁿 英格兰方向</div>
-        <div style="font-size:13px;color:#8892b0">
-          <p>• 凯恩6球冲金靴(差梅西2球)</p>
-          <p>• 贝林厄姆6球状态出色</p>
-          <p>• 60年无缘世界杯前三</p>
-          <p>• 图赫尔救赎之战</p>
-        </div>
-        <div style="margin-top:12px;text-align:center">
-          <div style="color:#fbbf24;font-weight:700">防冷: 英格兰+0.5</div>
-          <div style="color:#8892b0;font-size:12px">波胆 1-1</div>
-        </div>
+      <div style="background:#0d1225;border-radius:8px;padding:12px;text-align:center">
+        <div style="color:#8892b0;font-size:12px">萨卡</div>
+        <div style="color:#4ade80;font-size:24px;font-weight:700">🎩3球</div>
+      </div>
+      <div style="background:#0d1225;border-radius:8px;padding:12px;text-align:center">
+        <div style="color:#8892b0;font-size:12px">姆巴佩</div>
+        <div style="color:#60a5fa;font-size:24px;font-weight:700">2球1助</div>
+      </div>
+      <div style="background:#0d1225;border-radius:8px;padding:12px;text-align:center">
+        <div style="color:#8892b0;font-size:12px">姆巴佩本届</div>
+        <div style="color:#ff6b6b;font-size:24px;font-weight:700">10球</div>
       </div>
     </div>
-    <div style="background:#3a1a1a;border:1px solid #5a2a2a;border-radius:8px;padding:12px;margin-top:16px">
-      <div style="color:#f87171;font-weight:600;margin-bottom:8px">⚠️ 风险提示</div>
-      <div style="font-size:12px;color:#8892b0">
-        <p>季军战不确定性极高！两队刚经历半决赛惨败，心理状态不稳。</p>
-        <p>德尚确认季军赛后卸任，法国可能爆发；英格兰被逆转士气受损。</p>
-        <p>建议仓位≤15%，可双选法国胜+平局防冷。</p>
-      </div>
+  </div>
+
+  <div class="card" style="border-color:#2a4a4a">
+    <div class="card-title" style="color:#fbbf24">📋 历史纪录</div>
+    <div style="font-size:13px;color:#8892b0;line-height:1.8">
+      <p>• 🇬🇧 英格兰60年来首进世界杯前三，自1966年夺冠后最佳战绩</p>
+      <p>• 🇫🇷 法国单场丢6球创队史纪录，半场丢4球为历史首次</p>
+      <p>• 🇫🇷 姆巴佩22球独占世界杯历史射手王，超越梅西</p>
+      <p>• ⚽ 10球为世界杯季军战历史第5高，英法4次世界杯交手英格兰3胜</p>
+      <p>• 🎩 萨卡成为英格兰队史首位世界杯帽子戏法球员</p>
     </div>
   </div>
 </div>
@@ -282,7 +272,21 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
   </div>
 
   <div class="card">
-    <div class="card-title">✅ 半决赛复盘 (7/15-7/16)</div>
+    <div class="card-title">✅ 季军赛复盘 (7/19)</div>
+    <div style="background:#1a2a3a;border:1px solid #2a3a5a;border-radius:8px;padding:12px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <div><span style="color:#60a5fa;font-weight:700">🔄 走盘</span> <span style="color:#8892b0">英格兰 6-4 法国</span></div>
+        <div>推荐: 法国-0.5胜 → 实际法国输盘</div>
+      </div>
+      <div style="font-size:12px;color:#8892b0">
+        <p>推荐法国但英格兰大胜，萨卡帽子戏法。季军战进球大战超出预期。</p>
+        <p><strong style="color:#fbbf24">姆巴佩本届10球，独占世界杯历史射手王(22球)</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">✅✅ 半决赛全中 (7/15-7/16)</div>
     <div style="display:grid;gap:12px">
       <div style="background:#1a3a2a;border:1px solid #2a4a2a;border-radius:8px;padding:12px">
         <div style="display:flex;justify-content:space-between;align-items:center">
@@ -300,12 +304,14 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
   </div>
 
   <div class="card" style="border-color:#5a2a2a">
-    <div class="card-title" style="color:#fbbf24">📋 投注建议</div>
+    <div class="card-title" style="color:#fbbf24">📋 决赛投注建议</div>
     <div style="font-size:13px;color:#8892b0;line-height:1.8">
-      <p>• <strong>决赛(7/20):</strong> 西班牙-0.25胜(首选) + 阿根廷+0.25(防冷)，总仓位≤20%</p>
-      <p>• <strong>季军赛(7/19):</strong> 法国-0.5胜(首选) + 平局防冷，总仓位≤15%</p>
-      <p>• <strong style="color:#f87171">⚠️ 凯利模型提示:</strong> 近期让球盘连续失效，信心指数全部下调至7以下</p>
-      <p>• <strong>策略:</strong> 决赛+季军赛合计投注不超过总预算40%，严禁重注</p>
+      <p>• <strong>首选:</strong> 小球 +1.5 (全场≤2球，赔率1.83)</p>
+      <p>• <strong>次选:</strong> 1-1波胆 (赔率5.20)</p>
+      <p>• <strong>防冷:</strong> 西班牙2-1 (赔率6.80)</p>
+      <p>• <strong style="color:#f87171">⚠️ 风险提示:</strong> 决赛不确定性极高，建议仓位≤15%</p>
+      <p>• <strong>策略:</strong> 机构防范平局，Opta模拟41%加时概率</p>
+      <p>• <strong style="color:#ff6b6b">最后一届世界杯竞猜:</strong> 理性观赛，享受比赛！</p>
     </div>
   </div>
 </div>
